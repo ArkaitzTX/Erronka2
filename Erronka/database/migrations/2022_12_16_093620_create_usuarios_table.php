@@ -18,9 +18,13 @@ return new class extends Migration
             $table->string('nombre', 50);
             $table->string('apellido', 50);
             $table->string('usuario', 50)->nullable();
-            $table->integer('rol', 1);
+            $table->string('pass', 50)->nullable();
+            $table->integer('rol');
             $table->string('foto', 50);
             $table->string('type', 10);
+            // $table->unsignedBigInteger('grupo');
+            // $table->foreign('grupo')->references('id')->on('usuarios');
+            // $table->integer('grupoV');
             $table->timestamps();
         });
     }
