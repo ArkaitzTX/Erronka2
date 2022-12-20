@@ -1,0 +1,38 @@
+$negro: #0C1713;
+$azul1: #101243;
+
+#cofre{ 
+    background-color: $negro;
+    height: 100vh;
+
+    h1{
+        margin-top: 15% !important;
+        font-size: 700%;
+    }
+    button{
+        height: 7vh;
+        min-width: 8vw;
+    }
+}
+
+#candado{
+    // height: 50vh;
+
+    article{
+        height: 40vh;
+        background-color: $azul1;
+        position: relative;
+
+        h1{
+            font-size: 500%;
+        }
+        div{
+            height: 25%;
+            width: 100%;
+
+            background-color: $negro;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}

@@ -22,6 +22,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
 
                 <img class="navbar-brand" src="{{asset('IMG/Logo.png')}}" height="36">
                 
@@ -47,11 +48,5 @@
             </div>
         </nav>
     </header>
-
-
-
-
-
 </body>
-
 </html>
