@@ -1,0 +1,35 @@
+
+#fondo{
+    background-color: #868b89;
+}
+.boton {
+    color: #fff;
+    background-color: #140C73;
+    border-color: #140C73;
+}
+
+.nav-pills {
+
+    display: table !important;
+    width: 100%;
+}
+
+.nav-item {
+    display: table-cell;
+    background: #101243;
+}
+
+.form input {
+
+    margin-bottom: 12px;
+    border-radius: 3px;
+}
+
+.form button {
+
+    margin-top: 20px;
+}
+.vidas{
+    color: white;
+   
+}
