@@ -1,34 +1,30 @@
-#tamaina {
-    display: block;
+main{
+    background-color: #140C73;
+    border-radius: 10px;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
     max-width: 500px;
 }
 
-.boton {
-    color: #fff;
-    background-color: #140C73;
-    border-color: #140C73;
-}
 
-.nav-pills {
-
+#menu {
     display: table !important;
     width: 100%;
 }
 
-.nav-item {
+.menu-obj {
     display: table-cell;
     background: #101243;
 }
 
-.form input {
+.formulario input {
 
     margin-bottom: 12px;
     border-radius: 3px;
 }
 
-.form button {
+.formulario button {
 
     margin-top: 20px;
 }
