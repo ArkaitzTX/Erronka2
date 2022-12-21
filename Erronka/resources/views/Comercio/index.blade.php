@@ -20,7 +20,7 @@
         {{-- COFRE --}}
         <section class="d-flex align-items-center flex-column" id="cofre">
             <h1 class="text-light my-5">COFRE</h1>
-            <button class="btn btn-primary">ABRIR</button>
+            <button onclick="location.href='#juegos'" class="btn btn-primary">ABRIR</button>
             <p id="juegos">---</p>
         </section>
 

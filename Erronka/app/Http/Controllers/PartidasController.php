@@ -16,6 +16,9 @@ class PartidasController extends Controller
     //VER ID
     public function ver($candado, $id)
     {
+        if(null === session()->get('usuario')){
+            return view('Comercio.log-reg');
+        }
         $partidas = Partidas::findOrFail($id);
         return view('Comercio.juegos', compact('partidas', 'candado'));
     }
