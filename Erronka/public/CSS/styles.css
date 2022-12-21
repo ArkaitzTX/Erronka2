@@ -32,7 +32,8 @@
 
 .usu-img {
     padding: 50px;
-    align-self: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .adm-inp {

@@ -10,8 +10,10 @@ class UsuariosController extends Controller
     //VER
     public function index()
     {
-        $usu = Usuarios::orderBy('id','asc');
-        return view('Comercio.admin', compact('usu'));
+        // $miUsu = Usuarios::where('usuario','=',session()->get('usuario'))->get();
+        $miUsu = Usuarios::where('id','=',1)->get();
+        $usu = Usuarios::all();
+        return view('Comercio.admin', compact('usu', 'miUsu'));
     }
     //VER ID
     // public function ver($id)
@@ -89,9 +91,9 @@ class UsuariosController extends Controller
     }
 
     //BORRAR
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $usu = Usuarios::findOrFail($id);
+        $usu = Usuarios::findOrFail($request->usuario);
         unlink(public_path('img/profile/'.$usu->foto));
         $usu->delete();
         return redirect()->route('Comercio.index')->with('success', 'Erabiltzailea ezabatu da.');
