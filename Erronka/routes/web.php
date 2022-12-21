@@ -8,11 +8,21 @@ use App\Http\Controllers\PartidasController;
 Route::get('/', function () {
     return view('Comercio.index');
 })->name('Comercio.index');
+//Index con #
+Route::get('/#juegos', function () {
+    return view('Comercio.index');
+})->name('Comercio.juegos');
+Route::get('/#cofre', function () {
+    return view('Comercio.index');
+})->name('Comercio.cofre');
 
 //Ventana Log-reg
 Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.login');
     //Create
-    Route::post('/',  [UsuariosController::class, 'store'])->name('Comercio.usuNuevo');
+    Route::post('/log-reg',  [UsuariosController::class, 'store'])->name('Comercio.usuNuevo');
+    //Login
+    Route::post('/',  [UsuariosController::class, 'logSes'])->name('Comercio.logSes');
+
 
 //Admin
 Route::get('/admin', [UsuariosController::class, 'index'])->name('Comercio.admin');

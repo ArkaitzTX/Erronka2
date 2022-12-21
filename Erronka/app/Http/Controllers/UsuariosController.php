@@ -38,21 +38,32 @@ class UsuariosController extends Controller
         $usu->nombre = $request->nombre;
         $usu->apellido = $request->apellido;
         $usu->usuario = $request->usuario;
+        $usu->pass = $request->pass;
         $usu->rol = 0;
+        $usu->foto = "default.png";
+        $usu->type = "png";
 
-        if ($request->hasFile("img")){
-            $img = $request->file("img");
-            $nomImg = Str::slug($request->usuario).".".$img->guessExtension();
-            $ruta = public_path("img/profile/");
 
-            copy($img->getRealPath(),$ruta.$nomImg);
+        // if ($request->hasFile("img")){
+        //     $img = $request->file("img");
+        //     $nomImg = Str::slug($request->usuario).".".$img->guessExtension();
+        //     $ruta = public_path("img/profile/");
 
-            $usu->foto = $nomImg;
-            $usu->type = $img->guessExtension();
-        }
+        //     copy($img->getRealPath(),$ruta.$nomImg);
+
+        //     $usu->foto = $nomImg;
+        //     $usu->type = $img->guessExtension();
+        // }
         $usu->save();
-        return redirect()->action([UsuariosController::class, 'index']);
+        return redirect()->action([UsuariosController::class, 'create']);
     }
+    //LOGIN
+    public function logSes($id){
+        // session()->put('usuario' ,  $id);
+        session(['usuario' => $id]);
+        return view('Comercio.index');
+    }
+    
     //UPDATE
     public function update(Request $request, $id)
     {

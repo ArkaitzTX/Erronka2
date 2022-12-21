@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
             <div class="container-fluid">
                 
@@ -30,17 +30,18 @@
 
                     <ul class="navbar-nav me-auto my-2 my-lg-0">
                         <li class="nav-item active">
-                            <a href=' {{ route('Comercio.index') }}' class="nav-link">Hasiera</a>
+                            <a href=' {{ route('Comercio.cofre') }}' class="nav-link">Hasiera</a>
                         </li>
                         <li class="nav-item">
-                            <a href=' {{ route('Comercio.index') }}' class="nav-link">Jokoak</a>
+                            <a href=' {{ route('Comercio.juegos') }}' class="nav-link">Jokoak</a>
                         </li>
                     </ul>
 
                     <ul class="navbar-nav">
                         <form class="form-inline my-2 my-lg-0 ml-auto">
-                            <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">Saioa
-                                Hasi
+                            <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
+                                {{-- @if() --}}
+                                Saioa Hasi
                             </a>
                         </form>
                     </ul>

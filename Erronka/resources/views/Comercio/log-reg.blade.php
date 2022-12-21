@@ -38,6 +38,8 @@
 
                 {{-- FORM LOGGIN --}}
                 <form class="form px-4 pt-5 formulario">
+                    @csrf
+
                     <input type="text" name="" class="form-control" placeholder="Erabiltzaile">
                     <input type="text" name="" class="form-control" placeholder="Pasahitza">
                     <button class="btn btn-dark btn-block">Saioa Hasi</button>
@@ -49,11 +51,13 @@
             <article class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
 
                 {{-- FORM SING-UP --}}
-                <form class="form px-4 formulario">
-                    <input type="text" name="" class="form-control" placeholder="Izena">
-                    <input type="text" name="" class="form-control" placeholder="Abizena">
-                    <input type="text" name="" class="form-control" placeholder="Erabiltzaile">
-                    <input type="text" name="" class="form-control" placeholder="Pasahitza">
+                <form class="form px-4 formulario" action="{{ route('Comercio.usuNuevo') }}" method ="POST">
+                    @csrf
+
+                    <input type="text" name="nombre" class="form-control" placeholder="Izena">
+                    <input type="text" name="apellido" class="form-control" placeholder="Abizena">
+                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile">
+                    <input type="text" name="pass" class="form-control" placeholder="Pasahitza">
                     <button class="btn btn-dark btn-block">Erregistratu</button>
                 </form>
 
