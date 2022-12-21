@@ -37,11 +37,11 @@
             <article class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
 
                 {{-- FORM LOGGIN --}}
-                <form class="form px-4 pt-5 formulario">
+                <form class="form px-4 pt-5 formulario" action="{{ route('Comercio.logSes') }}" method ="POST">
                     @csrf
 
-                    <input type="text" name="" class="form-control" placeholder="Erabiltzaile">
-                    <input type="text" name="" class="form-control" placeholder="Pasahitza">
+                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile">
+                    <input type="text" name="pass" class="form-control" placeholder="Pasahitza">
                     <button class="btn btn-dark btn-block">Saioa Hasi</button>
                 </form>
 

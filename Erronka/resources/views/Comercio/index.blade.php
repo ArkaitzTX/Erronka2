@@ -17,26 +17,28 @@
     @include('Comercio.header')
    
     <main>
+        {{-- COFRE --}}
         <section class="d-flex align-items-center flex-column" id="cofre">
             <h1 class="text-light my-5">COFRE</h1>
             <button class="btn btn-primary">ABRIR</button>
             <p id="juegos">---</p>
         </section>
 
+        {{-- LOS JUEGOS --}}
         <section class="container" id="candado">
+            {{-- CANDADO 1 --}}
             <article class="my-5 text-light d-flex align-items-center justify-content-center">
                 <h1>* * * *</h1>
                 <div>
                     <h3>CANDADO 1</h3>
                 </div>
             </article>
-        </section>
 
-        <section class="container" id="candado">
+            {{-- CANDADO 2 --}}
             <article class="mb-5 text-light d-flex align-items-center justify-content-center">
                 <h1>* * * *</h1>
                 <div>
-                    <h3>CANDADO 1</h3>
+                    <h3>CANDADO 2</h3>
                 </div>
             </article>
         </section>

@@ -22,7 +22,8 @@ Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.lo
     Route::post('/log-reg',  [UsuariosController::class, 'store'])->name('Comercio.usuNuevo');
     //Login
     Route::post('/',  [UsuariosController::class, 'logSes'])->name('Comercio.logSes');
-
+    //Cerrar Secion
+    Route::get('/cerrarSes',  [UsuariosController::class, 'cerrarSes'])->name('Comercio.cerrarSes');
 
 //Admin
 Route::get('/admin', [UsuariosController::class, 'index'])->name('Comercio.admin');
@@ -37,3 +38,6 @@ Route::get('/{id}/juegos', [UsuariosController::class, 'ver'])->name('Comercio.j
     Route::put('{id}/juegos', [UsuariosController::class, 'update'])->name('Comercio.parUptade');
     //Crear Juego
     Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear');
+
+
+    

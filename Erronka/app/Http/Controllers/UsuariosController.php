@@ -58,11 +58,34 @@ class UsuariosController extends Controller
         return redirect()->action([UsuariosController::class, 'create']);
     }
     //LOGIN
-    public function logSes($id){
-        // session()->put('usuario' ,  $id);
-        session(['usuario' => $id]);
+    public function logSes(Request $request){
+
+        // $usuarios = Usuarios::all();
+
+        // foreach($usuarios as $usu){
+        //     if($request->usuario != $usu->usuario && $request->pass != $usu->pass){
+        //         return view('Comercio.log-reg', 'El usuario es incorrecto');
+        //     }   
+        // }
+
+        $usuarios = Usuarios::where('usuario','=',$request->usuario)->get();
+        foreach($usuarios as $usu){
+            if($request->usuario != $usu->usuario && $request->pass != $usu->pass){
+                return view('Comercio.log-reg', 'El usuario es incorrecto');
+            }   
+        }
+
+        session(['usuario' => $usu]);
         return view('Comercio.index');
     }
+
+     //CERRAR SESION
+     public function cerrarSes(){
+
+        session()->forget('usuario');
+        return view('Comercio.index');
+    }
+    
     
     //UPDATE
     public function update(Request $request, $id)

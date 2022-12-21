@@ -38,12 +38,18 @@
                     </ul>
 
                     <ul class="navbar-nav">
-                        <form class="form-inline my-2 my-lg-0 ml-auto">
-                            <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
-                                {{-- @if() --}}
-                                Saioa Hasi
-                            </a>
-                        </form>
+                        <div class="form-inline my-2 my-lg-0 ml-auto">
+                            @if(null !== session()->get('usuario'))
+                                <a href=' {{ route('Comercio.admin') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
+                                    {{ session()->get('usuario')->usuario }}
+                                </a>
+                            @else
+                                <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
+                                    Saioa Hasi
+                                </a>
+                            @endif
+
+                        </div>
                     </ul>
 
                 </div>
