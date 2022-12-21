@@ -27,20 +27,24 @@
         {{-- LOS JUEGOS --}}
         <section class="container" id="candado">
             {{-- CANDADO 1 --}}
-            <article class="my-5 text-light d-flex align-items-center justify-content-center">
-                <h1>* * * *</h1>
-                <div>
-                    <h3>CANDADO 1</h3>
-                </div>
-            </article>
+            <a class="text-decoration-none" href="{{ route('Comercio.juego', [1, 1])  }}"> {{-- nºcandado, id --}}
+                <article class="my-5 text-light d-flex align-items-center justify-content-center">
+                    <h1>* * * *</h1>
+                    <div>
+                        <h3>CANDADO 1</h3>
+                    </div>
+                </article>
+            </a>
 
             {{-- CANDADO 2 --}}
-            <article class="mb-5 text-light d-flex align-items-center justify-content-center">
-                <h1>* * * *</h1>
-                <div>
-                    <h3>CANDADO 2</h3>
-                </div>
-            </article>
+            <a class="text-decoration-none" href="{{ route('Comercio.juego', [2, 1])  }}">
+                <article class="mb-5 text-light d-flex align-items-center justify-content-center">
+                    <h1>* * * *</h1>
+                    <div>
+                        <h3>CANDADO 2</h3>
+                    </div>
+                </article>
+            </a>
         </section>
     </main>
 

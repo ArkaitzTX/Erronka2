@@ -1,35 +1,36 @@
-
-#fondo{
-    background-color: #868b89;
-}
-.boton {
-    color: #fff;
-    background-color: #140C73;
-    border-color: #140C73;
+#fondo {
+  background-color: white;
 }
 
-.nav-pills {
-
-    display: table !important;
-    width: 100%;
+#menu {
+  display: table !important;
+  width: 100%;
 }
 
-.nav-item {
-    display: table-cell;
-    background: #101243;
+.objeto {
+  display: table-cell;
+  background: #0C1713;
 }
 
-.form input {
-
-    margin-bottom: 12px;
-    border-radius: 3px;
+.otro {
+  background-color: #101243 !important;
+  cursor: default !important;
 }
 
-.form button {
+#info {
+  background-color: #101243 !important;
+  border-radius: 50%;
+  width: 5vh;
+  height: 5vh;
+}
 
-    margin-top: 20px;
+.juegos {
+  background-color: #140C73;
+  border-radius: 5px;
+  margin-bottom: 30%;
 }
-.vidas{
-    color: white;
-   
+.juegos div {
+  height: 50vh;
 }
+
+/*# sourceMappingURL=PantallaJuegos.css.map */
