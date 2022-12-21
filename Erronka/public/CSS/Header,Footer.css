@@ -3,16 +3,16 @@ html {
     position: relative;
 }
 
-body {
+/* body {
     margin: 0;
     margin-bottom: 40px;
-}
+} */
 
 /* FOOTER */
 
 footer {
-    /* position: absolute;
-    bottom: 0; */
+    position: absolute;
+    bottom: 0;
     width: 100%;
 }
 
@@ -30,6 +30,6 @@ header{
   z-index: 5;
 }
 
-a{
+header a{
     cursor: pointer
 }

@@ -38,21 +38,55 @@ class UsuariosController extends Controller
         $usu->nombre = $request->nombre;
         $usu->apellido = $request->apellido;
         $usu->usuario = $request->usuario;
+        $usu->pass = $request->pass;
         $usu->rol = 0;
+        $usu->foto = "default.png";
+        $usu->type = "png";
 
-        if ($request->hasFile("img")){
-            $img = $request->file("img");
-            $nomImg = Str::slug($request->usuario).".".$img->guessExtension();
-            $ruta = public_path("img/profile/");
 
-            copy($img->getRealPath(),$ruta.$nomImg);
+        // if ($request->hasFile("img")){
+        //     $img = $request->file("img");
+        //     $nomImg = Str::slug($request->usuario).".".$img->guessExtension();
+        //     $ruta = public_path("img/profile/");
 
-            $usu->foto = $nomImg;
-            $usu->type = $img->guessExtension();
-        }
+        //     copy($img->getRealPath(),$ruta.$nomImg);
+
+        //     $usu->foto = $nomImg;
+        //     $usu->type = $img->guessExtension();
+        // }
         $usu->save();
-        return redirect()->action([UsuariosController::class, 'index']);
+        return redirect()->action([UsuariosController::class, 'create']);
     }
+    //LOGIN
+    public function logSes(Request $request){
+
+        // $usuarios = Usuarios::all();
+
+        // foreach($usuarios as $usu){
+        //     if($request->usuario != $usu->usuario && $request->pass != $usu->pass){
+        //         return view('Comercio.log-reg', 'El usuario es incorrecto');
+        //     }   
+        // }
+
+        $usuarios = Usuarios::where('usuario','=',$request->usuario)->get();
+        foreach($usuarios as $usu){
+            if($request->usuario != $usu->usuario && $request->pass != $usu->pass){
+                return view('Comercio.log-reg', 'El usuario es incorrecto');
+            }   
+        }
+
+        session(['usuario' => $usu]);
+        return view('Comercio.index');
+    }
+
+     //CERRAR SESION
+     public function cerrarSes(){
+
+        session()->forget('usuario');
+        return view('Comercio.index');
+    }
+    
+    
     //UPDATE
     public function update(Request $request, $id)
     {

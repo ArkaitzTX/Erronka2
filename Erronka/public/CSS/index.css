@@ -1,4 +1,9 @@
+main {
+  margin-bottom: 30%;
+}
+
 #cofre {
+  position: relative;
   background-color: #0C1713;
   height: 100vh;
 }
@@ -23,6 +28,10 @@
   height: 25%;
   width: 100%;
   background-color: #0C1713;
+  position: absolute;
+  bottom: 0;
+}
+#juegos{
   position: absolute;
   bottom: 0;
 }
