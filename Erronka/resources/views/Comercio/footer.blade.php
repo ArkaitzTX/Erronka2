@@ -17,6 +17,7 @@
 <div>
 
     <section class="">
+<<<<<<< HEAD
         <!-- Footer -->
         <footer class="text-center text-white" style="background-color: #140C73;">
             <!-- Grid container -->
@@ -33,6 +34,27 @@
                 <!-- Section: CTA -->
             </div>
             <!-- Grid container -->
+=======
+        <!-- FOOTER -->
+        <footer class="text-center text-white" style="background-color: #140C73;">
+            <div class="container p-4 pb-0">
+                <!-- CONTENIDO -->
+                <section class="">
+                    <p class="d-flex justify-content-center align-items-center">
+                        @if(null !== session()->get('usuario'))
+                        <a href="{{ route('Comercio.cerrarSes') }}" type="button" class="btn btn-outline-light btn-rounded">
+                            Saioa itxi
+                        </a>
+                        @else
+                            <span class="me-3">Izena eman orain</span>
+                            <button type="button" class="btn btn-outline-light btn-rounded">
+                                Saioa Hasi
+                            </button>
+                        @endif
+                    </p>
+                </section>
+            </div>
+>>>>>>> development
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color:#101243;">

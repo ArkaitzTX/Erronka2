@@ -1,0 +1,47 @@
+$negro: #0C1713;
+$azul1: #101243;
+$azul2: #140C73;
+$blanco: white;
+
+#fondo{
+    background-color: $blanco;
+}
+
+#menu {
+
+    display: table !important;
+    width: 100%;
+}
+
+.objeto {
+    display: table-cell;
+    background: $negro;
+}
+
+.otro{
+    background-color: $azul1 !important;
+    cursor: default !important;
+}
+
+#info{
+    background-color: $azul1 !important;
+
+    border-radius: 50%;
+    width: 5vh;
+    height: 5vh;
+}
+
+.juegos{
+    background-color: $azul2;
+    border-radius: 5px;
+    margin-bottom: 30%;
+
+    div{
+        height: 50vh;
+    }
+}
+
+@mixin fondo {
+    background-color: $azul1 !important;
+    border: $blanco 2px solid;
+}

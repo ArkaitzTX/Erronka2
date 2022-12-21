@@ -1,0 +1,36 @@
+#fondo {
+  background-color: white;
+}
+
+#menu {
+  display: table !important;
+  width: 100%;
+}
+
+.objeto {
+  display: table-cell;
+  background: #0C1713;
+}
+
+.otro {
+  background-color: #101243 !important;
+  cursor: default !important;
+}
+
+#info {
+  background-color: #101243 !important;
+  border-radius: 50%;
+  width: 5vh;
+  height: 5vh;
+}
+
+.juegos {
+  background-color: #140C73;
+  border-radius: 5px;
+  margin-bottom: 30%;
+}
+.juegos div {
+  height: 50vh;
+}
+
+/*# sourceMappingURL=PantallaJuegos.css.map */

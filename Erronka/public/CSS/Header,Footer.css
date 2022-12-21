@@ -1,25 +1,35 @@
 html {
     min-height: 100%;
     position: relative;
-  }
-  body {
+}
+
+/* body {
     margin: 0;
     margin-bottom: 40px;
-  }
-  footer {
-   
+} */
+
+/* FOOTER */
+
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    
- 
-  }
+}
 
-#color{ 
+#color {
     border: 1px solid white;
     color: white;
     background-color: #101243;
-
 }
 
+/* HEADER */
 
+header{
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+header a{
+    cursor: pointer
+}

@@ -12,62 +12,64 @@
     <title>Comercio</title>
 </head>
 
-
 <body id="fondo">
-
-    @include('Comercio.header')
-
-    <main class="mt-5" id="tamaina">
-
-        {{-- Otros --}}
-        <section class="mx-5 my-3 d-flex flex-nowrap align-items-center justify-content-between">
-            <article class="">
-                <strong class="text-light btn otro">Vidas: 3</strong>
-                <strong class="text-light btn otro">Tiempo: <span>30</span> mins</strong>
-            </article>
-
-            <article class="">
-                <button class="text-light" id="info" type="submit">i</button>
-            </article>
-        </section>
-
-        {{-- Menu --}}
-        <ul class="nav nav-pills container" id="menu" role="tablist">
-
-            <li class="objeto nav-item text-center bg-danger rounded" role="presentation">
+    <div class="mt-5" id="tamaina">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+            <li class="nav-item text-center">
+                <strong class="vidas">Vidas: 3</strong>
+            </li>
+            <li class="nav-item text-center bg-danger" role="presentation">
                 <button class="nav-link active w-100 text-light" id="pills-Juego1-tab" data-bs-toggle="pill"
                     data-bs-target="#pills-Juego1" type="button" role="tab" aria-controls="pills-Juego1"
-                    aria-selected="true">Jolasa 1</button>
+                    aria-selected="true">Juego 1</button>
             </li>
-            <li class="objeto nav-item text-center bg-danger rounded mx-3" role="presentation">
+            <li class="nav-item text-center bg-danger" role="presentation">
                 <button class="nav-link w-100 text-light" id="pills-Juego2-tab" data-bs-toggle="pill"
                     data-bs-target="#pills-Juego2" type="button" role="tab" aria-controls="pills-Juego2"
-                    aria-selected="false">Jolasa 2</button>
+                    aria-selected="false">Juego 2</button>
             </li>
-            <li class="objeto nav-item text-center bg-danger rounded  mx-3" role="presentation">
+            <li class="nav-item text-center bg-danger" role="presentation">
                 <button class="nav-link w-100 text-light" id="pills-Juego3-tab" data-bs-toggle="pill"
                     data-bs-target="#pills-Juego3" type="button" role="tab" aria-controls="pills-Juego3"
-                    aria-selected="false">Jolasa 3</button>
+                    aria-selected="false">Juego 3</button>
             </li>
-
+            <li class="nav-item text-center" role="presentation">
+                <strong class="vidas">30:00</strong>
+            </li>
+            <li class="nav-item text-center" role="presentation">
+                <button class="nav-link" type="submit">P</button>
+            </li>
         </ul>
-
-        {{-- Modulo de los Juegos --}}
-        <section class="juegos container text-light text-center tab-content mt-5">
-            <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
-                JUEGO 1
+        <div class="text-center tab-content mt-5">
+            <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel"
+                aria-labelledby="pills-Juego1-tab">
+                <div>
+                    hola
+                </div>
+                <div>
+                    hola2
+                </div>
             </div>
             <div class=" tab-pane fade" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
-                JUEGO 2
+                <div>
+                    hola3
+                </div>
+                <div>
+                    hola4
+                </div>
+
             </div>
             <div class="tab-pane fade" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
-                JUEGO 3
+                <div>
+                    hola5
+                </div>
+                <div>
+                    hola6
+                </div>
+
             </div>
-        </section>
-    </main>
-
-    @include('Comercio.footer')
-
+        </div>
+    </div>
 </body>
 
 </html>

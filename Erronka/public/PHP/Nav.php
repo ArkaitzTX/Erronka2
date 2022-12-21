@@ -14,36 +14,43 @@
 
 <body>
     <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <img class="navbar-brand" src="{{asset('IMG/Logo.png')}}" height="36">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link">Hasiera</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">Jokoak</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div class="container-fluid">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <img class="navbar-brand" src="{{asset('IMG/Logo.png')}}" height="36">
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav me-auto my-2 my-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link">Hasiera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Jokoak</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
                         <form class="form-inline my-2 my-lg-0 ml-auto">
-                            <button class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">Saioa Hasi</button>
+                            <button class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">Saioa
+                                Hasi</button>
                         </form>
                     </ul>
-                    </div>
+
                 </div>
-            </nav>
+            </div>
+        </nav>
     </header>
 
 
 
- 
+
 
 </body>
 
