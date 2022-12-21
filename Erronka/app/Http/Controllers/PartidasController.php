@@ -14,10 +14,10 @@ class PartidasController extends Controller
         return view('Comercio.juegos', compact('partidas'));
     }
     //VER ID
-    public function ver($id)
+    public function ver($candado, $id)
     {
         $partidas = Partidas::findOrFail($id);
-        return view('Comercio.juegos', compact('partidas'));
+        return view('Comercio.juegos', compact('partidas', 'candado'));
     }
     //CREAR
     public function store(Request $request)

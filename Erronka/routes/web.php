@@ -33,9 +33,9 @@ Route::get('/admin', [UsuariosController::class, 'index'])->name('Comercio.admin
     Route::put('/{id}', [UsuariosController::class, 'update'])->name('Comercio.usuUpdate');
 
 //Juegos
-Route::get('/{id}/juegos', [UsuariosController::class, 'ver'])->name('Comercio.juego');
+Route::get('/{candado}/{id}/juegos', [PartidasController::class, 'ver'])->name('Comercio.juego');
     //Editar
-    Route::put('{id}/juegos', [UsuariosController::class, 'update'])->name('Comercio.parUptade');
+    Route::put('{id}/juegos', [PartidasController::class, 'update'])->name('Comercio.parUptade');
     //Crear Juego
     Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear');
 
