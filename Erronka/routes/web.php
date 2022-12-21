@@ -28,7 +28,7 @@ Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.lo
 //Admin
 Route::get('/admin', [UsuariosController::class, 'index'])->name('Comercio.admin');
     //Eliminar
-    Route::delete('/{id}', [UsuariosController::class, 'destroy'])->name('Comercio.usuEliminar');
+    Route::delete('/', [UsuariosController::class, 'destroy'])->name('Comercio.usuEliminar');
     //Editar
     Route::put('/{id}', [UsuariosController::class, 'update'])->name('Comercio.usuUpdate');
 
