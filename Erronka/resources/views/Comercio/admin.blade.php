@@ -57,11 +57,14 @@
         <article class="d-flex justify-content-center align-items-center">
             <select name="usuario" class="text-center">
                 @foreach($usu as $usus)
-                <option value="{{ $usus->id }}">{{ $usus->usuario }}</option>
+                    @if($usus->id != $miUsu->id)
+                        <option value="{{ $usus->id }}">{{ $usus->usuario }}</option>
+                    @endif
                 @endforeach
             </select>
             <button type="submit" class="btn btn-dark" value="borrar">-</button>
         </article>
+        <p class="text-center text-success">{{Session::get('mensaje')}}</p>
     </form>
     @endif
 

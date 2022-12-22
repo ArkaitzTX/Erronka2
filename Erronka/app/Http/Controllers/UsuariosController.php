@@ -140,6 +140,6 @@ class UsuariosController extends Controller
         $usu = Usuarios::findOrFail($request->usuario);
         if($usu->foto != 'default.png') unlink(public_path('img/profile/'.$usu->foto));
         $usu->delete();
-        return redirect()->route('Comercio.admin')->with('success', 'Erabiltzailea ezabatu da.');
+        return redirect()->route('Comercio.admin')->with('mensaje', 'Erabiltzailea ezabatu da.');
     }
 }
