@@ -15,7 +15,7 @@
 
 <body id="fondo">
 
-    @include('Comercio.header')
+    @include('layouts.header')
 
     <main class="mt-5" id="tamaina">
 
@@ -66,7 +66,7 @@
         </section>
     </main>
 
-    @include('Comercio.footer')
+    @include('layouts.footer')
 
 </body>
 

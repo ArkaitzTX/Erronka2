@@ -22,7 +22,7 @@ class UsuariosSeeder extends Seeder
         $usuario->pass = 'admin';
         $usuario->foto = 'default.png';
         $usuario->type = 'png';
-        $usuario->rol = 3;
+        $usuario->rol = 1;
         // $usuario->grupo = 0;
         // $usuario->grupoV = 0;
         $usuario->save();
@@ -35,7 +35,7 @@ class UsuariosSeeder extends Seeder
         $usuario1->pass = 'Inf041';
         $usuario1->foto = 'default.png';
         $usuario1->type = 'png';
-        $usuario1->rol = 2;
+        $usuario1->rol = 0;
         // $usuario1->grupo = 0;
         // $usuario1->grupoV = 0;
         $usuario1->save();

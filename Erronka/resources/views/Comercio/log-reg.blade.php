@@ -14,7 +14,7 @@
 
 <body>
 
-    @include('Comercio.header')
+    @include('layouts.header')
 
     <main class="mt-5" id="tamaina">
 
@@ -41,9 +41,15 @@
                     @csrf
 
                     <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile">
-                    <input type="text" name="pass" class="form-control" placeholder="Pasahitza">
+                    <input type="password" name="pass" class="form-control" placeholder="Pasahitza">
                     <button class="btn btn-dark btn-block">Saioa Hasi</button>
                 </form>
+
+                
+                @isset($error)
+                <br>
+                <p class="text-center text-danger">*{{$error}}*</p>
+                @endisset
 
             </article>
 
@@ -56,16 +62,18 @@
 
                     <input type="text" name="nombre" class="form-control" placeholder="Izena">
                     <input type="text" name="apellido" class="form-control" placeholder="Abizena">
-                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile">
-                    <input type="text" name="pass" class="form-control" placeholder="Pasahitza">
+                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile" required>
+                    <input type="password" name="pass" class="form-control" placeholder="Pasahitza" required>
                     <button class="btn btn-dark btn-block">Erregistratu</button>
                 </form>
-
             </article>
+
+
+
         </section>
     </main>
 
-    @include('Comercio.footer')
+    @include('layouts.footer')
 
 </body>
 

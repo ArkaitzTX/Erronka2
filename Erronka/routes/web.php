@@ -30,7 +30,9 @@ Route::get('/admin', [UsuariosController::class, 'index'])->name('Comercio.admin
     //Eliminar
     Route::delete('/', [UsuariosController::class, 'destroy'])->name('Comercio.usuEliminar');
     //Editar
-    Route::put('/{id}', [UsuariosController::class, 'update'])->name('Comercio.usuUpdate');
+    Route::put('/admin/{id}', [UsuariosController::class, 'update'])->name('Comercio.usuUpdate');
+    //Rol mejora
+    Route::post('/admin/{id}', [UsuariosController::class, 'rol'])->name('Comercio.rol');
 
 //Juegos
 Route::get('/{candado}/{id}/juegos', [PartidasController::class, 'ver'])->name('Comercio.juego');

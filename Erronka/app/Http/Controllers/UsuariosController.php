@@ -10,7 +10,7 @@ class UsuariosController extends Controller
     //VER
     public function index()
     {
-        $miUsu = Usuarios::where('id','=',1)->get();
+        $miUsu = session()->get('usuario');
         $usu = Usuarios::all();
         return view('Comercio.admin', compact('usu', 'miUsu'));
     }
@@ -69,15 +69,20 @@ class UsuariosController extends Controller
         //     }   
         // }
 
+        
+        
+        // $usuarios = Usuarios::all();
         $usuarios = Usuarios::where('usuario','=',$request->usuario)->get();
+        
         foreach($usuarios as $usu){
-            if($request->usuario != $usu->usuario && $request->pass != $usu->pass){
-                return view('Comercio.log-reg', 'El usuario es incorrecto');
+            if($request->usuario == $usu->usuario && $request->pass == $usu->pass){
+                session(['usuario' => $usu]);
+                return view('Comercio.index');
             }   
         }
 
-        session(['usuario' => $usu]);
-        return view('Comercio.index');
+        $error = 'El usuario: ' . $request->usuario . ', es incorrecto o la contraseña no coincide';
+        return view('Comercio.log-reg', compact('error'));
     }
 
      //CERRAR SESION
@@ -87,6 +92,21 @@ class UsuariosController extends Controller
         return view('Comercio.index');
     }
     
+    // MEJORAR ROL
+    public function rol(Request $request, $id)
+    {
+        $codigoAdmin = 'ADMIN123';
+
+        if ($request->rol == $codigoAdmin) {
+            $usu = Usuarios::findOrFail($id);
+            $usu->rol = 1;
+            $usu->save();
+
+            session(['usuario' => $usu]);
+        }
+
+        return redirect()->action([UsuariosController::class, 'index']);
+    }
     
     //UPDATE
     public function update(Request $request, $id)
@@ -95,7 +115,6 @@ class UsuariosController extends Controller
         $usu->nombre = $request->nombre;
         $usu->apellido = $request->apellido;
         $usu->usuario = $request->usuario;
-        $usu->rol = $request->rol;
 
         if ($request->hasFile("img")){
             unlink(public_path('img/profile/'.$usu->foto));
@@ -107,19 +126,11 @@ class UsuariosController extends Controller
 
             $usu->foto = $nomImg;
             $usu->type = $img->guessExtension();
-        } elseif ($request->usuario == $usu->usuario) {
-            
-            $img = public_path('img/profile/'.$usu->foto);
-            
-            $nomImg = Str::slug($request->usuario).".".$usu->type;
-            $ruta = public_path("img/profile/");
-
-            copy($img,$ruta.$nomImg);
-            unlink(public_path('img/profile/'.$usu->foto));
-            $usu->foto = $nomImg;
-        };
+        } 
 
         $usu->save();
+
+        session(['usuario' => $usu]);
         return redirect()->action([UsuariosController::class, 'index']);
     }
 
@@ -127,8 +138,8 @@ class UsuariosController extends Controller
     public function destroy(Request $request)
     {
         $usu = Usuarios::findOrFail($request->usuario);
-        unlink(public_path('img/profile/'.$usu->foto));
+        if($usu->foto != 'default.png') unlink(public_path('img/profile/'.$usu->foto));
         $usu->delete();
-        return redirect()->route('Comercio.index')->with('success', 'Erabiltzailea ezabatu da.');
+        return redirect()->route('Comercio.admin')->with('success', 'Erabiltzailea ezabatu da.');
     }
 }

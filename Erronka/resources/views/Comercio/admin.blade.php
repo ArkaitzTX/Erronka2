@@ -5,62 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{asset('CSS/styles.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('CSS/admin.css')}}" rel="stylesheet" type="text/css">
     <title>Admin</title>
 </head>
 <body>
-@include('comercio.header')
-    <section class="container">
-        <form action="{{ route('Comercio.usuUpdate', $miUsu[0]->id) }}" enctype="multipart/form-data" method="post">
-            @csrf
-            {{ method_field('PUT') }}
-            <main class="usu">
-                <div class="usu-edit">
-                    <input type="text" name="nombre" class="usu-inp text-center" placeholder="{{$miUsu[0]->nombre}}">
-                    <input type="text" name="apellido" class="usu-inp text-center" placeholder="{{$miUsu[0]->apellido}}">
-                </div>
-                <div class="usu-edit">
-                    <input type="text" name="usuario" class="usu-inp text-center" placeholder="{{$miUsu[0]->usuario}}">
-                    <input type="password" name="pass" class="usu-inp text-center" placeholder="{{$miUsu[0]->password}}">
-                </div>
-                <button type="submit" class="usu-btn" value="editar">edit</button>
-                <div class="usu-img">
-                    <!-- <button type="file" class="rounded-circle" name="img">
-                        <img src="img/profile/{{ $miUsu[0]->foto }}" alt="img" width="260px" height="260px">
-                    </button> -->
-                    <img src="img/profile/{{ $miUsu[0]->foto }}" class="border border-dark rounded-circle" alt="img" width="260px" height="260px">
-                    <label for="files" class="btn border border-dark">Editar IMG</label>
-                    <input id="files" style="visibility:hidden;" name="img">
-                </div>
-            </main>
-         </form>
-    </section>
+
+@include('layouts.header')
+
+<main>
+    <article  class="container my-5">
+        {{-- EDITAR --}}
+    <p class="text-danger">Editando...</p>{{-- HACER CON JS QUE ESTE PUESTO CUANDO ESTEMOS EDITANDO  --}}
+    <form id="editar" class="row" action="{{ route('Comercio.usuUpdate', $miUsu->id) }}" enctype="multipart/form-data" method="post">
+        @csrf {{ method_field('PUT') }}
+        {{-- IMAGEN --}}
+        <section class="row col-lg-3 col-md-12">
+            <img  name="" src="IMG/profile/{{ $miUsu->foto }}" alt="Perfil" class="col-12">
+            <label class="imagen col-12 text-center btn btn-dark my-2">
+                <input type="file" name="img">
+                IRUDIA    
+            </label>
+        </section>
+        {{-- EDITAR --}}
+        <section class="row col-lg-9 mt-5 col-md-12">
+            <input type="text" name="nombre" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->nombre}}">
+            <input type="text" name="apellido" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->apellido}}">
+            <input type="text" name="usuario" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->usuario}}">
+            <input type="password" name="pass" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->pass}}">
+
+            <button type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar">EDITATU</button>
+        </section>
+
+    </form>
+
     <hr>
-    <section class="container">
-        <form action="{{ route('Comercio.usuUpdate', $miUsu[0]->id) }}" method="post">
+
+    <form class=" my-5 text-center" id="rol" action="{{ route('Comercio.rol', $miUsu->id) }}" method="post">
         @csrf
-            <main class="d-flex justify-content-center">
-                <input type="text" placeholder="Introduce cod." class="adm-inp text-center" name="rol">
-                <button type="submit" class="adm-btn text-center" value="enviar">+</button>
-            </main>
-        </form>
-        <div class="">
-            <!-- Posible table -->
-        </div>
-    </section>
-    <hr>
-    <section class="container text-center">
-        <form action="{{ route('Comercio.usuEliminar') }}" method="POST">  
-            @csrf
-            @method('DELETE')      
-            <select name="usuario" class="del-inp text-center">
+        <article class="d-flex justify-content-center align-items-center">
+            <input type="text" placeholder="Admin kodea" class="text-center" name="rol">
+            <button type="submit" class="btn btn-dark" value="enviar">+</button>
+        </article>
+    </form>
+
+
+    {{-- ELIMINAR --}}
+
+    @if($miUsu->rol == 1)
+    <form class=" my-5 text-center" id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">  
+        @csrf @method('DELETE')      
+        <article class="d-flex justify-content-center align-items-center">
+            <select name="usuario" class="text-center">
                 @foreach($usu as $usus)
                 <option value="{{ $usus->id }}">{{ $usus->usuario }}</option>
                 @endforeach
             </select>
-            <button type="submit" class="del-btn" value="borrar">Ezabatu</button>
-        </form>
-    </section>
-@include('comercio.footer')
+            <button type="submit" class="btn btn-dark" value="borrar">-</button>
+        </article>
+    </form>
+    @endif
+
+    </article>
+</main>
+
+@include('layouts.footer')
+
 </body>
 </html>

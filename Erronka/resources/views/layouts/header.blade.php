@@ -30,7 +30,8 @@
 
                     <ul class="navbar-nav me-auto my-2 my-lg-0">
                         <li class="nav-item active">
-                            <a href=' {{ route('Comercio.cofre') }}' class="nav-link">Hasiera</a>
+                            {{-- Comercio.cofre --> BUEG EN LOGIN [CAMBIAR EL SISTEMA DE LOS #] --}}
+                            <a href=' {{ route('Comercio.index') }}' class="nav-link">Hasiera</a>
                         </li>
                         <li class="nav-item">
                             <a href=' {{ route('Comercio.juegos') }}' class="nav-link">Jokoak</a>
@@ -56,5 +57,8 @@
             </div>
         </nav>
     </header>
+
+    @yield('content')
+    
 </body>
 </html>

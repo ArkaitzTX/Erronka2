@@ -29,9 +29,9 @@
                         </a>
                         @else
                             <span class="me-3">Izena eman orain</span>
-                            <button type="button" class="btn btn-outline-light btn-rounded">
+                            <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
                                 Saioa Hasi
-                            </button>
+                            </a>
                         @endif
                     </p>
                 </section>
@@ -40,7 +40,7 @@
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color:#101243;">
                 © 2023 Copyright:
-                <a class="text-white" href="https://fptxurdinaga.hezkuntza.net/">CIFP Txudinaga</a>
+                <a class="text-white" href="https://fptxurdinaga.hezkuntza.net/">CIFP Txurdinaga LHII</a>
             </div>
             <!-- Copyright -->
         </footer>
@@ -48,6 +48,9 @@
     </section>
 
 </div>
+
+@yield('content')
+
 </body>
 
 </html>

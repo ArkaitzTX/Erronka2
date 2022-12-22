@@ -1,0 +1,56 @@
+/* GENERAL */
+main {
+  margin-bottom: 30% !important;
+}
+
+#editar input {
+  width: 40%;
+  height: 15%;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+#editar button {
+  width: 30vh;
+  height: 6vh;
+}
+#editar img {
+  width: 25vh;
+  height: 30vh;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+input[type=file] {
+  display: none;
+  width: 25vh !important;
+}
+
+.imagen {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px black solid;
+  border-radius: 10px;
+  width: 25vh !important;
+}
+
+#rol input, #rol button {
+  height: 5vh;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+#rol input {
+  width: 30vh;
+}
+
+#eliminar select, #eliminar button {
+  height: 5vh;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+#eliminar select {
+  width: 30vh;
+}
+
+/*# sourceMappingURL=admin.css.map */
