@@ -117,8 +117,9 @@ class UsuariosController extends Controller
         $usu->usuario = $request->usuario;
 
         if ($request->hasFile("img")){
-            unlink(public_path('img/profile/'.$usu->foto));
+            if($usu->foto != 'default.png') unlink(public_path('img/profile/'.$usu->foto));
             $img = $request->file("img");
+            
             $nomImg = Str::slug($request->usuario).".".$img->guessExtension();
             $ruta = public_path("img/profile/");
 
