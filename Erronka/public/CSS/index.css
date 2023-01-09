@@ -1,28 +1,41 @@
 main {
-  margin-bottom: 30%;
+  margin-bottom: 15%;
 }
 
 #cofre {
-  position: relative;
   background-color: #0C1713;
   height: 100vh;
 }
 #cofre h1 {
   margin-top: 15% !important;
   font-size: 700%;
+  z-index: 1;
+  animation: texto 1s linear infinite alternate;
 }
 #cofre button {
   height: 7vh;
   min-width: 8vw;
+  z-index: 1;
+}
+#cofre p {
+  z-index: 1;
+}
+#cofre #fondo {
+  position: absolute;
+  z-index: 0;
+  height: 100vh;
 }
 
 #candado article {
   height: 40vh;
   background-color: #101243;
   position: relative;
+  transform: translateY(4px);
+  transition: 1s;
 }
 #candado article h1 {
   font-size: 500%;
+  animation: combinacion 1s linear infinite alternate;
 }
 #candado article div {
   height: 25%;
@@ -31,10 +44,26 @@ main {
   position: absolute;
   bottom: 0;
 }
-#juegos{
-  position: absolute;
-  bottom: 0;
+#candado article:hover {
+  transform: translateY(-4px);
+  transition: 1s;
+  background-color: #140C73;
 }
 
+@keyframes texto {
+  0% {
+    transform: translateY(-2px);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes combinacion {}
 
 /*# sourceMappingURL=index.css.map */

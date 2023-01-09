@@ -26,7 +26,7 @@
                 IRUDIA    
             </label>
         </section>
-        {{-- EDITAR --}}
+        {{-- EDITAR FORM --}}
         <section class="row col-lg-9 mt-5 col-md-12">
             <input type="text" name="nombre" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->nombre}}">
             <input type="text" name="apellido" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->apellido}}">
@@ -35,6 +35,11 @@
 
             <button type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar">EDITATU</button>
         </section>
+
+        <br>
+        @foreach ($errors->all() as $error)
+            <p class="text-danger text-center">{{ $error }}</p>
+        @endforeach 
 
     </form>
 
@@ -57,7 +62,7 @@
         <article class="d-flex justify-content-center align-items-center">
             <select name="usuario" class="text-center">
                 @foreach($usu as $usus)
-                    @if($usus->id != $miUsu->id)
+                    @if($usus->id != $miUsu->id && $usus->id != 1)
                         <option value="{{ $usus->id }}">{{ $usus->usuario }}</option>
                     @endif
                 @endforeach
@@ -68,10 +73,16 @@
     </form>
     @endif
 
-    </article>
+    
+</article>
 </main>
 
-@include('layouts.footer')
+{{-- CERRAR --}}
+<a href="{{ route('Comercio.cerrarSes') }}" type="button" class="btn btn-dark" id="cerrar">
+    Saioa itxi
+</a>
+
+{{-- @include('layouts.footer') --}}
 
 </body>
 </html>

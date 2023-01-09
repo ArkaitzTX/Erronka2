@@ -14,21 +14,23 @@ class PartidasController extends Controller
         return view('Comercio.juegos', compact('partidas'));
     }
     //VER ID
-    public function ver($candado, $id)
+    public function ver($candado)
     {
         if(null === session()->get('usuario')){
             return view('Comercio.log-reg');
         }
-        $partidas = Partidas::findOrFail($id);
+
+        $candado = 'juego'.$candado;
+        $partidas = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0];
         return view('Comercio.juegos', compact('partidas', 'candado'));
     }
     //CREAR
-    public function store(Request $request)
-    {
-        $partidas = new Partidas($request->all());
-        $partidas->save();
-        return redirect()->action([PartidasController::class, 'index']);
-    }
+    // public function store(Request $request)
+    // {
+    //     $partidas = new Partidas($request->all());
+    //     $partidas->save();
+    //     return redirect()->action([PartidasController::class, 'index']);
+    // }
 
     //Editar
     public function update(Request $request, $id)

@@ -51,6 +51,11 @@
                 <p class="text-center text-danger">*{{$error}}*</p>
                 @endisset
 
+                @foreach ($errors->all() as $error)
+                    <p class="text-danger text-center">Ez da Erabiltzaile sortu</p>
+                    @break;
+                @endforeach 
+
             </article>
 
             {{-- SING-UP --}}
@@ -60,12 +65,19 @@
                 <form class="form px-4 formulario" action="{{ route('Comercio.usuNuevo') }}" method ="POST">
                     @csrf
 
-                    <input type="text" name="nombre" class="form-control" placeholder="Izena">
-                    <input type="text" name="apellido" class="form-control" placeholder="Abizena">
-                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile" required>
-                    <input type="password" name="pass" class="form-control" placeholder="Pasahitza" required>
+                    <input type="text" name="nombre" class="form-control" placeholder="Izena" value="{{ old('nombre')}}" required>
+                    <input type="text" name="apellido" class="form-control" placeholder="Abizena" value="{{ old('apellido')}}" required>
+                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile" value="{{ old('usuario')}}" required>
+                    <input type="password" name="pass" class="form-control" placeholder="Pasahitza" value="{{ old('pass')}}" required>
                     <button class="btn btn-dark btn-block">Erregistratu</button>
                 </form>
+
+                <br>
+                @foreach ($errors->all() as $error)
+                    <p class="text-danger text-center">{{ $error }}</p>
+                @endforeach 
+
+
             </article>
 
 

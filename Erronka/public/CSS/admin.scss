@@ -10,7 +10,7 @@ $blanco: white;
 
 /* GENERAL */
 main{
-    margin-bottom: 30% !important;
+    // margin-bottom: 30% !important;
 }
 
 #editar{
@@ -69,4 +69,14 @@ input[type="file"] {
     select{
         width: 30vh;
     }
+}
+
+
+#cerrar{
+    position: absolute;
+    bottom: 5%;
+    left: 90%;
+    z-index: 10;
+
+    border: white 1px solid;
 }

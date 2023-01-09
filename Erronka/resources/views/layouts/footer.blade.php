@@ -14,6 +14,8 @@
 
 <body>
 
+@yield('content')
+
 <div>
 
     <section class="">
@@ -48,8 +50,6 @@
     </section>
 
 </div>
-
-@yield('content')
 
 </body>
 

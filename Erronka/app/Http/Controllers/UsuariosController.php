@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuarios;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\Partidas;
 
 class UsuariosController extends Controller
 {
@@ -29,11 +30,12 @@ class UsuariosController extends Controller
     //CREAR
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'modelo' => 'required|max:40',
-        //     'nacionalidad' => 'required|max:40',
-        //     'anyo' => 'required|integer',
-        // ]);
+        $request->validate([
+            'nombre' => 'required|max:50',
+            'apellido' => 'required|max:50',
+            'usuario' => 'required|max:50', // unique:posts|
+            'pass' => 'required|max:50',
+        ]);
 
         $usu = new Usuarios();
         $usu->nombre = $request->nombre;
@@ -43,19 +45,15 @@ class UsuariosController extends Controller
         $usu->rol = 0;
         $usu->foto = "default.png";
         $usu->type = "png";
-
-
-        // if ($request->hasFile("img")){
-        //     $img = $request->file("img");
-        //     $nomImg = Str::slug($request->usuario).".".$img->guessExtension();
-        //     $ruta = public_path("img/profile/");
-
-        //     copy($img->getRealPath(),$ruta.$nomImg);
-
-        //     $usu->foto = $nomImg;
-        //     $usu->type = $img->guessExtension();
-        // }
         $usu->save();
+
+        $partidas = new Partidas();
+        $partidas->juego1 = 0;
+        $partidas->juego2 = 0;
+        $partidas->usuario = Usuarios::where('usuario','=', $request->usuario)->get()[0]->id;
+        $partidas->save();
+
+        // return view('Comercio.log-reg');
         return redirect()->action([UsuariosController::class, 'create']);
     }
     //LOGIN
@@ -75,8 +73,10 @@ class UsuariosController extends Controller
         $usuarios = Usuarios::where('usuario','=',$request->usuario)->get();
         
         foreach($usuarios as $usu){
-            if($request->usuario == $usu->usuario && $request->pass == $usu->pass){
+            if($request->pass == $usu->pass){
                 session(['usuario' => $usu]);
+
+                // Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear');
                 return view('Comercio.index');
             }   
         }
@@ -111,6 +111,13 @@ class UsuariosController extends Controller
     //UPDATE
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nombre' => 'required|max:50',
+            'apellido' => 'required|max:50',
+            'usuario' => 'required|max:50', // unique:posts|
+            'pass' => 'required|max:50',
+        ]);
+        
         $usu = Usuarios::findOrFail($id);
         $usu->nombre = $request->nombre;
         $usu->apellido = $request->apellido;

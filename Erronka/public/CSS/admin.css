@@ -1,8 +1,4 @@
 /* GENERAL */
-main {
-  margin-bottom: 30% !important;
-}
-
 #editar input {
   width: 40%;
   height: 15%;
@@ -51,6 +47,14 @@ input[type=file] {
 }
 #eliminar select {
   width: 30vh;
+}
+
+#cerrar {
+  position: absolute;
+  bottom: 5%;
+  left: 90%;
+  z-index: 10;
+  border: white 1px solid;
 }
 
 /*# sourceMappingURL=admin.css.map */
