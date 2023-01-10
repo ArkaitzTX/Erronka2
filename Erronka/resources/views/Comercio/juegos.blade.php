@@ -64,7 +64,8 @@
         </ul>
 
         {{-- Modulo de los Juegos --}}
-        <section class="juegos container text-light text-center tab-content mt-5">
+        {{-- <section class="juegos container text-light text-center tab-content mt-5"> --}}
+        <section class="juegos container mt-5">
             <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
                 @include($candado.'.juego1')
             </div>

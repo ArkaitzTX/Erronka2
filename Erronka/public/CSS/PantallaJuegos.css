@@ -28,12 +28,14 @@
 }
 
 .juegos {
-  background-color: #140C73;
+  background-color: #101243;
+  /* border: solid 1px black; */
+  color: white;
   border-radius: 5px;
   margin-bottom: 30%;
 }
-.juegos div {
+/* .juegos div {
   height: 50vh;
-}
+} */
 
 /*# sourceMappingURL=PantallaJuegos.css.map */
