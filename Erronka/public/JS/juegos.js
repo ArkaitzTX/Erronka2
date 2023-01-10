@@ -1,9 +1,59 @@
 window.onload = () => {
 
+    const app1=Vue.createApp({})
+    app1.component('reloj',{
+        data() {
+            return{
+                minutos: 30,
+                segundos: '00',
+                tiempo: null,
+            }
+        },
+        template: //html
+        `
+            <strong class="otro">Erlojua: {{ minutos }}:{{ segundos }}</strong>
+        `,
+        methods: {
 
-    const app=Vue.createApp({})
+            intervalo () {
+                this.tiempo = setInterval(() => {
 
-    app.component('pregunta',{
+                    this.segundos--;
+
+                    if (this.segundos < 0) {
+                        this.segundos = 59;
+                        this.minutos--;
+                    }
+
+                    if(this.segundos < 10){
+                        this.segundos = '0' + this.segundos;
+                    }
+                    if(this.minutos < 10){
+                        this.segundos = '0' + this.minutos;
+                    }
+
+                    
+                    if (this.minutos == 0 && this.segundos == 0) {
+                        clearInterval(this.tiempo)
+
+                        alert("SIN TIEMPO");
+                        //GAMEOVER
+                    }
+
+
+                }, 1000)
+            },         
+        },
+        created () {
+            this.intervalo()
+        }
+    });
+
+    app1.mount('#reloj')
+
+    const app2=Vue.createApp({})
+
+    app2.component('pregunta',{
         data() {
             return{
                 preguntas: [
@@ -52,6 +102,6 @@ window.onload = () => {
         `
     });
 
-    app.mount('#cont')
+    app2.mount('#cont')
     
 }

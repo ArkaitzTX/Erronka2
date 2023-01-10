@@ -14,25 +14,6 @@ $(document).ready(function () {
         $("#imagenUsu").attr("src", IMG);
     });
 
-    //CUANDO TE VAS SIN GUARDAR
-    // $(window).unload(function () {
-    //     if (true) {
-    //         swal.fire({
-    //             title: 'No tienes guardados los cambios',
-    //             type: 'warning',
-    //             showCancelButton: true,
-    //             confirmButtonColor: '#3085d6',
-    //             cancelButtonColor: '#d33',
-    //             cancelButtonText: 'Cancelar',
-    //             confirmButtonText: 'Salir'
-    //         }).then((result) => {
-    //             if (result.value) {
-    //                 alert("SALIR");
-    //             }
-    //         });
-    //     }
-    // });
-
     $(window).on("beforeunload", function () {
         if(cambiado){
             return confirm();

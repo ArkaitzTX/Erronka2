@@ -1,16 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{asset('CSS/admin.css')}}" rel="stylesheet" type="text/css"> 
+
+    <link href="{{asset('CSS/admin.css')}}" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{asset('JS/admin.js')}}"></script>
 
     <title>Admin</title>
-
-    {{-- !! --}} <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    {{-- !! --}} <script src="{{asset('JS/admin.js')}}"></script>
 </head>
 <body>
 
@@ -22,23 +22,37 @@
     <form id="editar" class="row" action="{{ route('Comercio.usuUpdate', $miUsu->id) }}" enctype="multipart/form-data" method="post">
         @csrf {{ method_field('PUT') }}
         {{-- IMAGEN --}}
-        <section class="row col-lg-3 col-md-12">
-            {{-- !! --}} <img  id="imagenUsu" src="IMG/profile/{{ $miUsu->foto }}" alt="Perfil" class="col-12">
+        <section class="row col-lg-3 col-md-6 editimagen">
+            <img  id="imagenUsu" src="IMG/profile/{{ $miUsu->foto }}" alt="Perfil" class="col-12">
             <label class="imagen col-12 text-center btn btn-dark my-2">
-                {{-- !! --}} <input type="file" name="img" class="cambios">
+                <input type="file" name="img" class="cambios imagen col-12 text-center btn btn-dark my-2">
                 IRUDIA    
             </label>
         </section>
         {{-- EDITAR FORM --}}
-        <section class="row col-lg-9 mt-5 col-md-12">
-            {{-- !! --}} <input type="text" name="nombre" class="cambios text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->nombre}}">
-            {{-- !! --}} <input type="text" name="apellido" class="cambios text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->apellido}}">
-            {{-- !! --}} <input type="text" name="usuario" class="cambios text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->usuario}}">
-            {{-- !! --}} <input type="password" name="pass" class="cambios text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->pass}}">
+        <section class="row col-lg-9 col-md-9 col-sm-9  mt-5  erabiltzailea">
+            <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
+            <label class="etiquetas">Izena</label>
+            <input type="text" name="nombre"  class="cambios" value="{{$miUsu->nombre}}">
+        </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
+            <label class="etiquetas">Abizena</label>
+            <input type="text" name="apellido" class="cambios" value="{{$miUsu->apellido}}">
+        </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
+            <label class="etiquetas">Erabiltzailea</label>
+            <input type="text" name="usuario" class="cambios" value="{{$miUsu->usuario}}">
+        </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
+            <label class="etiquetas">Pasaitza</label>
+            <input type="password" name="pass" class="cambios" value="{{$miUsu->pass}}">
+        </div>
 
-            {{-- !! --}} <button type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar" data-bs-toggle="tooltip" data-bs-placement="down" title="Guarda los cambios">GUARDAR</button>
+
+            
+            <button type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar" data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">GORDE</button>
         </section>
-            {{-- !! --}} <p id="editando" class="d-none text-danger text-center">Tienes datos sin guardar...</p>{{-- HACER CON JS QUE ESTE PUESTO CUANDO ESTEMOS EDITANDO  --}}
+        <p id="editando" class="d-none text-danger text-center">Datuak ez dira gorde...</p>{{-- HACER CON JS QUE ESTE PUESTO CUANDO ESTEMOS EDITANDO  --}}
 
         <br>
         @foreach ($errors->all() as $error)

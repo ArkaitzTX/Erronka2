@@ -15,7 +15,8 @@
     <title>Comercio</title>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="{{asset('JS/reloj.js')}}"></script>
+    <script src="{{asset('JS/juegos.js')}}"></script>
+
 </head>
 
 
@@ -33,7 +34,7 @@
         {{-- Otros --}}
         <section class="mx-5 my-3 d-flex flex-nowrap align-items-center justify-content-between">
             <article id="reloj" class="">
-                <strong class="otro">Vidas: 3</strong>
+                <strong class="otro">Bizitzak: 3</strong>
                 <reloj></reloj>
             </article>
 
