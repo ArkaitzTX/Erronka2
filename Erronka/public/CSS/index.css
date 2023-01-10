@@ -1,9 +1,22 @@
+@keyframes texto {
+  0% {
+    transform: translateY(-2px);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
 main {
-  margin-bottom: 15%;
+  margin-bottom: 35%;
 }
 
 #cofre {
-  /* background-color: #0C1713; */
   height: 100vh;
 }
 #cofre h1 {
@@ -29,21 +42,21 @@ main {
   left: 0;
 }
 
-.candado{
+.candado {
   max-width: 40vw;
   max-height: 40vh;
 }
 
 #candado article {
   height: 40vh;
-  background-color: #050505; /* COLOR CANDADO  */
+  background-color: #050505;
   position: relative;
   transform: translateY(4px);
   transition: 1s;
 }
 #candado article h1 {
   font-size: 500%;
-  color: white;/* COLOR H1  */
+  color: white;
   animation: combinacion 1s linear infinite alternate;
   z-index: 1;
 }
@@ -57,10 +70,9 @@ main {
 #candado article:hover {
   transform: translateY(-4px);
   transition: 1s;
-  /* background-color: #140C73; */
 }
 
-#oro{
+#oro {
   display: none;
   width: 100%;
   height: 100%;
@@ -68,42 +80,22 @@ main {
   background-color: #0C1713;
 }
 
-#fondoCandado{
+#fondoCandado {
   position: absolute;
   z-index: 0;
   top: 0;
   left: 40%;
 }
 
-
-
 @media (min-width: 1200px) {
-  #titulo{
-    font-size: 800% !important;
+  #titulo {
+    font-size: 550% !important;
   }
 }
-
 @media (max-width: 1199.98px) {
-  #titulo{
-    font-size: 500% !important;
+  #titulo {
+    font-size: 400% !important;
   }
 }
-
-
-@keyframes texto {
-  0% {
-    transform: translateY(-2px);
-  }
-  25% {
-    transform: translateY(-4px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-  100% {
-    transform: translateY(-8px);
-  }
-}
-@keyframes combinacion {}
 
 /*# sourceMappingURL=index.css.map */

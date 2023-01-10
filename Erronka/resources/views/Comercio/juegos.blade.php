@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERKATARITZA</title>
 
+    {{-- CSS --}}
     <link href="{{asset('CSS/PantallaJuegos.css')}}" rel="stylesheet" type="text/css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <title>Comercio</title>
-
+    {{-- JS --}}
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="{{asset('JS/juegos.js')}}"></script>
 

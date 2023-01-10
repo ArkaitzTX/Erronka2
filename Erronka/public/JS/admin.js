@@ -14,22 +14,9 @@ $(document).ready(function () {
         $("#imagenUsu").attr("src", IMG);
     });
 
-    $(window).on("beforeunload", function () {
-        if(cambiado){
-            return confirm();
-        }
-
-        // swal.fire({
-        //     title: 'No tienes guardados los cambios',
-        //     type: 'warning',
-        //     showCancelButton: true,
-        //     confirmButtonColor: '#3085d6',
-        //     cancelButtonColor: '#d33',
-        //     cancelButtonText: 'Cancelar',
-        //     confirmButtonText: 'Salir'
-        // }).then((result) => {
-        //     return result.value;
-        // });
-
-    });
+    // $(window).on("beforeunload", function () {
+    //     if(cambiado){
+    //         return confirm();
+    //     }
+    // });
 });

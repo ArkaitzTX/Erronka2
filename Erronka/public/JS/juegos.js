@@ -9,7 +9,7 @@ window.onload = () => {
                 tiempo: null,
             }
         },
-        template: //html
+        template: 
         `
             <strong class="otro">Erlojua: {{ minutos }}:{{ segundos }}</strong>
         `,

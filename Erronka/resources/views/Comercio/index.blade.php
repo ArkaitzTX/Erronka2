@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MERKATARITZA</title>
 
-    <title>Comercio</title>
-
+    {{-- CSS --}}
     <link href="{{asset('CSS/index.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    {{-- JS --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{asset('JS/animCofre.js')}}"></script>
+
 </head>
 <body>
     
@@ -30,10 +29,10 @@
                     <img class="col d-none d-xl-block candado" src="{{asset('IMG/candado.png')}}" alt="">
                     <div class="col">
                         <img id="fondo" src="{{asset('IMG/fondo5.png')}}" alt="fondo">
-                        <h1 id="titulo" class="mb-5 text-dark">COMERCIO</h1>
+                        <h1 id="titulo" class="mb-5 text-dark">MERKATARITZA</h1>
                         <p class="mb-5 text-center text-dark">
-                        Busca la combinacion de los 2 candados en los diferentes juegos para asi poder desbloquear el cofre. Cada juego te dara una letra la cual  <br>
-                        sera una parte de la combinacion del candado. Cuando tengas los dos candados abiertos podras abrir el cofre.
+                            Bilatu 2 giltzarrapoen konbinazioa joko ezberdinetan, kutxa desblokeatu ahal izateko. Joko bakoitzak letra bat emango dizu,
+                            giltzarrapoaren konbinazioaren zati bat izango da. Bi giltzarrapoak irekita dituzunean, kutxa ireki dezakezu.                            
                         </p>
                         {{-- <button onclick="location.href='#juegos'" class="btn btn-primary">ABRIR COFRE</button> --}}
                         <button id="animatu" class="btn btn-primary">ABRIR COFRE</button>
@@ -52,7 +51,7 @@
                     <h1 class="mx-5">* * *</h1>
                     <img id="fondoCandado" src="{{asset('IMG/cerradura.png')}}" alt="fondo">
                     <div>
-                        <h3 class="mx-5 my-4">CANDADO Nº1</h3>
+                        <h3 class="mx-5 my-4">KANDADU Nº1</h3>
                     </div>
                 </article>
             </a>
@@ -63,7 +62,7 @@
                     <h1 class="mx-5">* * *</h1>
                     <img id="fondoCandado" src="{{asset('IMG/cerradura.png')}}" alt="fondo">
                     <div>
-                        <h3 class="mx-5 my-4">CANDADO Nº2</h3>
+                        <h3 class="mx-5 my-4">KANDADU Nº2</h3>
                     </div>
                 </article>
             </a>
