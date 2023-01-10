@@ -30,31 +30,41 @@ class UsuariosController extends Controller
     //CREAR
     public function store(Request $request)
     {
+        if(Usuarios::where('usuario', $request->usuario)->exists()){
+            return redirect()->action([UsuariosController::class, 'create'])->with('error', 'Erabiltzailea existitzen da.');
+        }
+        
         $request->validate([
-            'nombre' => 'required|max:50',
-            'apellido' => 'required|max:50',
-            'usuario' => 'required|max:50', // unique:posts|
-            'pass' => 'required|max:50',
+            'nombre' => 'required|between:3,50',
+            'apellido' => 'required|between:3,50',
+            'usuario' => 'required|between:6,50', // unique:posts|
+            'pass' => 'required|between:8,50',
+            'passB' => 'required|between:8,50',
         ]);
 
         $usu = new Usuarios();
-        $usu->nombre = $request->nombre;
-        $usu->apellido = $request->apellido;
-        $usu->usuario = $request->usuario;
-        $usu->pass = $request->pass;
-        $usu->rol = 0;
-        $usu->foto = "default.png";
-        $usu->type = "png";
-        $usu->save();
 
-        $partidas = new Partidas();
-        $partidas->juego1 = 0;
-        $partidas->juego2 = 0;
-        $partidas->usuario = Usuarios::where('usuario','=', $request->usuario)->get()[0]->id;
-        $partidas->save();
+        if ($request->pass == $request->passB) {
 
-        // return view('Comercio.log-reg');
-        return redirect()->action([UsuariosController::class, 'create']);
+            $usu->nombre = $request->nombre;
+            $usu->apellido = $request->apellido;
+            $usu->usuario = $request->usuario;
+            $usu->pass = $request->pass;
+            $usu->rol = 0;
+            $usu->foto = "default.png";
+            $usu->type = "png";
+            $usu->save();
+    
+            $partidas = new Partidas();
+            $partidas->juego1 = 0;
+            $partidas->juego2 = 0;
+            $partidas->usuario = Usuarios::where('usuario','=', $request->usuario)->get()[0]->id;
+            $partidas->save();
+            
+            return redirect()->action([UsuariosController::class, 'create'])->with('bien', 'Erabiltzailea sortu egin da.');
+        } else {
+            return redirect()->action([UsuariosController::class, 'create'])->with('error', 'Pasahitza ez da berdina.');
+        }
     }
     //LOGIN
     public function logSes(Request $request){
@@ -146,8 +156,12 @@ class UsuariosController extends Controller
     public function destroy(Request $request)
     {
         $usu = Usuarios::findOrFail($request->usuario);
+        $part = Partidas::where('usuario',$request->usuario)->get()[0];
+
         if($usu->foto != 'default.png') unlink(public_path('img/profile/'.$usu->foto));
+        $part->delete();
         $usu->delete();
+        
         return redirect()->route('Comercio.admin')->with('mensaje', 'Erabiltzailea ezabatu da.');
     }
 }

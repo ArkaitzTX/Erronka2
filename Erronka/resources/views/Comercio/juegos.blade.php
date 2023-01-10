@@ -26,15 +26,15 @@
     <main class="mt-5" id="tamaina">
 
         {{-- ************************************************ --}}
-        <h1>{{$partidas->$candado}}</h1>
+        {{-- <h1>{{$partidas->$candado}}</h1> --}}
         {{-- ************************************************ --}}
 
 
         {{-- Otros --}}
         <section class="mx-5 my-3 d-flex flex-nowrap align-items-center justify-content-between">
-            <article class="">
-                <strong class="text-light btn otro">Vidas: 3</strong>
-                <strong id="reloj" class="text-light btn otro">Tiempo: {{ minutos }}:{{ segundos }} mins</strong>
+            <article id="reloj" class="">
+                <strong class="otro">Vidas: 3</strong>
+                <reloj></reloj>
             </article>
 
             <article class="">
@@ -69,10 +69,10 @@
                 @include($candado.'.juego1')
             </div>
             <div class=" tab-pane fade" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
-                JUEGO 2
+                @include($candado.'.juego2')
             </div>
             <div class="tab-pane fade" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
-                JUEGO 3
+                @include($candado.'.juego3')
             </div>
         </section>
     </main>

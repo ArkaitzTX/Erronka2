@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{asset('CSS/admin.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('CSS/admin.css')}}" rel="stylesheet" type="text/css"> 
+
     <title>Admin</title>
+
+    {{-- !! --}} <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{-- !! --}} <script src="{{asset('JS/admin.js')}}"></script>
 </head>
 <body>
 
@@ -15,26 +19,26 @@
 <main>
     <article  class="container my-5">
         {{-- EDITAR --}}
-    <p class="text-danger">Editando...</p>{{-- HACER CON JS QUE ESTE PUESTO CUANDO ESTEMOS EDITANDO  --}}
     <form id="editar" class="row" action="{{ route('Comercio.usuUpdate', $miUsu->id) }}" enctype="multipart/form-data" method="post">
         @csrf {{ method_field('PUT') }}
         {{-- IMAGEN --}}
         <section class="row col-lg-3 col-md-12">
-            <img  name="" src="IMG/profile/{{ $miUsu->foto }}" alt="Perfil" class="col-12">
+            {{-- !! --}} <img  id="imagenUsu" src="IMG/profile/{{ $miUsu->foto }}" alt="Perfil" class="col-12">
             <label class="imagen col-12 text-center btn btn-dark my-2">
-                <input type="file" name="img">
+                {{-- !! --}} <input type="file" name="img" class="cambios">
                 IRUDIA    
             </label>
         </section>
         {{-- EDITAR FORM --}}
         <section class="row col-lg-9 mt-5 col-md-12">
-            <input type="text" name="nombre" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->nombre}}">
-            <input type="text" name="apellido" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->apellido}}">
-            <input type="text" name="usuario" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->usuario}}">
-            <input type="password" name="pass" class="text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->pass}}">
+            {{-- !! --}} <input type="text" name="nombre" class="cambios text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->nombre}}">
+            {{-- !! --}} <input type="text" name="apellido" class="cambios text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->apellido}}">
+            {{-- !! --}} <input type="text" name="usuario" class="cambios text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->usuario}}">
+            {{-- !! --}} <input type="password" name="pass" class="cambios text-center col-sm-12 col-md-12 col-lg-6 mx-3" value="{{$miUsu->pass}}">
 
-            <button type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar">EDITATU</button>
+            {{-- !! --}} <button type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar" data-bs-toggle="tooltip" data-bs-placement="down" title="Guarda los cambios">GUARDAR</button>
         </section>
+            {{-- !! --}} <p id="editando" class="d-none text-danger text-center">Tienes datos sin guardar...</p>{{-- HACER CON JS QUE ESTE PUESTO CUANDO ESTEMOS EDITANDO  --}}
 
         <br>
         @foreach ($errors->all() as $error)

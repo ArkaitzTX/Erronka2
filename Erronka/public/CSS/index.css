@@ -3,7 +3,7 @@ main {
 }
 
 #cofre {
-  background-color: #0C1713;
+  /* background-color: #0C1713; */
   height: 100vh;
 }
 #cofre h1 {
@@ -22,33 +22,73 @@ main {
 }
 #cofre #fondo {
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   height: 100vh;
+  max-width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.candado{
+  max-width: 40vw;
+  max-height: 40vh;
 }
 
 #candado article {
   height: 40vh;
-  background-color: #101243;
+  background-color: #050505; /* COLOR CANDADO  */
   position: relative;
   transform: translateY(4px);
   transition: 1s;
 }
 #candado article h1 {
   font-size: 500%;
+  color: white;/* COLOR H1  */
   animation: combinacion 1s linear infinite alternate;
+  z-index: 1;
 }
 #candado article div {
   height: 25%;
   width: 100%;
-  background-color: #0C1713;
+  background-color: #140C73;
   position: absolute;
   bottom: 0;
 }
 #candado article:hover {
   transform: translateY(-4px);
   transition: 1s;
-  background-color: #140C73;
+  /* background-color: #140C73; */
 }
+
+#oro{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #0C1713;
+}
+
+#fondoCandado{
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 40%;
+}
+
+
+
+@media (min-width: 1200px) {
+  #titulo{
+    font-size: 800% !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  #titulo{
+    font-size: 500% !important;
+  }
+}
+
 
 @keyframes texto {
   0% {

@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    JUEGO 1 PRUEBA
-    @yield('content')
+    JUEGO 1.1
 </body>
 </html>

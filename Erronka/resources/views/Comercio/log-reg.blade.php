@@ -45,7 +45,8 @@
                     <button class="btn btn-dark btn-block">Saioa Hasi</button>
                 </form>
 
-                
+                <p class="text-center text-success">{{Session::get('bien')}}</p>
+                <p class="text-center text-danger">{{Session::get('error')}}</p>
                 @isset($error)
                 <br>
                 <p class="text-center text-danger">*{{$error}}*</p>
@@ -53,7 +54,7 @@
 
                 @foreach ($errors->all() as $error)
                     <p class="text-danger text-center">Ez da Erabiltzaile sortu</p>
-                    @break;
+                    @break
                 @endforeach 
 
             </article>
@@ -69,6 +70,7 @@
                     <input type="text" name="apellido" class="form-control" placeholder="Abizena" value="{{ old('apellido')}}" required>
                     <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile" value="{{ old('usuario')}}" required>
                     <input type="password" name="pass" class="form-control" placeholder="Pasahitza" value="{{ old('pass')}}" required>
+                    <input type="password" name="passB" class="form-control" placeholder="Bersartu pasahitza" value="{{ old('passB')}}" required>
                     <button class="btn btn-dark btn-block">Erregistratu</button>
                 </form>
 
