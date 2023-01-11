@@ -96,6 +96,9 @@ main {
   #titulo {
     font-size: 400% !important;
   }
+  main {
+    margin-bottom: 35%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
