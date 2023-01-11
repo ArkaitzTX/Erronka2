@@ -1,21 +1,20 @@
 window.onload = () => {
 
-    const reloj=Vue.createApp({})
-    reloj.component('reloj',{
+    const reloj = Vue.createApp({})
+    reloj.component('reloj', {
         data() {
-            return{
+            return {
                 minutos: 30,
                 segundos: '00',
                 tiempo: null,
             }
         },
-        template: 
-        `
+        template: `
             <strong class="otro">Erlojua: {{ minutos }}:{{ segundos }}</strong>
         `,
         methods: {
 
-            intervalo () {
+            intervalo() {
                 this.tiempo = setInterval(() => {
 
                     this.segundos--;
@@ -25,14 +24,14 @@ window.onload = () => {
                         this.minutos--;
                     }
 
-                    if(this.segundos < 10){
+                    if (this.segundos < 10) {
                         this.segundos = '0' + this.segundos;
                     }
-                    if(this.minutos < 10){
+                    if (this.minutos < 10) {
                         this.segundos = '0' + this.minutos;
                     }
 
-                    
+
                     if (this.minutos == 0 && this.segundos == 0) {
                         clearInterval(this.tiempo)
 
@@ -42,9 +41,9 @@ window.onload = () => {
 
 
                 }, 1000)
-            },         
+            },
         },
-        created () {
+        created() {
             this.intervalo()
         }
     });
@@ -53,42 +52,91 @@ window.onload = () => {
 
 
     // CORRECTOR
-    const corrector=Vue.createApp({
+    const corrector = Vue.createApp({})
+    corrector.component('corrector', {
+        props: ['pre', 'cor'],
         data() {
-            return{
-                
+            return {
+                pregunta: this.pre,
+                correcta: this.cor,
+                miRespuesta: null
             }
         },
+        template: `
+        <form action="">
+            <label>{{ pregunta }}</label>
+            <br>
+            <input type="text" v-model="miRespuesta">
+            <input type="button" value="Bidali" v-on:click='corregir()'>
+        </form>
+        `,
         methods: {
-    
+            corregir() {
+                if (this.miRespuesta === this.correcta) {
+                    alert("Ta bien");
+                } else {
+                    alert("ta mal");
+                }
+            }
         },
     });
-    
- 
 
     corrector.mount('.corrector')
 
 
 
     // JUEGOS
-        // JUEGO 2
-    const juego2=Vue.createApp({})
-
-    juego2.component('pregunta',{
+    // JUEGO 2
+    const juego2 = Vue.createApp({
         data() {
-            return{
-                preguntas: [
+            return {
+                preguntas: [{
+                        pregunta: "Como se denomina el almacenamiento en el que cada producto tiene su ubicación",
+                        respuesta: ["Almacenamiento caótico.", "Almacenamiento ordenado.", "Almacenamiento desordenado.", "Almacenamiento aleatorio."],
+                        miRespuesta: null,
+                        correcta: 1
+                    },
                     {
-                        pregunta: "Pregunta1",
-                        respuesta: ["Respuesta1", "Respuesta2", "Respuesta3", "Respuesta4"],
+                        pregunta: "Entre los objetivos que persigue un buen sistema de almacenamiento está:",
+                        respuesta: ["Maximo aprovechamiento de la capacidad de almacenamiento.", "Accesibilidad de los productos.", "Rotación controlado de stock.", "Todas son correctas."],
+                        miRespuesta: null,
+                        correcta: 3
+                    },
+                    {
+                        pregunta: "El sistema de almacenamiento convencional",
+                        respuesta: ["No se utilizan estanterías.", "No sirve para el almacenamiento de mercancía paletizada.", "Es fácil realizar las salidas por el método FIFO.", "Puede adaptarse a cualquier tipo de carga."],
+                        miRespuesta: null,
+                        correcta: 3
+                    },
+                    {
+                        pregunta: "El consumidor industrial es:",
+                        respuesta: ["El que alquila un piso para vivir.", "La fábrica que compra bienes para elaborar otros bienes.", "Una ONG que compra papel para la oficina."],
+                        miRespuesta: null,
+                        correcta: 1
+                    },
+                    {
+                        pregunta: "Un grupo de referencia es:",
+                        respuesta: ["El grupo de personas que van en el autobús", "El grupo de personas haciendo cola para comprar.", "Grupos con quien la persona actúa y que ejercen influencia sobre él."],
+                        miRespuesta: null,
+                        correcta: 2
+                    },
+                    {
+                        pregunta: "Señala qué afirmación es verdadera:",
+                        respuesta: ["Un deportista tenderá a comprar productos que tengan que ver con su deporte favorito.", "En épocas de crisis los individuos tienden a gastar más.", "La personalidad del individuo no influye en su comportamiento de consumo."],
                         miRespuesta: null,
                         correcta: 0
                     },
                     {
-                        pregunta: "Pregunta2",
-                        respuesta: ["Respuesta1", "Respuesta2", "Respuesta3", "Respuesta4"],
+                        pregunta: "Entendemos por necesidad:",
+                        respuesta: ["La visualización de aquello que nos falta.", "Una carencia física o psíquica de algo que no se tiene y se desea porque, obteniéndolo, desaparece esa sensación desagradable de vacío.", "El producti que consumimos"],
                         miRespuesta: null,
-                        correcta: 0
+                        correcta: 1
+                    },
+                    {
+                        pregunta: "¿Cuál piensas que es el marketing que se propaga de usuario a usuario?",
+                        respuesta: ["De afiliación.", "Viral.", "One to one.", "Relacional."],
+                        miRespuesta: null,
+                        correcta: 1
                     },
                 ]
             }
@@ -101,28 +149,6 @@ window.onload = () => {
                 //MAL te quita una vida :(
             }
         },
-        template:
-        `
-        <form v-for="miPregunta in preguntas" action="">
-            <label>{{ miPregunta.pregunta }}</label>
+    }).mount('#cont')
 
-            <div v-for="(respuestas, index) in miPregunta.respuesta">
-                <label>{{ respuestas }}</label>
-                <input type="radio" name="resp" :value="index" v-model="miPregunta.miRespuesta">
-            </div>
-
-        </form>
-
-        <button v-on:click='corregir()'>CORREGIR</button>
-
-        
-        <pre>
-            //BORRAR//
-            {{ $data }}
-        </pre>
-        `
-    });
-
-    juego2.mount('#cont')
-    
 }
