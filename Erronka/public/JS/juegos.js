@@ -1,7 +1,7 @@
 window.onload = () => {
 
-    const app1=Vue.createApp({})
-    app1.component('reloj',{
+    const reloj=Vue.createApp({})
+    reloj.component('reloj',{
         data() {
             return{
                 minutos: 30,
@@ -49,11 +49,32 @@ window.onload = () => {
         }
     });
 
-    app1.mount('#reloj')
+    reloj.mount('#reloj')
 
-    const app2=Vue.createApp({})
 
-    app2.component('pregunta',{
+    // CORRECTOR
+    const corrector=Vue.createApp({
+        data() {
+            return{
+                
+            }
+        },
+        methods: {
+    
+        },
+    });
+    
+ 
+
+    corrector.mount('.corrector')
+
+
+
+    // JUEGOS
+        // JUEGO 2
+    const juego2=Vue.createApp({})
+
+    juego2.component('pregunta',{
         data() {
             return{
                 preguntas: [
@@ -102,6 +123,6 @@ window.onload = () => {
         `
     });
 
-    app2.mount('#cont')
+    juego2.mount('#cont')
     
 }

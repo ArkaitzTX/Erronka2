@@ -2,6 +2,12 @@
 <html lang="en">
 
 <body>
-    JUEGO 1.1
+    <div class="corrector">
+        <form action="">
+            <label></label>
+            <input type="text">
+            <input type="button" value="">
+        </form>
+    </div>
 </body>
 </html>
