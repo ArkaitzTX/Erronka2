@@ -5,25 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERKATARITZA</title>
+
+    {{-- CSS --}}
     <link href="{{asset('CSS/PantallaJuegos.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Comercio</title>
+
+    {{-- JS --}}
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="{{asset('JS/juegos.js')}}"></script>
+
 </head>
 
 
 <body id="fondo">
 
-    @include('Comercio.header')
+    @include('layouts.header')
 
     <main class="mt-5" id="tamaina">
 
+        {{-- ************************************************ --}}
+        {{-- <h1>{{$partidas->$candado}}</h1> --}}
+        {{-- ************************************************ --}}
+
+
         {{-- Otros --}}
         <section class="mx-5 my-3 d-flex flex-nowrap align-items-center justify-content-between">
-            <article class="">
-                <strong class="text-light btn otro">Vidas: 3</strong>
-                <strong class="text-light btn otro">Tiempo: <span>30</span> mins</strong>
+            <article id="reloj" class="">
+                <strong class="otro">Bizitzak: 3</strong>
+                <reloj></reloj>
             </article>
 
             <article class="">
@@ -53,20 +62,21 @@
         </ul>
 
         {{-- Modulo de los Juegos --}}
-        <section class="juegos container text-light text-center tab-content mt-5">
+        {{-- <section class="juegos container text-light text-center tab-content mt-5"> --}}
+        <section class="juegos container mt-5">
             <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
-                JUEGO 1
+                @include($candado.'.juego1')
             </div>
             <div class=" tab-pane fade" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
-                JUEGO 2
+                @include($candado.'.juego2')
             </div>
             <div class="tab-pane fade" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
-                JUEGO 3
+                @include($candado.'.juego3')
             </div>
         </section>
     </main>
 
-    @include('Comercio.footer')
+    @include('layouts.footer')
 
 </body>
 

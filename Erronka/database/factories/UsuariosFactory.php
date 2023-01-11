@@ -24,7 +24,7 @@ class UsuariosFactory extends Factory
             'pass'=>'Inf041',
             'foto'=>'default.png',
             'type'=>'png',
-            'rol'=>1,
+            'rol'=>0,
         ];
     }
 }

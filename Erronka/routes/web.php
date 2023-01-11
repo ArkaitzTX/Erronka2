@@ -25,19 +25,23 @@ Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.lo
     //Cerrar Secion
     Route::get('/cerrarSes',  [UsuariosController::class, 'cerrarSes'])->name('Comercio.cerrarSes');
 
-//Admin
-Route::get('/admin', [UsuariosController::class, 'index'])->name('Comercio.admin');
-    //Eliminar
-    Route::delete('/{id}', [UsuariosController::class, 'destroy'])->name('Comercio.usuEliminar');
-    //Editar
-    Route::put('/{id}', [UsuariosController::class, 'update'])->name('Comercio.usuUpdate');
-
 //Juegos
-Route::get('/{candado}/{id}/juegos', [PartidasController::class, 'ver'])->name('Comercio.juego');
+Route::get('/{candado}/juegos', [PartidasController::class, 'ver'])->name('Comercio.juego');
     //Editar
     Route::put('{id}/juegos', [PartidasController::class, 'update'])->name('Comercio.parUptade');
     //Crear Juego
-    Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear');
+    // Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear'); //Esta con el usuario
 
 
-    
+// MIDELWARE EVITAR A LOS INVITADOS
+Route::group(['middleware' => 'seguridad'], function(){
+    //Admin
+    Route::get('/admin', [UsuariosController::class, 'index'])->name('Comercio.admin');
+        //Eliminar
+        Route::delete('/', [UsuariosController::class, 'destroy'])->name('Comercio.usuEliminar');
+        //Editar
+        Route::put('/admin/{id}', [UsuariosController::class, 'update'])->name('Comercio.usuUpdate');
+        //Rol mejora
+        Route::post('/admin/{id}', [UsuariosController::class, 'rol'])->name('Comercio.rol');
+});
+
