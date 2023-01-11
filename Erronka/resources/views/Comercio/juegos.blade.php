@@ -27,51 +27,62 @@
         {{-- <h1>{{$partidas->$candado}}</h1> --}}
         {{-- ************************************************ --}}
 
+        {{-- MENU-PISTAS VUE --}}
+        <article>
+            {{-- Otros --}}
+            <section class="mx-5 my-3 d-flex flex-nowrap align-items-center justify-content-between">
+                <article id="reloj" class="">
+                    <strong class="otro">Bizitzak: 3</strong>
+                    <reloj></reloj>
+                </article>
+            </section>
 
-        {{-- Otros --}}
-        <section class="mx-5 my-3 d-flex flex-nowrap align-items-center justify-content-between">
-            <article id="reloj" class="">
-                <strong class="otro">Bizitzak: 3</strong>
-                <reloj></reloj>
-            </article>
+            {{-- Menu --}}
+            <ul class="nav nav-pills container" id="menu" role="tablist">
 
-            <article class="">
-                <button class="text-light" id="info" type="submit">i</button>
-            </article>
-        </section>
+                <li class="objeto nav-item text-center bg-danger rounded" role="presentation">
+                    <button class="nav-link active w-100 text-light" id="pills-Juego1-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-Juego1" type="button" role="tab" aria-controls="pills-Juego1"
+                        aria-selected="true">Jolasa 1</button>
+                </li>
+                <li class="objeto nav-item text-center bg-danger rounded mx-3"
+                    role="presentation">
+                    <button class="nav-link w-100 text-light" id="pills-Juego2-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-Juego2" type="button" role="tab" aria-controls="pills-Juego2"
+                        aria-selected="false">Jolasa 2</button>
+                </li>
+                <li class="objeto nav-item text-center bg-danger rounded  mx-3"
+                    role="presentation">
+                    <button class="nav-link w-100 text-light" id="pills-Juego3-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-Juego3" type="button" role="tab" aria-controls="pills-Juego3"
+                        aria-selected="false">Jolasa 3</button>
+                </li>
 
-        {{-- Menu --}}
-        <ul class="nav nav-pills container" id="menu" role="tablist">
+            </ul>
+        </article>
+        {{-- MENU-PISTAS VUE --}}
 
-            <li class="objeto nav-item text-center bg-danger rounded" role="presentation">
-                <button class="nav-link active w-100 text-light" id="pills-Juego1-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-Juego1" type="button" role="tab" aria-controls="pills-Juego1"
-                    aria-selected="true">Jolasa 1</button>
-            </li>
-            <li class="objeto nav-item text-center bg-danger rounded mx-3" role="presentation">
-                <button class="nav-link w-100 text-light" id="pills-Juego2-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-Juego2" type="button" role="tab" aria-controls="pills-Juego2"
-                    aria-selected="false">Jolasa 2</button>
-            </li>
-            <li class="objeto nav-item text-center bg-danger rounded  mx-3" role="presentation">
-                <button class="nav-link w-100 text-light" id="pills-Juego3-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-Juego3" type="button" role="tab" aria-controls="pills-Juego3"
-                    aria-selected="false">Jolasa 3</button>
-            </li>
-
-        </ul>
 
         {{-- Modulo de los Juegos --}}
         {{-- <section class="juegos container text-light text-center tab-content mt-5"> --}}
         <section class="juegos container mt-5">
-            <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
+            <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel"
+                aria-labelledby="pills-Juego1-tab">
                 @include($candado.'.juego1')
+
             </div>
             <div class=" tab-pane fade" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
                 @include($candado.'.juego2')
+
+            {{-- PISTA --}}
+               <article class="pistas">
+                    <button id="info" type="submit">i</button>
+                </article>
+
             </div>
             <div class="tab-pane fade" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
                 @include($candado.'.juego3')
+
             </div>
         </section>
     </main>

@@ -1,3 +1,13 @@
+// VARIABLE
+let vidas = 3;
+let juegos = 3;
+
+// FUNCIONES
+function GameOver(){
+
+}
+
+
 window.onload = () => {
 
     const reloj = Vue.createApp({})
@@ -48,7 +58,7 @@ window.onload = () => {
         }
     });
 
-    reloj.mount('#reloj')
+    reloj.mount('#reloj');
 
 
     // CORRECTOR
@@ -59,7 +69,8 @@ window.onload = () => {
             return {
                 pregunta: this.pre,
                 correcta: this.cor,
-                miRespuesta: null
+                miRespuesta: null,
+                misVidas: this.vidas
             }
         },
         template: `
@@ -83,10 +94,20 @@ window.onload = () => {
 
     corrector.mount('.corrector')
 
+    // PISTAS
+   Vue.createApp({
+        data() {
+            return {
+            }
+        },
+        methods: {
+
+        },
+    }).mount('#pistas');
 
 
     // JUEGOS
-    // JUEGO 2
+        // JUEGO 2
     const juego2 = Vue.createApp({
         data() {
             return {
@@ -149,6 +170,7 @@ window.onload = () => {
                 //MAL te quita una vida :(
             }
         },
-    }).mount('#cont')
+    }).mount('#cont');
 
 }
+
