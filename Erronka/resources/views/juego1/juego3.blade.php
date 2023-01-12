@@ -3,6 +3,7 @@
 
 <body>
     JUEGO 1.3
-    @yield('content')
-</body>
+
+    <section id="p3">
+    </section></body>
 </html>

@@ -11,9 +11,10 @@
     <link href="{{asset('CSS/PantallaJuegos.css')}}" rel="stylesheet" type="text/css">
 
     {{-- JS --}}
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> {{-- VUE  --}}
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> {{-- AXIOX  --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> {{-- ALERT  --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>{{-- JQUERY  --}}
 
     <script src="{{asset('JS/juegos.js')}}"></script>
 
@@ -34,11 +35,16 @@
         {{-- MENU-PISTAS VUE --}}
         <article>
             {{-- Otros --}}
-            <section class="mx-5 my-3 d-flex flex-nowrap align-items-center justify-content-between">
-                <article id="reloj" class="">
-                    <strong class="otro">Bizitzak: 3</strong>
+            <section class="mx-5 my-3 d-flex flex-nowrap">
+                {{-- <div id="vidas">
+                    <vidas></vidas>
+                </div> --}}
+                <div>
+                    <strong class="otro">Bizitzak: <span id="vidas">3</span></strong>
+                </div>
+                <div id="reloj">
                     <reloj></reloj>
-                </article>
+                </div> 
             </section>
 
             {{-- Menu --}}
@@ -68,7 +74,7 @@
         {{-- <section class="juegos container text-light text-center tab-content mt-5"> --}}
 
             {{-- TELEPORT --}}
-            <div id="pistas">
+            <div hidden id="pistas">
             <Teleport hidden to="#pistas1">
                 <pista n="0" c="{{$candado}}"></pista>
             </Teleport>
@@ -79,10 +85,23 @@
                 <pista n="2" c="{{$candado}}"></pista>
             </Teleport>
             </div>
+
+            <section class="corrector">
+                <Teleport hidden to="#p1">
+                    <corrector n="0" c="{{$candado}}">
+                </Teleport>
+                <Teleport hidden to="#p2">
+                    <corrector n="1" c="{{$candado}}">
+                </Teleport>
+                <Teleport hidden to="#p3">
+                    <corrector n="2" c="{{$candado}}">
+                </Teleport>
+            </section>
+
             {{-- TELEPORT --}}
 
         <section class="juegos container mt-5">
-            <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
+            <div class="tab-pane fade show active" id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
                                 
             {{-- PISTA --}}
                 <div id="pistas1">
@@ -92,7 +111,8 @@
                 @include($candado.'.juego1')
 
             </div>
-            <div class=" tab-pane fade" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
+
+            <div class="tab-pane fade  d-none" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
                 
             {{-- PISTA --}}
                 <div id="pistas2">
@@ -102,7 +122,8 @@
                 @include($candado.'.juego2')
 
             </div>
-            <div class="tab-pane fade" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
+
+            <div class="tab-pane fade d-none" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
                                 
             {{-- PISTA --}}
                 <div id="pistas3">
@@ -112,6 +133,7 @@
                 @include($candado.'.juego3')
 
             </div>
+            
         </section>
     </main>
 

@@ -1,9 +1,22 @@
 // VARIABLE
-let vidas = 3;
+let vidasVar = 3;
 let juegos = 3;
 
 // FUNCIONES
+function CambioVidas(i){
+    vidasVar-=i;
+
+    if(vidasVar == 0){
+        GameOver();
+    }
+
+    $("#vidas").text(vidasVar);
+}
 function GameOver(){
+    Swal.fire("GAMEOVER")
+    .then(v => {
+            window.location = "../";
+    })
 
 }
 
@@ -45,9 +58,7 @@ window.onload = () => {
 
                     if (this.minutos == 0 && this.segundos == 0) {
                         clearInterval(this.tiempo)
-
-                        alert("SIN TIEMPO");
-                        //GAMEOVER
+                        GameOver();
                     }
 
 
@@ -65,13 +76,14 @@ window.onload = () => {
     // CORRECTOR-----------------------------------------------------------------------------
     const corrector = Vue.createApp({})
     corrector.component('corrector', {
-        props: ['pre', 'cor'],
+        props: ['n', 'c'],
         data() {
             return {
-                pregunta: this.pre,
-                correcta: this.cor,
+                juego: this.n,
+                candado: this.c,
+
+                pregunta: null,
                 miRespuesta: null,
-                misVidas: this.vidas
             }
         },
         template: `
@@ -84,16 +96,52 @@ window.onload = () => {
         `,
         methods: {
             corregir() {
-                if (this.miRespuesta === this.correcta) {
-                    alert("Ta bien");
-                } else {
-                    alert("ta mal");
-                }
+                axios.get('../JS/pregunta.json')
+                .then((pregunta) => {
+                    const N = (this.candado == "juego2") ? Number(this.juego)+3 : this.juego;
+
+                    if (this.miRespuesta.toUpperCase() === pregunta.data[N].respuesta) {
+                        alert("Ta bien");
+                    } else {
+                        // alert("Ta mal");
+                        CambioVidas(1);
+                        Swal.fire("TA MAL")
+                    }
+                })
+                .catch(err => console.log(err));
             }
         },
+        created() {
+            axios.get('../JS/pregunta.json')
+                .then((pregunta) => {
+                    const N = (this.candado == "juego2") ? Number(this.juego)+3 : this.juego;
+                    this.pregunta = pregunta.data[N].pregunta
+                })
+                .catch(err => console.log(err));
+        }
     });
 
-    corrector.mount('.corrector')
+    corrector.mount('.corrector');
+
+    // VIDAS-----------------------------------------------------------------------------
+    // const vidas = Vue.createApp({})
+    // vidas.component('vidas', {
+    //     data() {
+    //         return {
+    //         }
+    //     },
+    //     template: `
+    //         <strong class="otro">Bizitzak: {{misVidas}}</strong>
+    //     `,
+    //     computed: {
+    //         misVidas() {
+    //             return vidasVar;
+    //         },
+    //       }
+    // });
+    // vidas.mount('#vidas');
+
+
 
     // PISTAS-----------------------------------------------------------------------------
     let pistas = Vue.createApp({})
@@ -125,10 +173,43 @@ window.onload = () => {
 
     pistas.mount('#pistas');
 
+    // MENU
+    $(document).on("click", "#pills-Juego1-tab", function () {
+        cambiar(0);
+    });
+    $(document).on("click", "#pills-Juego2-tab", function () {
+        cambiar(1);
+    });
+    $(document).on("click", "#pills-Juego3-tab", function () {
+        cambiar(2);
+    });
+    
+
+
+
+    function cambiar(i){
+        $(".tab-pane").addClass("d-none");
+
+        switch(i){
+            case 0:
+                $("#pills-Juego1").removeClass("d-none");
+                break;
+            case 1:
+                $("#pills-Juego2").removeClass("d-none");
+                break;
+            case 2:
+                $("#pills-Juego3").removeClass("d-none");
+                break;
+        }
+
+        // console.log( $(".tab-pane")[i]);
+        // $(".tab-pane").removeClass("d-none");
+    }
+
 
     // JUEGOS-----------------------------------------------------------------------------
         // JUEGO 2-----------------------------------------------------------------------------
-    const juego2 = Vue.createApp({
+    Vue.createApp({
         data() {
             return {
                 preguntas: [{

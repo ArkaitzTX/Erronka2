@@ -23,9 +23,7 @@
 
     </section>
 
-    <section class="corrector">
-        <corrector pre="pregunta 2:" cor="A">
-        </corrector>
+    <section id="p2">
     </section>
 </body>
 

@@ -21,7 +21,7 @@
     <main>
         {{-- COFRE --}}
         <section class=" align-items-center justify-content-center" id="oro" >
-            <img class="w-100"  src="{{asset('IMG/oroEspañol.jpeg')}}" alt="">
+            <img class="w-100"  src="{{asset('IMG/oro.jpg')}}" alt="">
         </section>
         <section class="d-flex align-items-center justify-content-center flex-column" id="cofre">
             <div class="container text-center">
@@ -31,8 +31,8 @@
                         <img id="fondo" src="{{asset('IMG/fondo5.png')}}" alt="fondo">
                         <h1 id="titulo" class="mb-5 text-dark">MERKATARITZA</h1>
                         <p class="mb-5 text-center text-dark">
-                            Bilatu 2 giltzarrapoen konbinazioa joko ezberdinetan, kutxa desblokeatu ahal izateko. Joko bakoitzak letra bat emango dizu,
-                            giltzarrapoaren konbinazioaren zati bat izango da. Bi giltzarrapoak irekita dituzunean, kutxa ireki dezakezu.                            
+                            Bilatu 2 kandaduen konbinazioa joko ezberdinetan, kutxa desblokeatu ahal izateko. Joko bakoitzak letra bat emango dizu,
+                            kandaduaren konbinazioaren zati bat izango da. Bi kandaduak irekita dituzunean, kutxa ireki dezakezu.                            
                         </p>
                         {{-- <button onclick="location.href='#juegos'" class="btn btn-primary">ABRIR COFRE</button> --}}
                         <button id="animatu" class="btn btn-primary">KUTXA IREKI</button>

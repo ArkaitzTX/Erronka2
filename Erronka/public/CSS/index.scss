@@ -94,11 +94,39 @@ main {
 		font-size: 550% !important;
 	}
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1199.98px) and (min-width: 500px) {
 	#titulo {
 		font-size: 400% !important;
 	}
 	main {
-		margin-bottom: 35%;
+		margin-bottom: 45%;
+	}
+	#fondoCandado {
+		left: 30%;
+	}
+}
+
+@media (max-width: 499px) and (min-width: 440px) {
+	#titulo {
+		font-size: 250% !important;
+	}
+	main {
+		margin-bottom: 50%;
+	}
+	#fondoCandado {
+		width: 60%;
+		left: 25%;
+	}
+}
+
+@media (max-width: 449px) {
+	#titulo {
+		font-size: 200% !important;
+	}
+	#fondoCandado {
+		display: none;
+	}
+	main {
+		margin-bottom: 60%;
 	}
 }

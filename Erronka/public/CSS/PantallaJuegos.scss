@@ -26,27 +26,40 @@ $blanco: white;
 }
 
 #info {
-    position: absolute;
-    top: 5;
-    right: 0;
+    // position: absolute;
+    // top: 5;
+    // right: 0;
 
     background-color: $blanco !important;
     color: $negro;
     border-radius: 50%;
+
     width: 5vh;
     height: 5vh;
+
+    margin-left: 95%;
+    margin-top: 1%;
 }
 
 .juegos {
     position: relative;
     background-color: $azul1;
     /* border: solid 1px black; */
+
     color: $blanco;
     border-radius: 5px;
     margin-bottom: 30%;
 }
 
 
+@media screen and (max-width: 900px) {
+	#info{
+        width: 4.5vh;
+        height: 4.5vh;
+    
+        margin-left: 80%;
+    }
+}
 
 /* .juegos div {
     height: 50vh;
