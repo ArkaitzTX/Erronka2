@@ -101,9 +101,8 @@ window.onload = () => {
                     const N = (this.candado == "juego2") ? Number(this.juego)+3 : this.juego;
 
                     if (this.miRespuesta.toUpperCase() === pregunta.data[N].respuesta) {
-                        alert("Ta bien");
+                        Swal.fire("TA BIEN EL JUEGO " + N)
                     } else {
-                        // alert("Ta mal");
                         CambioVidas(1);
                         Swal.fire("TA MAL")
                     }
