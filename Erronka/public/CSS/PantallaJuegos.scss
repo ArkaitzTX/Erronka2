@@ -26,6 +26,10 @@ $blanco: white;
 }
 
 #info {
+    position: absolute;
+    top: 5;
+    right: 0;
+
     background-color: $blanco !important;
     color: $negro;
     border-radius: 50%;
@@ -34,6 +38,7 @@ $blanco: white;
 }
 
 .juegos {
+    position: relative;
     background-color: $azul1;
     /* border: solid 1px black; */
     color: $blanco;

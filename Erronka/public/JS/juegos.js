@@ -10,6 +10,7 @@ function GameOver(){
 
 window.onload = () => {
 
+    // RELOJ-----------------------------------------------------------------------------
     const reloj = Vue.createApp({})
     reloj.component('reloj', {
         data() {
@@ -61,7 +62,7 @@ window.onload = () => {
     reloj.mount('#reloj');
 
 
-    // CORRECTOR
+    // CORRECTOR-----------------------------------------------------------------------------
     const corrector = Vue.createApp({})
     corrector.component('corrector', {
         props: ['pre', 'cor'],
@@ -94,20 +95,39 @@ window.onload = () => {
 
     corrector.mount('.corrector')
 
-    // PISTAS
-   Vue.createApp({
+    // PISTAS-----------------------------------------------------------------------------
+    let pistas = Vue.createApp({})
+    pistas.component('pista', {
+        props: ['n', 'c'],
         data() {
-            return {
+           return {
+               juego: this.n,
+               candado: this.c,
+           }
+       },
+       template:`
+       <button v-on:click='darPista()' id="info" type="submit">i</button>
+      `,
+       methods: {
+            darPista(){
+                // axios.get('{{asset("JS/pistas.json")}}')
+                // Swal.fire(this.juego+" // "+this.candado)
+
+                axios.get('../JS/pistas.json')
+                .then((respuesta) => {
+                    const N = (this.candado == "juego2") ? Number(this.juego)+3 : this.juego;
+                    Swal.fire(respuesta.data[N].pista);
+                })
+                .catch(err => console.log(err));
             }
         },
-        methods: {
+    });
 
-        },
-    }).mount('#pistas');
+    pistas.mount('#pistas');
 
 
-    // JUEGOS
-        // JUEGO 2
+    // JUEGOS-----------------------------------------------------------------------------
+        // JUEGO 2-----------------------------------------------------------------------------
     const juego2 = Vue.createApp({
         data() {
             return {

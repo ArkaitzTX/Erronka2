@@ -12,8 +12,12 @@
 
     {{-- JS --}}
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="{{asset('JS/juegos.js')}}"></script>
 
+    {{-- @vite(['resources/js/app.js','resources/css/app.css']) --}}
 </head>
 
 
@@ -24,7 +28,7 @@
     <main class="mt-5" id="tamaina">
 
         {{-- ************************************************ --}}
-        {{-- <h1>{{$partidas->$candado}}</h1> --}}
+        {{-- <h1>{{$candado}}</h1> --}}
         {{-- ************************************************ --}}
 
         {{-- MENU-PISTAS VUE --}}
@@ -60,27 +64,51 @@
 
             </ul>
         </article>
-        {{-- MENU-PISTAS VUE --}}
-
-
         {{-- Modulo de los Juegos --}}
         {{-- <section class="juegos container text-light text-center tab-content mt-5"> --}}
+
+            {{-- TELEPORT --}}
+            <div id="pistas">
+            <Teleport hidden to="#pistas1">
+                <pista n="0" c="{{$candado}}"></pista>
+            </Teleport>
+            <Teleport hidden to="#pistas2">
+                <pista n="1" c="{{$candado}}"></pista>
+            </Teleport>
+            <Teleport hidden to="#pistas3">
+                <pista n="2" c="{{$candado}}"></pista>
+            </Teleport>
+            </div>
+            {{-- TELEPORT --}}
+
         <section class="juegos container mt-5">
-            <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel"
-                aria-labelledby="pills-Juego1-tab">
+            <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
+                                
+            {{-- PISTA --}}
+                <div id="pistas1">
+                </div>
+
+            {{-- JUEGO --}}
                 @include($candado.'.juego1')
 
             </div>
             <div class=" tab-pane fade" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
-                @include($candado.'.juego2')
-
+                
             {{-- PISTA --}}
-               <article class="pistas">
-                    <button id="info" type="submit">i</button>
-                </article>
+                <div id="pistas2">
+                </div>
+
+            {{-- JUEGO --}}
+                @include($candado.'.juego2')
 
             </div>
             <div class="tab-pane fade" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
+                                
+            {{-- PISTA --}}
+                <div id="pistas3">
+                </div>
+
+            {{-- JUEGO --}}
                 @include($candado.'.juego3')
 
             </div>
