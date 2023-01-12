@@ -35,7 +35,7 @@
                             giltzarrapoaren konbinazioaren zati bat izango da. Bi giltzarrapoak irekita dituzunean, kutxa ireki dezakezu.                            
                         </p>
                         {{-- <button onclick="location.href='#juegos'" class="btn btn-primary">ABRIR COFRE</button> --}}
-                        <button id="animatu" class="btn btn-primary">ABRIR COFRE</button>
+                        <button id="animatu" class="btn btn-primary">KUTXA IREKI</button>
                     </div>
                     <img class="col d-none d-xl-block candado" src="{{asset('IMG/candado.png')}}" alt="">
                 </div>
