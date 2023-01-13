@@ -1,32 +1,65 @@
 // VARIABLE
 let vidasVar = 3;
-let juegos = 0;
+let juegos = [
+    false,
+    false,
+    false,
+];
+
+// !COGER DE LA BD SI ESTA ACABADO O NO Y SI LO ESTA CAMBIAR JEUGOS
 
 // FUNCIONES
-function JuegosBien(i){
-    // alert(i); // BORRAR
-    juegos++;
-    if (juegos==3) {
-        Ganar(i);
+function JuegosBien(i, c){
+
+    if (!juegos[i]) {
+
+        juegos[i] = true;
+
+        CambiarJuegos();
+
+        if (juegos.every(e=>e===true)) {
+            Ganar(c);
+            return;
+        }
+
+        Swal.fire({
+            icon: 'success',
+            title: 'EGINDA',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 }
-function Ganar(){
+function Ganar(c){
     Swal.fire({
         icon: 'success',
-        title: 'KANDADUA BUKATUTA DAGO',
+        title: 'KANDADUA '+c.toUpperCase()+' BUKATUTA DAGO',
     })
     .then(v => {
-        var nombre = '';
-        var token = '{{csrf_token()}}';
-        var data={nombre:nombre,_token:token};
-        $.ajax({
-            type: "post",
-            url: "{{route('empresa.store')}}",
-            data: data,
-            success: function (msg) {
-                    alert("Se ha realizado el POST con exito "+msg);
-            }
-        });    })
+        //! ACABAR ESTO PARA QUE GUARDE QUE EL CANDADO
+
+        // var juego1 = c == "juego1" ? 1 : 0;
+        // var juego2 = c == "juego2" ? 1 : 0;
+        // var token = '{{csrf_token()}}';
+        // var data={juego1:juego1, juego2:juego2, _token:token};
+        // $.ajax({
+        //     type: "post",
+        //     url: "{{route('Comercio.parUptade', session()->get('usuario')->id)}}",
+        //     data: data,
+        //     success: function (msg) {
+        //             alert("Se ha realizado el POST con exito "+msg);
+        //     }
+        // });    
+    })
+}
+function CambiarJuegos(){
+    // PONER COMPLETADO
+    for (const i in juegos) {
+        let a = Number(i)+1;
+        if (juegos[i]) {
+            $("#pills-Juego"+a).html("<div class='completado'><h1>JOLASA EGINDA DAGO!</h1></div>");; 
+        }
+    }
 }
 
 function CambioVidas(i){
@@ -57,6 +90,8 @@ function GameOver(){
 
 
 window.onload = () => {
+
+    CambiarJuegos();
 
     // RELOJ-----------------------------------------------------------------------------
     const reloj = Vue.createApp({})
@@ -122,12 +157,18 @@ window.onload = () => {
             }
         },
         template: `
-        <form action="">
-            <label>{{ pregunta }}</label>
-            <br>
-            <input type="text" v-model="miRespuesta">
-            <input type="button" value="Bidali" v-on:click='corregir()'>
-        </form>
+        <div class="row m-5 g-3 align-items-center d-flex justify-content-center text-center">
+            <div class="col-12">
+                <label class="col-form-label">{{ pregunta }}</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" v-model="miRespuesta">
+            </div>
+            <div class="col-auto">
+                <input type="button" class="btn btn-outline-light" value="Bidali" v-on:click='corregir()'>
+            </div>
+        </div>
+        <br>
         `,
         methods: {
             corregir() {
@@ -137,7 +178,7 @@ window.onload = () => {
 
                     if (this.miRespuesta.toUpperCase() === pregunta.data[N].respuesta) {
                         // Swal.fire("TA BIEN EL JUEGO " + N)
-                        JuegosBien(this.juego);
+                        JuegosBien(this.juego, this.candado);
                     } else {
                         CambioVidas(1);
                     }

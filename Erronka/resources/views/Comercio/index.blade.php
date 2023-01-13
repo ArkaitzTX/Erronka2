@@ -16,6 +16,8 @@
 </head>
 <body>
     
+    {{-- !CAMBIAR CANDADOS CON LA BD --}}
+    
     @include('layouts.header')
    
     <main>

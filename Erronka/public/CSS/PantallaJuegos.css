@@ -9,7 +9,7 @@
 
 .objeto {
   display: table-cell;
-  background: #0C1713;
+  background: #101243;
 }
 
 .otro {
@@ -32,11 +32,16 @@
 
 .juegos {
   position: relative;
-  background-color: #101243;
+  background-color: #140C73;
   /* border: solid 1px black; */
   color: white;
   border-radius: 5px;
   margin-bottom: 30%;
+}
+
+.completado {
+  height: 50vh;
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {

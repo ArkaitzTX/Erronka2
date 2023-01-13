@@ -14,7 +14,7 @@ $blanco: white;
 
 .objeto {
     display: table-cell;
-    background: $negro;
+    background: $azul1;
 }
 
 .otro {
@@ -43,12 +43,21 @@ $blanco: white;
 
 .juegos {
     position: relative;
-    background-color: $azul1;
+    background-color: $azul2;
     /* border: solid 1px black; */
 
     color: $blanco;
     border-radius: 5px;
     margin-bottom: 30%;
+}
+
+.completado{
+    height: 50vh;
+    text-align: center;
+
+    // display: flex;
+    // text-align: center;
+    // justify-content: center !important;
 }
 
 
