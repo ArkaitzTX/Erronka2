@@ -41,7 +41,9 @@ function Ganar(c){
         // var juego1 = c == "juego1" ? 1 : 0;
         // var juego2 = c == "juego2" ? 1 : 0;
         // var token = '{{csrf_token()}}';
+
         // var data={juego1:juego1, juego2:juego2, _token:token};
+
         // $.ajax({
         //     type: "post",
         //     url: "{{route('Comercio.parUptade', session()->get('usuario')->id)}}",
@@ -50,6 +52,16 @@ function Ganar(c){
         //             alert("Se ha realizado el POST con exito "+msg);
         //     }
         // });    
+
+        var data={_token:token};
+        $.ajax({
+            type: "post",
+            url: "{{route('Comercio.index'}}",
+            data: data,
+            success: function (msg) {
+                    alert("Se ha realizado el POST con exito "+msg);
+            }
+        });    
     })
 }
 function CambiarJuegos(){
@@ -90,6 +102,10 @@ function GameOver(){
 
 
 window.onload = () => {
+
+    // !ELIMINAR
+    // Ganar(1);
+    // !ELIMINAR
 
     CambiarJuegos();
 
