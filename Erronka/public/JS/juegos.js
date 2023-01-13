@@ -1,19 +1,54 @@
 // VARIABLE
 let vidasVar = 3;
-let juegos = 3;
+let juegos = 0;
 
 // FUNCIONES
+function JuegosBien(i){
+    // alert(i); // BORRAR
+    juegos++;
+    if (juegos==3) {
+        Ganar(i);
+    }
+}
+function Ganar(){
+    Swal.fire({
+        icon: 'success',
+        title: 'KANDADUA BUKATUTA DAGO',
+    })
+    .then(v => {
+        var nombre = '';
+        var token = '{{csrf_token()}}';
+        var data={nombre:nombre,_token:token};
+        $.ajax({
+            type: "post",
+            url: "{{route('empresa.store')}}",
+            data: data,
+            success: function (msg) {
+                    alert("Se ha realizado el POST con exito "+msg);
+            }
+        });    })
+}
+
 function CambioVidas(i){
     vidasVar-=i;
-
     if(vidasVar == 0){
         GameOver();
+        return;
     }
 
+    Swal.fire({
+        icon: 'error',
+        title: 'TXARTO DAGO',
+        showConfirmButton: false,
+        timer: 1500
+    })
     $("#vidas").text(vidasVar);
 }
 function GameOver(){
-    Swal.fire("GAMEOVER")
+    Swal.fire({
+        icon: 'error',
+        title: 'GAMEOVER',
+    })
     .then(v => {
             window.location = "../";
     })
@@ -101,10 +136,10 @@ window.onload = () => {
                     const N = (this.candado == "juego2") ? Number(this.juego)+3 : this.juego;
 
                     if (this.miRespuesta.toUpperCase() === pregunta.data[N].respuesta) {
-                        Swal.fire("TA BIEN EL JUEGO " + N)
+                        // Swal.fire("TA BIEN EL JUEGO " + N)
+                        JuegosBien(this.juego);
                     } else {
                         CambioVidas(1);
-                        Swal.fire("TA MAL")
                     }
                 })
                 .catch(err => console.log(err));
@@ -121,25 +156,6 @@ window.onload = () => {
     });
 
     corrector.mount('.corrector');
-
-    // VIDAS-----------------------------------------------------------------------------
-    // const vidas = Vue.createApp({})
-    // vidas.component('vidas', {
-    //     data() {
-    //         return {
-    //         }
-    //     },
-    //     template: `
-    //         <strong class="otro">Bizitzak: {{misVidas}}</strong>
-    //     `,
-    //     computed: {
-    //         misVidas() {
-    //             return vidasVar;
-    //         },
-    //       }
-    // });
-    // vidas.mount('#vidas');
-
 
 
     // PISTAS-----------------------------------------------------------------------------
@@ -263,14 +279,36 @@ window.onload = () => {
             }
         },
         methods: {
-            corregir() {
+            // corregir() {
                 //Cuando das boton te corrigeputon
 
                 //BIEN te dice muy bien :)
                 //MAL te quita una vida :(
-            }
+            // }
         },
-    }).mount('#cont');
+    }).mount('#juego2');
 
+    // JUEGO 3----------------------------------------------------------------------------------
+    // const juego3 = Vue.createApp({
+    //     data() {
+    //         return {
+    //             pregunta: "Calcula el dígito de control del siguiente código de barras: 8410297120134",
+    //             respuesta: null,
+    //             correcta: 72
+    //         }
+    //     },
+    //     methods: {
+    //         corregir() {
+    //             if (this.respuesta === this.correcta) {
+    //                 alert("Ta bien");
+    //             } else {
+    //                 alert("ta mal");
+    //             }
+    //         }
+         
+    //     }
+    // });
+
+    // juego3.mount('#juego3');
 }
 

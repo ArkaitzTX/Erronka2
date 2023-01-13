@@ -2,7 +2,8 @@
 <html lang="en">
 
 <body>
-    <section id="cont">
+    {{-- JUEGO2 --}}
+    <section id="juego2">
 
         <form v-for="miPregunta in preguntas" action="">
             <label>@{{ miPregunta.pregunta }}</label>
@@ -14,7 +15,7 @@
 
         </form>
 
-        <button v-on:click='corregir()'>CORREGIR</button>
+        {{-- <button v-on:click='corregir()'>CORREGIR</button> --}}
 
         {{-- BORRAR --}}
         {{-- <pre>
@@ -23,6 +24,7 @@
 
     </section>
 
+    {{-- PREGUNTA CORRECTOR --}}
     <section id="p2">
     </section>
 </body>

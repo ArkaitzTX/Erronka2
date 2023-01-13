@@ -28,7 +28,7 @@ Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.lo
 //Juegos
 Route::get('/{candado}/juegos', [PartidasController::class, 'ver'])->name('Comercio.juego');
     //Editar
-    Route::put('{id}/juegos', [PartidasController::class, 'update'])->name('Comercio.parUptade');
+    Route::post('{id}/juegos', [PartidasController::class, 'update'])->name('Comercio.parUptade');
     //Crear Juego
     // Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear'); //Esta con el usuario
 

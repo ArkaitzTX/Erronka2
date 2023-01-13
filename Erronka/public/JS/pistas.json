@@ -3,10 +3,10 @@
         "pista":"pista 1"
     },
     {
-        "pista":"pista 2"
+        "pista":"Completa las preguntas y saca cual a sido la pregunta mas usada, la cual puede ser A, B, C o la D"
     },
     {
-        "pista":"pista 3"
+        "pista":"Saca la respuesta mediante el video. Cuando la tengas coge el primer numero de tu respuesta y cuenta cual es la letra del abecedario que encaje con ese numero[a=1, b=2, c=3...]."
     },
     {
         "pista":"pista 4"

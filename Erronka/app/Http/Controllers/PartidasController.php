@@ -38,7 +38,7 @@ class PartidasController extends Controller
         $partidas = Partidas::findOrFail($id);
         $partidas->juego1 = $request->juego1;
         $partidas->juego2 = $request->juego2;
-        $partidas->usuario = $request->usuario;
+        // $partidas->usuario = $request->usuario;
         $partidas->save();
 
         return redirect()->action([PartidasController::class, 'index']);
