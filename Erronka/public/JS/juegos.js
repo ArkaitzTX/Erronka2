@@ -9,7 +9,7 @@ let juegos = [
 // !COGER DE LA BD SI ESTA ACABADO O NO Y SI LO ESTA CAMBIAR JEUGOS
 
 // FUNCIONES
-function JuegosBien(i, c){
+function JuegosBien(i, c, id){
 
     if (!juegos[i]) {
 
@@ -18,7 +18,7 @@ function JuegosBien(i, c){
         CambiarJuegos();
 
         if (juegos.every(e=>e===true)) {
-            Ganar(c);
+            Ganar(c, id);
             return;
         }
 
@@ -30,7 +30,8 @@ function JuegosBien(i, c){
         })
     }
 }
-function Ganar(c){
+function Ganar(c, id){
+    // alert(c+"--"+id);
     Swal.fire({
         icon: 'success',
         title: 'KANDADUA '+c.toUpperCase()+' BUKATUTA DAGO',
@@ -38,30 +39,21 @@ function Ganar(c){
     .then(v => {
         //! ACABAR ESTO PARA QUE GUARDE QUE EL CANDADO
 
-        // var juego1 = c == "juego1" ? 1 : 0;
-        // var juego2 = c == "juego2" ? 1 : 0;
-        // var token = '{{csrf_token()}}';
-
-        // var data={juego1:juego1, juego2:juego2, _token:token};
-
-        // $.ajax({
-        //     type: "post",
-        //     url: "{{route('Comercio.parUptade', session()->get('usuario')->id)}}",
-        //     data: data,
-        //     success: function (msg) {
-        //             alert("Se ha realizado el POST con exito "+msg);
-        //     }
-        // });    
-
-        var data={_token:token};
         $.ajax({
-            type: "post",
-            url: "{{route('Comercio.index'}}",
-            data: data,
-            success: function (msg) {
-                    alert("Se ha realizado el POST con exito "+msg);
-            }
-        });    
+            method: 'POST',
+            url: '../PHP/update.php',
+            data:
+            {
+                id: id,
+                juego: c
+            },
+        })
+        .done(
+            location.href = "../"
+        )
+        .fail(function(jqXHR, textStatus) {
+            console.log("Hubo un error: " + textStatus);
+        });
     })
 }
 function CambiarJuegos(){
@@ -162,11 +154,12 @@ window.onload = () => {
     // CORRECTOR-----------------------------------------------------------------------------
     const corrector = Vue.createApp({})
     corrector.component('corrector', {
-        props: ['n', 'c'],
+        props: ['n', 'c', 'i'],
         data() {
             return {
                 juego: this.n,
                 candado: this.c,
+                id: this.i,
 
                 pregunta: null,
                 miRespuesta: null,
@@ -194,7 +187,7 @@ window.onload = () => {
 
                     if (this.miRespuesta.toUpperCase() === pregunta.data[N].respuesta) {
                         // Swal.fire("TA BIEN EL JUEGO " + N)
-                        JuegosBien(this.juego, this.candado);
+                        JuegosBien(this.juego, this.candado, this.id);
                     } else {
                         CambioVidas(1);
                     }
@@ -369,3 +362,7 @@ window.onload = () => {
     // juego3.mount('#juego3');
 }
 
+// NO SALIR DE JUEGOS
+$(window).on("beforeunload", function () {
+    return "";
+});

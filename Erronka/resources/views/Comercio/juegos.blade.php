@@ -30,6 +30,7 @@
 
         {{-- ************************************************ --}}
         {{-- <h1>{{$candado}}</h1> --}}
+        {{-- <button onclick="Ganar('juego1', 22)">AAAAAAAAAAAAAAAA</button> --}}
         {{-- ************************************************ --}}
 
         {{-- MENU-PISTAS VUE --}}
@@ -88,13 +89,13 @@
 
             <section class="corrector">
                 <Teleport hidden to="#p1">
-                    <corrector n="0" c="{{$candado}}">
+                    <corrector n="0" c="{{$candado}}" i="{{$usuario}}">
                 </Teleport>
                 <Teleport hidden to="#p2">
-                    <corrector n="1" c="{{$candado}}">
+                    <corrector n="1" c="{{$candado}}" i="{{$usuario}}">
                 </Teleport>
                 <Teleport hidden to="#p3">
-                    <corrector n="2" c="{{$candado}}">
+                    <corrector n="2" c="{{$candado}}" i="{{$usuario}}">
                 </Teleport>
             </section>
 

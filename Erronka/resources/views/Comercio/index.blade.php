@@ -21,6 +21,10 @@
     @include('layouts.header')
    
     <main>
+        {{-- ************************************************ --}}
+        {{-- <h1>{{$partidas}}</h1> --}}
+        {{-- ************************************************ --}}
+
         {{-- COFRE --}}
         <section class=" align-items-center justify-content-center" id="oro" >
             <img class="w-100"  src="{{asset('IMG/oro.jpg')}}" alt="">
@@ -36,8 +40,15 @@
                             Bilatu 2 kandaduen konbinazioa joko ezberdinetan, kutxa desblokeatu ahal izateko. Joko bakoitzak letra bat emango dizu,
                             kandaduaren konbinazioaren zati bat izango da. Bi kandaduak irekita dituzunean, kutxa ireki dezakezu.                            
                         </p>
-                        {{-- <button onclick="location.href='#juegos'" class="btn btn-primary">ABRIR COFRE</button> --}}
-                        <button id="animatu" class="btn btn-primary">KUTXA IREKI</button>
+
+                        @isset($partidas)
+                            @if($partidas->juego1 == 1 && $partidas->juego2 == 1)
+                                <button id="animatu" class="btn btn-primary">KUTXA IREKI</button>
+                            @else
+                                <button onclick="location.href='#juegos'" class="btn btn-primary">KUTXA IREKI</button>
+                            @endif
+                        @endisset
+                            
                     </div>
                     <img class="col d-none d-xl-block candado" src="{{asset('IMG/candado.png')}}" alt="">
                 </div>
@@ -50,7 +61,15 @@
             {{-- CANDADO 1 --}}
             <a class="text-decoration-none" href="{{ route('Comercio.juego', 1)  }}"> {{-- nºcandado--}}
                 <article class="my-5 text-light d-flex align-items-center">
-                    <h1 class="mx-5">* * *</h1>
+                    {{-- CANDADO --}}
+                @isset($partidas)
+                    @if($partidas->juego1 == 1)
+                        <h1 class="mx-5">A B G</h1> {{-- ! COGERLO DEL JSON --}}
+                    @else
+                        <h1 class="mx-5">* * *</h1>
+                    @endif
+                @endisset
+
                     <img id="fondoCandado" src="{{asset('IMG/cerradura.png')}}" alt="fondo">
                     <div>
                         <h3 class="mx-5 my-4">KANDADU Nº1</h3>
@@ -61,7 +80,16 @@
             {{-- CANDADO 2 --}}
             <a class="text-decoration-none" href="{{ route('Comercio.juego', 2)  }}">
                 <article class="mb-5 text-light d-flex align-items-center">
-                    <h1 class="mx-5">* * *</h1>
+
+                {{-- CANDADO --}}
+                @isset($partidas)
+                    @if($partidas->juego2 == 1)
+                        <h1 class="mx-5">2 1 1</h1> {{-- ! COGERLO DEL JSON --}}
+                    @else
+                        <h1 class="mx-5">* * *</h1> 
+                    @endif                    
+                @endisset
+
                     <img id="fondoCandado" src="{{asset('IMG/cerradura.png')}}" alt="fondo">
                     <div>
                         <h3 class="mx-5 my-4">KANDADU Nº2</h3>
