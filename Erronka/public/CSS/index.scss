@@ -1,42 +1,104 @@
 $negro: #0C1713;
 $azul1: #101243;
+$azul2: #140C73;
+$blanco: white;
 
-main{
-    margin-bottom: 15%;
+@keyframes texto{
+	0% {
+		transform: translateY(-2px);
+	}
+	25% {
+		transform: translateY(-4px);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+	100% {
+		transform: translateY(-8px);
+	}
 }
 
-#cofre{ 
-    background-color: $negro;
-    height: 100vh;
-
-    h1{
-        margin-top: 15% !important;
-        font-size: 700%;
-    }
-    button{
-        height: 7vh;
-        min-width: 8vw;
-    }
+main {
+	margin-bottom: 15%;
 }
-
-#candado{
-    // height: 50vh;
-
-    article{
-        height: 40vh;
-        background-color: $azul1;
-        position: relative;
-
-        h1{
-            font-size: 500%;
-        }
-        div{
-            height: 25%;
-            width: 100%;
-
-            background-color: $negro;
-            position: absolute;
-            bottom: 0;
-        }
-    }
+#cofre {
+	height: 100vh;
+	h1 {
+		margin-top: 15% !important;
+		font-size: 700%;
+		z-index: 1;
+		animation: texto 1s linear infinite alternate;
+	}
+	button {
+		height: 7vh;
+		min-width: 8vw;
+		z-index: 1;
+	}
+	p {
+		z-index: 1;
+	}
+	#fondo {
+		position: absolute;
+		z-index: -1;
+		height: 100vh;
+		max-width: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+.candado {
+	max-width: 40vw;
+	max-height: 40vh;
+}
+#candado {
+	article {
+		height: 40vh;
+		background-color: #050505;
+		position: relative;
+		transform: translateY(4px);
+		transition: 1s;
+		h1 {
+			font-size: 500%;
+			color: $blanco;
+			animation: combinacion 1s linear infinite alternate;
+			z-index: 1;
+		}
+		div {
+			height: 25%;
+			width: 100%;
+			background-color: $azul2;
+			position: absolute;
+			bottom: 0;
+		}
+		&:hover {
+			transform: translateY(-4px);
+			transition: 1s;
+		}
+	}
+}
+#oro {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: $negro;
+}
+#fondoCandado {
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 40%;
+}
+@media (min-width: 1200px) {
+	#titulo {
+		font-size: 550% !important;
+	}
+}
+@media (max-width: 1199.98px) {
+	#titulo {
+		font-size: 400% !important;
+	}
+	main {
+		margin-bottom: 35%;
+	}
 }

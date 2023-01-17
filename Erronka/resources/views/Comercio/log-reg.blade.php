@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERKATARITZA</title>
+
+    {{-- CSS --}}
     <link href="{{asset('CSS/Login,Register.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Comercio</title>
-</head>
+ </head>
 
 <body>
 
-    @include('Comercio.header')
+    @include('layouts.header')
 
     <main class="mt-5" id="tamaina">
 
@@ -41,9 +40,21 @@
                     @csrf
 
                     <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile">
-                    <input type="text" name="pass" class="form-control" placeholder="Pasahitza">
+                    <input type="password" name="pass" class="form-control" placeholder="Pasahitza">
                     <button class="btn btn-dark btn-block">Saioa Hasi</button>
                 </form>
+
+                <p class="text-center text-success">{{Session::get('bien')}}</p>
+                <p class="text-center text-danger">{{Session::get('error')}}</p>
+                @isset($error)
+                <br>
+                <p class="text-center text-danger">*{{$error}}*</p>
+                @endisset
+
+                @foreach ($errors->all() as $error)
+                    <p class="text-danger text-center">Ez da Erabiltzaile sortu</p>
+                    @break
+                @endforeach 
 
             </article>
 
@@ -54,18 +65,28 @@
                 <form class="form px-4 formulario" action="{{ route('Comercio.usuNuevo') }}" method ="POST">
                     @csrf
 
-                    <input type="text" name="nombre" class="form-control" placeholder="Izena">
-                    <input type="text" name="apellido" class="form-control" placeholder="Abizena">
-                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile">
-                    <input type="text" name="pass" class="form-control" placeholder="Pasahitza">
+                    <input type="text" name="nombre" class="form-control" placeholder="Izena" value="{{ old('nombre')}}" required>
+                    <input type="text" name="apellido" class="form-control" placeholder="Abizena" value="{{ old('apellido')}}" required>
+                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile" value="{{ old('usuario')}}" required>
+                    <input type="password" name="pass" class="form-control" placeholder="Pasahitza" value="{{ old('pass')}}" required>
+                    <input type="password" name="passB" class="form-control" placeholder="Bersartu pasahitza" value="{{ old('passB')}}" required>
                     <button class="btn btn-dark btn-block">Erregistratu</button>
                 </form>
 
+                <br>
+                @foreach ($errors->all() as $error)
+                    <p class="text-danger text-center">{{ $error }}</p>
+                @endforeach 
+
+
             </article>
+
+
+
         </section>
     </main>
 
-    @include('Comercio.footer')
+    @include('layouts.footer')
 
 </body>
 

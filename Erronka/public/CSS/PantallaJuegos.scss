@@ -8,7 +8,6 @@ $blanco: white;
 }
 
 #menu {
-
     display: table !important;
     width: 100%;
 }
@@ -19,8 +18,11 @@ $blanco: white;
 }
 
 .otro{
-    background-color: $azul1 !important;
-    cursor: default !important;
+    background-color: $azul1;
+    border-radius: 10px;
+    padding: 10px;
+    color: $blanco;
+    margin-left: 1vh;
 }
 
 #info{
