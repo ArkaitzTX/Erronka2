@@ -43,8 +43,8 @@
                                     {{ session()->get('usuario')->usuario }}
                                 </a>
                                 {{-- ! --}}
-                                <?php $foto = session()->get("usuario")->foto ?>
-                                {{-- <img id="perfil" src="{{ asset('IMG/profile/<?php echo$foto ?>') }}" alt="imagen perfil"> --}}
+                                <img id="perfil" src="IMG/profile/{{ session()->get('usuario')->foto }}" alt="perfil">
+                                {{-- <img id="perfil" src="{{ asset('IMG/profile/{{ session()->get("usuario")->foto }}') }}" alt="imagen perfil"> --}}
                                 {{-- ! --}}
                             @else
                                 <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
