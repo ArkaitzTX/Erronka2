@@ -26,8 +26,12 @@
 
     @include('layouts.header')
 
+    <div id="cosa">
+        <cosa j="{{$partidas->$candado}}"></cosa>
+    </div>
+    
     <main class="mt-5" id="tamaina">
-
+        
         {{-- ************************************************ --}}
         {{-- <h1>{{$candado}}</h1> --}}
         {{-- <button onclick="Ganar('juego1', 22)">AAAAAAAAAAAAAAAA</button> --}}

@@ -64,7 +64,7 @@
                     {{-- CANDADO --}}
                 @isset($partidas)
                     @if($partidas->juego1 == 1)
-                        <h1 class="mx-5">A B G</h1> {{-- ! COGERLO DEL JSON --}}
+                        <h1 class="mx-5">J B G</h1> {{-- ! COGERLO DEL JSON --}}
                     @else
                         <h1 class="mx-5">* * *</h1>
                     @endif
@@ -84,7 +84,7 @@
                 {{-- CANDADO --}}
                 @isset($partidas)
                     @if($partidas->juego2 == 1)
-                        <h1 class="mx-5">2 1 1</h1> {{-- ! COGERLO DEL JSON --}}
+                        <h1 class="mx-5">2 0 0</h1> {{-- ! COGERLO DEL JSON --}}
                     @else
                         <h1 class="mx-5">* * *</h1> 
                     @endif                    

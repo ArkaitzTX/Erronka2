@@ -1,7 +1,7 @@
 [
     {
-        "pregunta":"No esta acabado este juego",
-        "respuesta":"A"
+        "pregunta":"Cuenta las 'O's y saca la letra correcta con tu respuesta",
+        "respuesta":"J"
     },
     {
         "pregunta":"Saca la letra correcta con tu respuesta:",
@@ -17,10 +17,10 @@
     },
     {
         "pregunta":"No esta acabado este juego",
-        "respuesta":"1"
+        "respuesta":"0"
     },
     {
         "pregunta":"No esta acabado este juego",
-        "respuesta":"1"
+        "respuesta":"0"
     }
 ]

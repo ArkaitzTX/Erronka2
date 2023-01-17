@@ -1,6 +1,6 @@
 [
     {
-        "pista":"pista 1"
+        "pista":"Cuando tengas la respuesta coge el primer numero de tu respuesta y cuenta cual es la letra del abecedario que encaje con ese numero[a=1, b=2, c=3...]."
     },
     {
         "pista":"Completa las preguntas y saca cual a sido la pregunta mas usada, la cual puede ser A, B, C o la D"
@@ -12,9 +12,9 @@
         "pista":"Usa la sigiente formula para calcular el iva: [precio * 1.21]"
     },
     {
-        "pista":"pista 5"
+        "pista":"X"
     },
     {
-        "pista":"pista 6"
+        "pista":"X"
     }
 ]
