@@ -14,6 +14,8 @@ $(document).ready(function () {
         $("#imagenUsu").attr("src", IMG);
     });
 
+
+    // ! NO SALIR DE JUEGOS
     // $(window).on("beforeunload", function () {
     //     if(cambiado){
     //         return confirm();

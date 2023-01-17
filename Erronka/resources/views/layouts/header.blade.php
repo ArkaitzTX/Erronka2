@@ -22,7 +22,7 @@
                 </button>
                 
 
-                <img class="navbar-brand" src="{{asset('IMG/Logo.png')}}" height="36">
+                <img class="navbar-brand" src="{{asset('IMG/Logo.png')}}" alt="logo" height="36">
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -42,6 +42,9 @@
                                 <a href=' {{ route('Comercio.admin') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
                                     {{ session()->get('usuario')->usuario }}
                                 </a>
+                                {{-- ! --}}
+                                <img id="perfil" src="IMG/profile/{{ session()->get('usuario')->foto }}" alt="">
+                                {{-- ! --}}
                             @else
                                 <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
                                     Saioa Hasi

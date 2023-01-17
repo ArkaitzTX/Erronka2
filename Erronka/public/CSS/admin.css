@@ -11,8 +11,6 @@
 #editar img {
   width: 25vh;
   height: 30vh;
-  border: 1px black solid;
-  border-radius: 10px;
 }
 
 .etiquetas {

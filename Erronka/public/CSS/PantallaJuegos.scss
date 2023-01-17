@@ -3,7 +3,7 @@ $azul1: #101243;
 $azul2: #140C73;
 $blanco: white;
 
-#fondo{
+#fondo {
     background-color: $blanco;
 }
 
@@ -14,10 +14,10 @@ $blanco: white;
 
 .objeto {
     display: table-cell;
-    background: $negro;
+    background: $azul1;
 }
 
-.otro{
+.otro {
     background-color: $azul1;
     border-radius: 10px;
     padding: 10px;
@@ -25,25 +25,53 @@ $blanco: white;
     margin-left: 1vh;
 }
 
-#info{
-    background-color: $azul1 !important;
+#info {
+    // position: absolute;
+    // top: 5;
+    // right: 0;
 
+    background-color: $blanco !important;
+    color: $negro;
     border-radius: 50%;
+
     width: 5vh;
     height: 5vh;
+
+    margin-left: 95%;
+    margin-top: 1%;
 }
 
-.juegos{
+.juegos {
+    position: relative;
     background-color: $azul2;
+    /* border: solid 1px black; */
+
+    color: $blanco;
     border-radius: 5px;
     margin-bottom: 30%;
+}
 
-    div{
-        height: 50vh;
+.completado{
+    height: 50vh;
+    text-align: center;
+
+    // display: flex;
+    // text-align: center;
+    // justify-content: center !important;
+}
+
+
+@media screen and (max-width: 900px) {
+	#info{
+        width: 4.5vh;
+        height: 4.5vh;
+    
+        margin-left: 80%;
     }
 }
 
-@mixin fondo {
-    background-color: $azul1 !important;
-    border: $blanco 2px solid;
-}
+/* .juegos div {
+    height: 50vh;
+  } */
+
+/*# sourceMappingURL=PantallaJuegos.css.map */
