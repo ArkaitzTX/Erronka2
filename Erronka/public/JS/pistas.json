@@ -12,7 +12,7 @@
         "pista":"Usa la sigiente formula para calcular el iva: [precio * 1.21]"
     },
     {
-        "pista":"X"
+        "pista":"Para sacar la factura primero calcula la suma de todos los productos que has comprado, ademas del transporte. Despues calcula un descuento del 10%."
     },
     {
         "pista":"X"

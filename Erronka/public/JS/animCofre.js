@@ -6,7 +6,6 @@ function hasiera() {
             bottom: '250px',
             opacity: '0',
             height: '0px',
-            width: 'opx'
 
         }, 1500);
     });

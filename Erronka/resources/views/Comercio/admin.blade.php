@@ -36,7 +36,7 @@
                     </label>
                 </section>
                 {{-- EDITAR FORM --}}
-                <section class="row col-lg-9 col-md-9 col-sm-9  mt-5  erabiltzailea">
+                <section class="row col-lg-9 col-md-9 col-sm-9 mt-5 erabiltzailea">
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
                         <label class="etiquetas">Izena</label>
                         <input type="text" name="nombre" class="cambios" value="{{$miUsu->nombre}}">
@@ -53,7 +53,7 @@
                         <label class="etiquetas">Pasaitza</label>
                         <input type="password" name="pass" class="cambios" value="{{$miUsu->pass}}">
                     </div>
-                    <button type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar"
+                    <button id="validar" type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar"
                         data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">GORDE</button>
                 </section>
                 <p id="editando" class="d-none text-danger text-center">Datuak ez dira gorde...</p>
