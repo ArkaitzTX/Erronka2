@@ -1,55 +1,45 @@
+@keyframes texto {
+  0% {
+    transform: translateY(-2px);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
 main {
-  background-color: #EFDBC7;
-  padding-bottom: 15%;
+  margin-bottom: 15%;
 }
 
-button {
-  background-color: #252525 !important;
-  color: #FFFFFE !important;
-}
-
-@media (max-width: 1199.98px) and (min-width: 500px) {
-  main {
-    padding-bottom: 35%;
-  }
-}
-@media (max-width: 499px) and (min-width: 440px) {
-  main {
-    padding-bottom: 45%;
-  }
-}
-@media (max-width: 449px) {
-  main {
-    padding-bottom: 55%;
-  }
-}
 #cofre {
   height: 100vh;
 }
 #cofre h1 {
-  position: relative;
   margin-top: 15% !important;
   font-size: 700%;
+  z-index: 1;
   animation: texto 1s linear infinite alternate;
-  z-index: 2;
 }
 #cofre button {
-  position: relative;
   height: 7vh;
   min-width: 8vw;
-  z-index: 2;
+  z-index: 1;
 }
 #cofre p {
-  position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 #cofre #fondo {
+  position: absolute;
+  z-index: -1;
   height: 100vh;
   max-width: 100%;
-  position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
 }
 
 .candado {
@@ -66,14 +56,14 @@ button {
 }
 #candado article h1 {
   font-size: 500%;
-  color: #FFFFFE;
+  color: white;
   animation: combinacion 1s linear infinite alternate;
   z-index: 1;
 }
 #candado article div {
   height: 25%;
   width: 100%;
-  background-color: #B08D6B;
+  background-color: #140C73;
   position: absolute;
   bottom: 0;
 }
@@ -82,18 +72,18 @@ button {
   transition: 1s;
 }
 
-#fondoCandado {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 40%;
-}
-
 #oro {
   display: none;
   width: 100%;
   height: 100vh;
   position: relative;
+}
+
+#fondoCandado {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 40%;
 }
 
 @media (min-width: 1200px) {
@@ -105,6 +95,9 @@ button {
   #titulo {
     font-size: 400% !important;
   }
+  main {
+    margin-bottom: 45%;
+  }
   #fondoCandado {
     left: 30%;
   }
@@ -113,8 +106,12 @@ button {
   #titulo {
     font-size: 250% !important;
   }
+  main {
+    margin-bottom: 50%;
+  }
   #fondoCandado {
-    display: none;
+    width: 60%;
+    left: 25%;
   }
 }
 @media (max-width: 449px) {
@@ -124,19 +121,8 @@ button {
   #fondoCandado {
     display: none;
   }
-}
-@keyframes texto {
-  0% {
-    transform: translateY(-2px);
-  }
-  25% {
-    transform: translateY(-4px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-  100% {
-    transform: translateY(-8px);
+  main {
+    margin-bottom: 60%;
   }
 }
 

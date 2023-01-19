@@ -23,9 +23,6 @@
     @include('layouts.header')
 
     <main>
-        {{-- ************************************************ --}}
-        {{-- <h1>{{$partidas}}</h1> --}}
-        {{-- ************************************************ --}}
 
         {{-- COFRE --}}
         <section class="align-items-center justify-content-center" id="oro">
@@ -69,7 +66,7 @@
                         </p>
                         @isset($partidas)
                         @if($partidas->juego1 == 1 && $partidas->juego2 == 1)
-                        <button id="animatu" class="btn btn-primary">KUTXA IREKI</button>
+                        <button id="animatu" class="btn">KUTXA IREKI</button>
                         @else
                         <button onclick="location.href='#juegos'" class="btn btn-primary">KUTXA IREKI</button>
                         @endif
