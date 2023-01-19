@@ -113,8 +113,7 @@
                 </div>
 
             {{-- JUEGO --}}
-                {{-- !!!!! @include($candado.'.juego1') --}}
-                @include($candado.'.juego3')
+                @include($candado.'.juego1')
 
             </div>
 

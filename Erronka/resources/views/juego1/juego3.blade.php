@@ -7,9 +7,8 @@
         <label>Calcula el dígito de control del siguiente código de barras: </label>
         <label class="text-danger">8410297120134</label>
         <br>
-        <video class="col w-50 d-block candado" controls>
-            <source src="{{asset('IMG/Calculo el dígito de control.mp4')}}" type="video/mp4">
-        </video>        
+        <iframe class="video col" src="https://www.youtube.com/embed/u2P6uVqNzSw" allowfullscreen></iframe>
+
     </section>
 
     {{-- PREGUNTA CORRECTOR --}}
@@ -18,6 +17,9 @@
 </body>
 
 <style>
-
+    .video{
+        min-height: 35vw;
+        width: 50vw;
+    }
 </style>
 </html>

@@ -4,6 +4,7 @@
     flex-direction: column;
 }
 
+
 .contenedor{
     display: flex;
     text-align: center;
@@ -11,15 +12,18 @@
 
     flex-direction: row;
 
+
     width:40%;
 }
 .tam{
-    width:20%;
+    width:30%;
 }
+
 
 .caja{
     width: 5vh;
     height: 5vh;
+
 
     border: 1px solid black;
     background-color: white;

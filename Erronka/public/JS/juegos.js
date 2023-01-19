@@ -457,31 +457,69 @@ window.onload = () => {
         data() {
             return {
                 div: '',
+                combinacion: [2, 6, 3, 8]
             }
         },
         methods: {
             //DRAG
             drag(e) {
-                this.div = e.target;
+                this.div = e.target.cloneNode(true);
             },
             // DROP
             drop(e) {
                 e.preventDefault();
 
-
                 if(e.target.firstChild == null){
                     e.target.appendChild(this.div);
-                }else{
-                    console.log(e.target);
-                    console.log(this.div);
-                    console.log(e.target.firstChild);
-                    e.target.replaceChild(this.div, e.target.firstChild)
                 }
-                // console.log(e.target);
+                else{
+                    e.target.parentElement.appendChild(this.div);
+                    e.target.remove();
+                }
+
+                let color;
+                switch (this.corrector(this.div.id, this.div.parentElement.id)) {
+                    case 0:
+                        color = "green";
+                        break;
+                    case 1:
+                        color = "orange";
+                        break;
+                    case 2:
+                        color = "red";
+                        break;
+                    default:
+                        break;
+                }
+
+                this.div.style.backgroundColor = color;
+                
             },
             allowDrop(e) {
                 e.preventDefault();
             },
+            corrector(valor, caja){
+                // Rojo
+                let res = 2;
+
+                for(n of this.combinacion){
+
+                    if (n == valor) {
+                        if (n == this.combinacion[caja]) {
+                            //Verde
+                            res = 0;
+                            break;
+                        }
+                        // Amarillo
+                        res = 1;
+                    }
+                };
+
+                return res;
+            },
+            suma(){
+
+            }
         }
     }).mount('#juego6');
 }
