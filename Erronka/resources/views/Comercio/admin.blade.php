@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
                         <label class="etiquetas">Pasaitza</label>
-                        <input type="password" name="pass" class="cambios" value="{{$miUsu->pass}}">
+                        <input readonly type="password" name="pass" class="cambios" value="{{$miUsu->pass}}">
                     </div>
                     <button id="validar" type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar"
                         data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">GORDE</button>

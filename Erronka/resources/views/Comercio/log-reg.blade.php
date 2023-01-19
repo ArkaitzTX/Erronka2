@@ -75,8 +75,11 @@
 
                 <br>
                 @foreach ($errors->all() as $error)
-                    <p class="text-danger text-center">{{ $error }}</p>
+                <ul>
+                    <li class="text-danger text-center">{{ $error }}</li>
+                </ul>
                 @endforeach 
+                <br>
 
 
             </article>
