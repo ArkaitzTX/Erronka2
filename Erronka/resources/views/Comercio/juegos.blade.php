@@ -26,9 +26,9 @@
 
     @include('layouts.header')
 
-    <div id="cosa">
+    <section id="cosa">
         <cosa j="{{$partidas->$candado}}"></cosa>
-    </div>
+    </section>
     
     <main class="mt-5" id="tamaina">
         
@@ -106,7 +106,7 @@
             {{-- TELEPORT --}}
 
         <section class="juegos container mt-5">
-            <div class="tab-pane fade show active" id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
+            <article class="tab-pane fade show active" id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
                                 
             {{-- PISTA --}}
                 <div id="pistas1">
@@ -115,9 +115,9 @@
             {{-- JUEGO --}}
                 @include($candado.'.juego1')
 
-            </div>
+            </article>
 
-            <div class="tab-pane fade  d-none" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
+            <article class="tab-pane fade  d-none" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
                 
             {{-- PISTA --}}
                 <div id="pistas2">
@@ -126,9 +126,9 @@
             {{-- JUEGO --}}
                 @include($candado.'.juego2')
 
-            </div>
+            </article>
 
-            <div class="tab-pane fade d-none" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
+            <article class="tab-pane fade d-none" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
                                 
             {{-- PISTA --}}
                 <div id="pistas3">
@@ -137,7 +137,7 @@
             {{-- JUEGO --}}
                 @include($candado.'.juego3')
 
-            </div>
+            </article>
             
         </section>
     </main>

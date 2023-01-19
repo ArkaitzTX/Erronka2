@@ -82,9 +82,9 @@
         </section>
 
         {{-- <p class="my-3 text-light text-center" id="juegos">Txurdinaga</p> --}}
-        <div class="d-flex justify-content-center">
+        <section class="d-flex justify-content-center">
             <audio id="juegos" src="{{asset('AUDIO/loquendo.mp3')}}" controls></audio>
-        </div>
+        </section>
 
         {{-- LOS JUEGOS --}}
         <section class="container" id="candado">
@@ -114,7 +114,7 @@
                     {{-- CANDADO --}}
                     @isset($partidas)
                     @if($partidas->juego2 == 1)
-                    <h1 class="mx-5">2 0 0</h1> {{-- ! COGERLO DEL JSON --}}
+                    <h1 class="mx-5">2 9 6</h1> {{-- ! COGERLO DEL JSON --}}
                     @else
                     <h1 class="mx-5">* * *</h1>
                     @endif

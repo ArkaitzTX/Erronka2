@@ -34,7 +34,7 @@ function Ganar(c, id){
     // alert(c+"--"+id);
     Swal.fire({
         icon: 'success',
-        title: 'KANDADUA '+c.toUpperCase()+' BUKATUTA DAGO',
+        title: 'KANDADUA BUKATUTA DAGO',
     })
     .then(v => {
         //! ACABAR ESTO PARA QUE GUARDE QUE EL CANDADO
