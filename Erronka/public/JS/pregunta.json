@@ -1,0 +1,26 @@
+[
+    {
+        "pregunta":"Cuenta las 'O's y saca la letra correcta con tu respuesta",
+        "respuesta":"J"
+    },
+    {
+        "pregunta":"Saca la letra correcta con tu respuesta:",
+        "respuesta":"B"
+    },
+    {
+        "pregunta":"Saca la letra correcta con tu respuesta:",
+        "respuesta":"G"
+    },
+    {
+        "pregunta":"Calcula el segundo decimal del importe consigido en el juego",
+        "respuesta":"2"
+    },
+    {
+        "pregunta":"Calcula el segundo numero del importe consigido en el la factura",
+        "respuesta":"9"
+    },
+    {
+        "pregunta":"Descubre la equacion y calcula el resultado para despues añadirle su IVA. Cuando lo tengas su primer numero sera la respuesta",
+        "respuesta":"6"
+    }
+]
