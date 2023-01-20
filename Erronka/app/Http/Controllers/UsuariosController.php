@@ -86,8 +86,7 @@ class UsuariosController extends Controller
             if($request->pass == $usu->pass){
                 session(['usuario' => $usu]);
 
-                // Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear');
-                return view('Comercio.index');
+                return redirect()->action([PartidasController::class, 'index']);
             }   
         }
 

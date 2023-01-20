@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    
 <body>
-    JUEGO 2.1
-    @yield('content')
+    {{-- ! antes era JUEGO 1, Por si se rompe --}}
+    <section id="juego4" class="row d-flex text-center fs-5">
+        <label>Calcula el IVA(21%) del siguiente PVP:</label>      
+        <label class="text-danger">14.98€</label>
+    </section>
+
+    <section id="p1">
+    </section>
 </body>
 </html>

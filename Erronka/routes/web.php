@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\PartidasController;
 
-//Ventana Index
-Route::get('/', function () {
-    return view('Comercio.index');
-})->name('Comercio.index');
+//Ventana Index 1
+// Route::get('/', function () {
+//     return view('Comercio.index');
+// })->name('Comercio.index');
 //Index con #
 Route::get('/#juegos', function () {
     return view('Comercio.index');
@@ -26,11 +26,10 @@ Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.lo
     Route::get('/cerrarSes',  [UsuariosController::class, 'cerrarSes'])->name('Comercio.cerrarSes');
 
 //Juegos
-Route::get('/{candado}/juegos', [PartidasController::class, 'ver'])->name('Comercio.juego');
-    //Editar
-    Route::put('{id}/juegos', [PartidasController::class, 'update'])->name('Comercio.parUptade');
-    //Crear Juego
-    // Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear'); //Esta con el usuario
+    //Ventana Index 2
+    Route::get('/', [PartidasController::class, 'index'])->name('Comercio.index');
+    //VER JUEGO
+    Route::get('/{candado}/juegos', [PartidasController::class, 'ver'])->name('Comercio.juego');
 
 
 // MIDELWARE EVITAR A LOS INVITADOS

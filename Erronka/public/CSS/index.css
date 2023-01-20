@@ -1,95 +1,130 @@
 main {
-  margin-bottom: 15%;
+  background-color: #EFDBC7;
+  padding-bottom: 15%;
 }
 
+button {
+  background-color: #252525 !important;
+  color: #FFFFFE !important;
+}
+
+@media (max-width: 1199.98px) and (min-width: 500px) {
+  main {
+    padding-bottom: 35%;
+  }
+}
+@media (max-width: 499px) and (min-width: 440px) {
+  main {
+    padding-bottom: 45%;
+  }
+}
+@media (max-width: 449px) {
+  main {
+    padding-bottom: 55%;
+  }
+}
 #cofre {
-  /* background-color: #0C1713; */
   height: 100vh;
 }
 #cofre h1 {
+  position: relative;
   margin-top: 15% !important;
   font-size: 700%;
-  z-index: 1;
   animation: texto 1s linear infinite alternate;
+  z-index: 2;
 }
 #cofre button {
+  position: relative;
   height: 7vh;
   min-width: 8vw;
-  z-index: 1;
+  z-index: 2;
 }
 #cofre p {
-  z-index: 1;
+  position: relative;
+  z-index: 2;
 }
 #cofre #fondo {
-  position: absolute;
-  z-index: -1;
   height: 100vh;
   max-width: 100%;
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
-.candado{
+.candado {
   max-width: 40vw;
   max-height: 40vh;
 }
 
 #candado article {
   height: 40vh;
-  background-color: #050505; /* COLOR CANDADO  */
+  background-color: #252525;
   position: relative;
   transform: translateY(4px);
   transition: 1s;
 }
 #candado article h1 {
   font-size: 500%;
-  color: white;/* COLOR H1  */
+  color: #FFFFFE;
   animation: combinacion 1s linear infinite alternate;
   z-index: 1;
 }
 #candado article div {
   height: 25%;
   width: 100%;
-  background-color: #140C73;
+  background-color: #B08D6B;
   position: absolute;
   bottom: 0;
 }
 #candado article:hover {
   transform: translateY(-4px);
   transition: 1s;
-  /* background-color: #140C73; */
 }
 
-#oro{
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: #0C1713;
-}
-
-#fondoCandado{
+#fondoCandado {
   position: absolute;
   z-index: 0;
   top: 0;
   left: 40%;
 }
 
-
+#oro {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
 
 @media (min-width: 1200px) {
-  #titulo{
-    font-size: 800% !important;
+  #titulo {
+    font-size: 550% !important;
   }
 }
-
-@media (max-width: 1199.98px) {
-  #titulo{
-    font-size: 500% !important;
+@media (max-width: 1199.98px) and (min-width: 500px) {
+  #titulo {
+    font-size: 400% !important;
+  }
+  #fondoCandado {
+    left: 30%;
   }
 }
-
-
+@media (max-width: 499px) and (min-width: 440px) {
+  #titulo {
+    font-size: 250% !important;
+  }
+  #fondoCandado {
+    display: none;
+  }
+}
+@media (max-width: 449px) {
+  #titulo {
+    font-size: 200% !important;
+  }
+  #fondoCandado {
+    display: none;
+  }
+}
 @keyframes texto {
   0% {
     transform: translateY(-2px);
@@ -104,6 +139,5 @@ main {
     transform: translateY(-8px);
   }
 }
-@keyframes combinacion {}
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,101 @@
+@import "_main";
+
+$f: #EFDBC7; //Fondo
+
+$d0: #B08D6B; //Div0
+$d1: #E8C39E; //Div1
+$d2: #F5F3F0; //Div2
+
+$b: #FFFFFE; //Blaco
+$n: #252525; //Negro
+
+#fondo {
+    background-color: $f;
+}
+
+#menu {
+    display: table !important;
+    width: 100%;
+}
+
+.menu-btn{
+    background-color: $d0 !important;
+    color: $b !important;
+
+    &:focus{
+        background-color: $d1 !important;
+    }    
+}
+
+.objeto {
+    display: table-cell;
+    background: $d0;
+}
+
+.otro {
+    background-color: $n;
+    border-radius: 10px;
+    padding: 10px;
+    color: $b;
+    margin-left: 1vh;
+}
+
+.page-link{
+    background-color: $d0 !important;
+    &:hover{
+        background-color: $d1 !important;
+    }
+}
+
+#info {
+    // position: absolute;
+    // top: 5;
+    // right: 0;
+
+    background-color: $b !important;
+    color: $n !important;
+    border-radius: 50%;
+
+    width: 5vh;
+    height: 5vh;
+
+    margin-left: 95%;
+    margin-top: 1%;
+}
+
+.juegos {
+    position: relative;
+    background-color: $d1;
+
+    color: $n;
+    border-radius: 5px;
+}
+
+hr{
+    background-color: $n;
+}
+
+.completado{
+    height: 50vh;
+    text-align: center;
+
+    // display: flex;
+    // text-align: center;
+    // justify-content: center !important;
+}
+
+
+@media screen and (max-width: 900px) {
+	#info{
+        width: 4.5vh;
+        height: 4.5vh;
+    
+        margin-left: 80%;
+    }
+}
+
+/* .juegos div {
+    height: 50vh;
+  } */
+
+/*# sourceMappingURL=PantallaJuegos.css.map */

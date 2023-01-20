@@ -2,19 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{asset('CSS/Header,Footer.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('CSS/header_footer.css')}}" rel="stylesheet" type="text/css">
+
+    {{-- BOOTSTRAP --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Comercio</title>
 </head>
 
 <body>
     <header id="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -24,7 +22,7 @@
                 </button>
                 
 
-                <img class="navbar-brand" src="{{asset('IMG/Logo.png')}}" height="36">
+                <img class="navbar-brand" src="{{asset('IMG/Logo.png')}}" alt="logo" height="36">
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -44,6 +42,9 @@
                                 <a href=' {{ route('Comercio.admin') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
                                     {{ session()->get('usuario')->usuario }}
                                 </a>
+                                {{-- ! --}}
+                                <img id="perfil" src="IMG/profile/{{ session()->get('usuario')->foto }}" alt="">
+                                {{-- ! --}}
                             @else
                                 <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
                                     Saioa Hasi
@@ -57,8 +58,6 @@
             </div>
         </nav>
     </header>
-
-    @yield('content')
     
 </body>
 </html>

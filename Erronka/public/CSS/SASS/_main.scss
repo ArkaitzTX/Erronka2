@@ -1,0 +1,38 @@
+$f: #EFDBC7; //Fondo
+
+$d0: #B08D6B; //Div0
+$d1: #E8C39E; //Div1
+$d2: #F5F3F0; //Div2
+
+$b: #FFFFFE; //Blaco
+$n: #252525; //Negro
+
+main {
+    background-color: $f;
+	padding-bottom: 15%;
+}
+button{
+    background-color: $n !important;
+    color: $b !important;
+}
+
+
+@media (max-width: 1199.98px) and (min-width: 500px) {
+	main {
+		padding-bottom: 35%;
+	}
+}
+
+@media (max-width: 499px) and (min-width: 440px) {
+	main {
+		padding-bottom: 45%;
+	}
+}
+
+@media (max-width: 449px) {
+	main {
+		padding-bottom: 55%;
+	}
+}
+
+

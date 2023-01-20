@@ -1,0 +1,40 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+/* FOOTER */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #E8C39E !important;
+}
+footer aside {
+  background-color: #B08D6B !important;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #252525;
+}
+header a {
+  cursor: pointer;
+}
+
+#perfil {
+  max-width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+#color {
+  border: 1px solid #FFFFFE;
+  color: #FFFFFE;
+  background-color: #252525;
+}
+
+/*# sourceMappingURL=header_footer.css.map */

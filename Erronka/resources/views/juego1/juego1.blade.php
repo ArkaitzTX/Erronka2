@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="{{asset('CSS/_juego1.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    JUEGO 1.1
+    <section id="seccion1">
+        <article id="juego1">
+
+        </article>
+        <article id="preguntas1">
+            
+        </article>
+    </section>
+
+    <section id="p1">
+
+    </section>
 </body>
 </html>
