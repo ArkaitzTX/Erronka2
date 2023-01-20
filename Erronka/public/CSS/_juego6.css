@@ -1,0 +1,30 @@
+#juego6{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.contenedor{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+
+    flex-direction: row;
+
+
+    width:40%;
+}
+.tam{
+    width:30%;
+}
+
+
+.caja{
+    width: 5vh;
+    height: 5vh;
+
+
+    border: 1px solid #252525;
+    background-color: #FFFFFE;
+}

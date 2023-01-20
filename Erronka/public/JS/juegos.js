@@ -34,7 +34,7 @@ function Ganar(c, id){
     // alert(c+"--"+id);
     Swal.fire({
         icon: 'success',
-        title: 'KANDADUA '+c.toUpperCase()+' BUKATUTA DAGO',
+        title: 'KANDADUA BUKATUTA DAGO',
     })
     .then(v => {
         //! ACABAR ESTO PARA QUE GUARDE QUE EL CANDADO
@@ -186,10 +186,10 @@ window.onload = () => {
                 <label class="col-form-label">{{ pregunta }}</label>
             </div>
             <div class="col-auto">
-                <input type="text" class="form-control" v-model="miRespuesta">
+                <input type="text" class="form-control"  @keydown='longitud()' v-model="miRespuesta">
             </div>
             <div class="col-auto">
-                <input type="button" class="btn btn-outline-light" value="Bidali" v-on:click='corregir()'>
+                <input type="button" class="btn btn-dark" value="Bidali" @click='corregir()'>
             </div>
         </div>
         <br>
@@ -208,6 +208,9 @@ window.onload = () => {
                     }
                 })
                 .catch(err => console.log(err));
+            },
+            longitud(){
+                this.miRespuesta = this.miRespuesta != null ? this.miRespuesta.substring(1) : '';
             }
         },
         created() {
@@ -449,28 +452,76 @@ window.onload = () => {
             }
         }).mount('#juego2')
 
-    // JUEGO 3----------------------------------------------------------------------------------
-    // const juego1 = Vue.createApp({
-    //     data() {
-    //         return {
-    //             pregunta: "Calcula el dígito de control del siguiente código de barras: 8410297120134",
-    //             respuesta: null,
-    //             correcta: 72
-    //         }
-    //     },
-    //     methods: {
-    //         corregir() {
-    //             if (this.respuesta === this.correcta) {
-    //                 alert("Ta bien");
-    //             } else {
-    //                 alert("ta mal");
-    //             }
-    //         }
-         
-    //     }
-    // });
+    // JUEGO 6----------------------------------------------------------------------------------
+    Vue.createApp({
+        data() {
+            return {
+                div: '',
+                combinacion: [2, 6, 3, 8]
+            }
+        },
+        methods: {
+            //DRAG
+            drag(e) {
+                this.div = e.target.cloneNode(true);
+            },
+            // DROP
+            drop(e) {
+                e.preventDefault();
 
-    // juego1.mount('#juego1');
+                if(e.target.firstChild == null){
+                    e.target.appendChild(this.div);
+                }
+                else{
+                    e.target.parentElement.appendChild(this.div);
+                    e.target.remove();
+                }
+
+                let color;
+                switch (this.corrector(this.div.id, this.div.parentElement.id)) {
+                    case 0:
+                        color = "green";
+                        break;
+                    case 1:
+                        color = "orange";
+                        break;
+                    case 2:
+                        color = "red";
+                        break;
+                    default:
+                        break;
+                }
+
+                this.div.style.backgroundColor = color;
+                
+            },
+            allowDrop(e) {
+                e.preventDefault();
+            },
+            corrector(valor, caja){
+                // Rojo
+                let res = 2;
+
+                for(n of this.combinacion){
+
+                    if (n == valor) {
+                        if (n == this.combinacion[caja]) {
+                            //Verde
+                            res = 0;
+                            break;
+                        }
+                        // Amarillo
+                        res = 1;
+                    }
+                };
+
+                return res;
+            },
+            suma(){
+
+            }
+        }
+    }).mount('#juego6');
 }
 
 

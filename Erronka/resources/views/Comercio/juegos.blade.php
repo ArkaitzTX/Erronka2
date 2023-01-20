@@ -8,7 +8,7 @@
     <title>MERKATARITZA</title>
 
     {{-- CSS --}}
-    <link href="{{asset('CSS/PantallaJuegos.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('CSS/juegos.css')}}" rel="stylesheet" type="text/css">
 
     {{-- JS --}}
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> {{-- VUE  --}}
@@ -26,9 +26,9 @@
 
     @include('layouts.header')
 
-    <div id="cosa">
+    <section id="cosa">
         <cosa j="{{$partidas->$candado}}"></cosa>
-    </div>
+    </section>
     
     <main class="mt-5" id="tamaina">
         
@@ -56,19 +56,19 @@
             <ul class="nav nav-pills container" id="menu" role="tablist">
 
                 <li class="objeto nav-item text-center rounded" role="presentation">
-                    <button class="nav-link active w-100 text-light" id="pills-Juego1-tab" data-bs-toggle="pill"
+                    <button class="menu-btn nav-link active w-100 text-light" id="pills-Juego1-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego1" type="button" role="tab" aria-controls="pills-Juego1"
                         aria-selected="true">Jolasa 1</button>
                 </li>
                 <li class="objeto nav-item text-center rounded mx-3"
                     role="presentation">
-                    <button class="nav-link w-100 text-light" id="pills-Juego2-tab" data-bs-toggle="pill"
+                    <button class="menu-btn nav-link w-100 text-light" id="pills-Juego2-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego2" type="button" role="tab" aria-controls="pills-Juego2"
                         aria-selected="false">Jolasa 2</button>
                 </li>
                 <li class="objeto nav-item text-center rounded  mx-3"
                     role="presentation">
-                    <button class="nav-link w-100 text-light" id="pills-Juego3-tab" data-bs-toggle="pill"
+                    <button class="menu-btn nav-link w-100 text-light" id="pills-Juego3-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego3" type="button" role="tab" aria-controls="pills-Juego3"
                         aria-selected="false">Jolasa 3</button>
                 </li>
@@ -106,7 +106,7 @@
             {{-- TELEPORT --}}
 
         <section class="juegos container mt-5">
-            <div class="tab-pane fade show active" id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
+            <article class="tab-pane fade show active" id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
                                 
             {{-- PISTA --}}
                 <div id="pistas1">
@@ -115,9 +115,9 @@
             {{-- JUEGO --}}
                 @include($candado.'.juego1')
 
-            </div>
+            </article>
 
-            <div class="tab-pane fade  d-none" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
+            <article class="tab-pane fade  d-none" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
                 
             {{-- PISTA --}}
                 <div id="pistas2">
@@ -126,9 +126,9 @@
             {{-- JUEGO --}}
                 @include($candado.'.juego2')
 
-            </div>
+            </article>
 
-            <div class="tab-pane fade d-none" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
+            <article class="tab-pane fade d-none" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
                                 
             {{-- PISTA --}}
                 <div id="pistas3">
@@ -137,7 +137,7 @@
             {{-- JUEGO --}}
                 @include($candado.'.juego3')
 
-            </div>
+            </article>
             
         </section>
     </main>

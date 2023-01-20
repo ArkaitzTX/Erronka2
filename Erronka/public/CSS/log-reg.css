@@ -1,0 +1,64 @@
+main {
+  background-color: #EFDBC7;
+  padding-bottom: 15%;
+}
+
+button {
+  background-color: #252525 !important;
+  color: #FFFFFE !important;
+}
+
+@media (max-width: 1199.98px) and (min-width: 500px) {
+  main {
+    padding-bottom: 35%;
+  }
+}
+@media (max-width: 499px) and (min-width: 440px) {
+  main {
+    padding-bottom: 45%;
+  }
+}
+@media (max-width: 449px) {
+  main {
+    padding-bottom: 55%;
+  }
+}
+main {
+  padding-top: 5%;
+}
+main section {
+  background-color: #E8C39E;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  min-height: 400px;
+}
+
+#menu {
+  display: table !important;
+  width: 100%;
+}
+
+.menu-obj {
+  display: table-cell;
+  background: #B08D6B;
+}
+
+.menu-btn {
+  background-color: #B08D6B !important;
+  color: #FFFFFE !important;
+}
+.menu-btn:focus {
+  background-color: #E8C39E !important;
+}
+
+.formulario input {
+  margin-bottom: 12px;
+  border-radius: 3px;
+}
+.formulario button {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=log-reg.css.map */
