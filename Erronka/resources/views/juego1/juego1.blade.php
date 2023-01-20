@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="{{asset('CSS/juego1.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('CSS/_juego1.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <section id="seccion1">

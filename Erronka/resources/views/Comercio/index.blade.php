@@ -68,7 +68,7 @@
                         @if($partidas->juego1 == 1 && $partidas->juego2 == 1)
                         <button id="animatu" class="btn">KUTXA IREKI</button>
                         @else
-                        <button onclick="location.href='#juegos'" class="btn btn-primary">KUTXA IREKI</button>
+                        <button onclick="location.href='#juegos'" class="btn">KUTXA IREKI</button>
                         @endif
                         @endisset
 
@@ -97,7 +97,7 @@
                     @endif
                     @endisset
 
-                    <img id="fondoCandado" src="{{asset('IMG/cerradura.png')}}" alt="fondo">
+                    <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
                         <h3 class="mx-5 my-4">KANDADU Nº1</h3>
                     </div>
@@ -117,7 +117,7 @@
                     @endif
                     @endisset
 
-                    <img id="fondoCandado" src="{{asset('IMG/cerradura.png')}}" alt="fondo">
+                    <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
                         <h3 class="mx-5 my-4">KANDADU Nº2</h3>
                     </div>

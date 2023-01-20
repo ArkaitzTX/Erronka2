@@ -21,7 +21,7 @@
     max-width: 2.5vw;
     height: 2.7vw;
     margin: .2vh;
-    border: 0.1vh solid black;
+    border: 0.1vh solid #252525;
 
     text-align: center;
 }
@@ -39,7 +39,7 @@
     top: .2vw;
 
     font-size: .8vw;
-    color: black;
+    color: #252525;
 }
 
 input:focus{

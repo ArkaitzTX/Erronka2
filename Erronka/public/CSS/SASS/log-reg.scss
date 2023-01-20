@@ -1,0 +1,55 @@
+@import "_main";
+
+$f: #EFDBC7; //Fondo
+
+$d0: #B08D6B; //Div0
+$d1: #E8C39E; //Div1
+$d2: #F5F3F0; //Div2
+
+$b: #FFFFFE; //Blaco
+$n: #252525; //Negro
+
+
+main{
+    padding-top: 5%;
+
+    section{
+        background-color: $d1;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    
+        max-width: 500px;
+        min-height: 400px;
+    }
+}
+
+
+#menu {
+    display: table !important;
+    width: 100%;
+}
+
+.menu-obj {
+    display: table-cell;
+    background: $d0;
+}
+
+.menu-btn{
+    background-color: $d0 !important;
+    color: $b !important;
+
+    &:focus{
+        background-color: $d1 !important;
+    }    
+}
+
+.formulario{
+    input {
+        margin-bottom: 12px;
+        border-radius: 3px;
+    }
+    button {
+        margin-top: 20px;
+    }
+}

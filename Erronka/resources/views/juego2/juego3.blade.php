@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{asset('CSS/juego6.css')}}">
+    <link rel="stylesheet" href="{{asset('CSS/_juego6.css')}}">
 </head>
 <body>
 
     <section id="juego6">
 
-        <h5><span class="text-danger">Rojo</span>: No esta | <span class="text-warning">Amarillo</span>: Es en otro lugar | <span class="text-success">Verde</span>: Es la posicion correcta</h5>
+        <h5>Completa la ecuacion arrastrando los numeros en su posicion correcta.</h5>
+        <h5><span class="text-danger">Rojo</span>: No esta <br> <span class="text-warning">Amarillo</span>: Es en otro lugar <br> <span class="text-success">Verde</span>: Es la posicion correcta</h5>
         <br>
 
         <div class="contenedor tam">

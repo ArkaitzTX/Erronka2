@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link href="{{asset('CSS/Header,Footer.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('CSS/header_footer.css')}}" rel="stylesheet" type="text/css">
 
     {{-- BOOTSTRAP --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -12,7 +12,7 @@
 
 <body>
     <header id="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

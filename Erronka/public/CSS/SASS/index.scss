@@ -55,7 +55,7 @@ $n: #252525; //Negro
 #candado {
 	article {
 		height: 40vh;
-		background-color: #050505;
+		background-color: $n;
 		position: relative;
 		transform: translateY(4px);
 		transition: 1s;
