@@ -6,7 +6,7 @@
     <section id="juego2">
 
         <form action="">
-            <table class="table text-light">
+            <table class="table">
                 <tr class="tr">
                     <th><label class="preg" >@{{page + 1 + ".- " }}@{{preguntas[page].pregunta}}</label></th>
                 </tr>

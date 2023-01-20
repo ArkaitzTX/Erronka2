@@ -30,10 +30,6 @@ Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.lo
     Route::get('/', [PartidasController::class, 'index'])->name('Comercio.index');
     //VER JUEGO
     Route::get('/{candado}/juegos', [PartidasController::class, 'ver'])->name('Comercio.juego');
-    //Editar
-    // Route::post('{id}/juegos', [PartidasController::class, 'update'])->name('Comercio.parUptade');
-    //Crear Juego
-    // Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear'); //Esta con el usuario
 
 
 // MIDELWARE EVITAR A LOS INVITADOS

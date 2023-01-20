@@ -8,7 +8,7 @@
     <title>MERKATARITZA</title>
 
     {{-- CSS --}}
-    <link href="{{asset('CSS/PantallaJuegos.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('CSS/juegos.css')}}" rel="stylesheet" type="text/css">
 
     {{-- JS --}}
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> {{-- VUE  --}}
@@ -56,19 +56,19 @@
             <ul class="nav nav-pills container" id="menu" role="tablist">
 
                 <li class="objeto nav-item text-center rounded" role="presentation">
-                    <button class="nav-link active w-100 text-light" id="pills-Juego1-tab" data-bs-toggle="pill"
+                    <button class="menu-btn nav-link active w-100 text-light" id="pills-Juego1-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego1" type="button" role="tab" aria-controls="pills-Juego1"
                         aria-selected="true">Jolasa 1</button>
                 </li>
                 <li class="objeto nav-item text-center rounded mx-3"
                     role="presentation">
-                    <button class="nav-link w-100 text-light" id="pills-Juego2-tab" data-bs-toggle="pill"
+                    <button class="menu-btn nav-link w-100 text-light" id="pills-Juego2-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego2" type="button" role="tab" aria-controls="pills-Juego2"
                         aria-selected="false">Jolasa 2</button>
                 </li>
                 <li class="objeto nav-item text-center rounded  mx-3"
                     role="presentation">
-                    <button class="nav-link w-100 text-light" id="pills-Juego3-tab" data-bs-toggle="pill"
+                    <button class="menu-btn nav-link w-100 text-light" id="pills-Juego3-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego3" type="button" role="tab" aria-controls="pills-Juego3"
                         aria-selected="false">Jolasa 3</button>
                 </li>

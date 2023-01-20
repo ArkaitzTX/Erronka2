@@ -1,0 +1,101 @@
+main {
+  background-color: #EFDBC7;
+  padding-bottom: 15%;
+}
+
+button {
+  background-color: #252525 !important;
+  color: #FFFFFE !important;
+}
+
+@media (max-width: 1199.98px) and (min-width: 500px) {
+  main {
+    padding-bottom: 35%;
+  }
+}
+@media (max-width: 499px) and (min-width: 440px) {
+  main {
+    padding-bottom: 45%;
+  }
+}
+@media (max-width: 449px) {
+  main {
+    padding-bottom: 55%;
+  }
+}
+#fondo {
+  background-color: #EFDBC7;
+}
+
+#menu {
+  display: table !important;
+  width: 100%;
+}
+
+.menu-btn {
+  background-color: #B08D6B !important;
+  color: #FFFFFE !important;
+}
+.menu-btn:focus {
+  background-color: #E8C39E !important;
+}
+
+.objeto {
+  display: table-cell;
+  background: #B08D6B;
+}
+
+.otro {
+  background-color: #252525;
+  border-radius: 10px;
+  padding: 10px;
+  color: #FFFFFE;
+  margin-left: 1vh;
+}
+
+.page-link {
+  background-color: #B08D6B !important;
+}
+.page-link:hover {
+  background-color: #E8C39E !important;
+}
+
+#info {
+  background-color: #FFFFFE !important;
+  color: #252525 !important;
+  border-radius: 50%;
+  width: 5vh;
+  height: 5vh;
+  margin-left: 95%;
+  margin-top: 1%;
+}
+
+.juegos {
+  position: relative;
+  background-color: #E8C39E;
+  color: #252525;
+  border-radius: 5px;
+}
+
+hr {
+  background-color: #252525;
+}
+
+.completado {
+  height: 50vh;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  #info {
+    width: 4.5vh;
+    height: 4.5vh;
+    margin-left: 80%;
+  }
+}
+/* .juegos div {
+    height: 50vh;
+  } */
+/*# sourceMappingURL=PantallaJuegos.css.map */
+
+/*# sourceMappingURL=juegos.css.map */

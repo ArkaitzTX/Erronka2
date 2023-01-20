@@ -1,0 +1,160 @@
+$f: #EFDBC7; //Fondo
+
+$d0: #B08D6B; //Div0
+$d1: #E8C39E; //Div1
+$d2: #F5F3F0; //Div2
+
+$b: #FFFFFE; //Blaco
+$n: #252525; //Negro
+
+
+html, main, body{
+    background-color: $f !important;
+}
+
+
+/* GENERAL */
+#editar input {
+    width: 100%;
+    max-height: 5vh;
+    border: 1px $n solid;
+    border-radius: 10px;
+}
+
+#editar button {
+    width: 30vh;
+    height: 6vh;
+}
+
+#editar img {
+    width: 25vh;
+    height: 30vh;
+}
+
+.etiquetas {
+    width: 100%;
+    margin: 0.5%;
+    border-radius: 10px;
+}
+
+.editimagen {
+    max-width: 50% !important;
+    margin-left: 0% !important;
+}
+
+input[type=file] {
+    display: none;
+    width: 25vh !important;
+}
+
+.imagen {
+    border: 1px solid $d2;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px black solid;
+    border-radius: 10px;
+    max-width: 25vh !important;
+    max-height: 20% !important;
+}
+
+#rol input {
+    height: 5vh;
+    border: 1px $n solid;
+    border-radius: 10px;
+    width: 30vh;
+}
+
+#rol button {
+    height: 5vh;
+    border: 1px $n solid;
+    border-radius: 10px;
+}
+
+#eliminar select {
+    height: 5vh;
+    border: 1px $n solid;
+    border-radius: 10px;
+    width: 30vh;
+}
+
+#eliminar button {
+    height: 5vh;
+    border: 1px $n solid;
+    border-radius: 10px;
+}
+
+#cerrar {
+    position: absolute;
+    margin-top: 1%;
+    left: 80%;
+    z-index: 10;
+    border: $b 1px solid;
+}
+
+@media screen and (min-width: 980px) {
+    #editar input {
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #editar input {
+        width: auto;
+    }
+
+    .erabiltzailea {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #editar input {
+        width: 100%;
+    }
+
+    #editar button {
+        width: 100%;
+    }
+
+    .editimagen {
+        justify-content: center;
+        margin-left: 1%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .editimagen {
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .erabiltzailea {
+        width: 100%;
+    }
+
+    #editar input {
+        width: 100%;
+    }
+}
+
+
+
+@keyframes error {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-2x);
+    }
+
+    50% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
