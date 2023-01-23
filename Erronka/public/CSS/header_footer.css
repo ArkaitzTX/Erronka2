@@ -1,3 +1,11 @@
+:root {
+  --f: white;
+  --d0: white;
+  --d1: white;
+  --d2: white;
+  --h: white;
+}
+
 html {
   min-height: 100%;
   position: relative;
@@ -8,10 +16,10 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #323232 !important;
+  background-color: var(--d1) !important;
 }
 footer aside {
-  background-color: #d2b202 !important;
+  background-color: var(--d0) !important;
 }
 
 /* HEADER */
@@ -19,9 +27,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 5;
-  background-color: #191919;
+  background-color: var(--h);
 }
 header a {
+  color: #FFFFFE !important;
   cursor: pointer;
 }
 

@@ -14,7 +14,6 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> {{-- VUE  --}}
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> {{-- AXIOX  --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> {{-- ALERT  --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>{{-- JQUERY  --}}
 
     <script src="{{asset('JS/juegos.js')}}"></script>
 

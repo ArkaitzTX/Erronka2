@@ -1,17 +1,12 @@
-// $f: #EFDBC7; //Fondo
+@import "_colores";
 
-// $d0: #B08D6B; //Div0
-// $d1: #E8C39E; //Div1
-// $d2: #F5F3F0; //Div2
+$f: var(--f); //Fondo
 
-// $b: #FFFFFE; //Blaco
-// $n: #252525; //Negro
+$d0: var(--d0); //Div0
+$d1: var(--d1); //Div1
+$d2: var(--d2); //Div2
 
-$f: #252525; //Fondo
-
-$d0: #d2b202; //Div0
-$d1: #323232; //Div1
-$d2: #F5F3F0; //Div2
+$h: var(--h); //Header
 
 $b: #FFFFFE; //Blaco
 $n: #191919; //Negro
@@ -42,9 +37,10 @@ header{
   position: sticky;
   top: 0;
   z-index: 5;
-  background-color: $n;
-
-    a{
+  background-color: $h;
+  
+  a{
+        color: $b !important;
         cursor: pointer
     }
 }

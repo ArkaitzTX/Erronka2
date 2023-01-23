@@ -1,11 +1,27 @@
+:root {
+  --f: white;
+  --d0: white;
+  --d1: white;
+  --d2: white;
+  --h: white;
+}
+
+:root {
+  --f: white;
+  --d0: white;
+  --d1: white;
+  --d2: white;
+  --h: white;
+}
+
 main {
-  background-color: #252525;
+  background-color: var(--f);
   padding-bottom: 15%;
 }
 
-button:not(.nocolor) {
+input[type=button], button:not(.nocolor), .elBoton {
   color: #FFFFFE !important;
-  background-color: #d2b202 !important;
+  background-color: var(--d0) !important;
 }
 
 @media (max-width: 1199.98px) and (min-width: 500px) {
@@ -73,7 +89,7 @@ button:not(.nocolor) {
 #candado article div {
   height: 25%;
   width: 100%;
-  background-color: #d2b202;
+  background-color: var(--d0);
   position: absolute;
   bottom: 0;
 }

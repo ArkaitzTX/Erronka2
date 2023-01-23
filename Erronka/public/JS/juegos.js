@@ -189,7 +189,7 @@ window.onload = () => {
                 <input type="text" class="form-control"  @keydown='longitud()' v-model="miRespuesta">
             </div>
             <div class="col-auto">
-                <input type="button" class="btn btn-dark" value="Bidali" @click='corregir()'>
+                <input type="button" class="btn" value="Bidali" @click='corregir()'>
             </div>
         </div>
         <br>

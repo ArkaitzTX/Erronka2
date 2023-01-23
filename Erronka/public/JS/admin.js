@@ -77,4 +77,16 @@ $(document).ready(function () {
     //         return confirm();
     //     }
     // });
+
+
+
+
+
+
+    // $(document).on("keypress", "#cerrar", function () {
+    //     $(document).on("mouseover", "#cerrar", function () {
+    //         // OTROS
+    //         console.log("SIMIO");
+    //     });
+    // });
 });
