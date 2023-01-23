@@ -22,7 +22,7 @@ Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.lo
     Route::post('/log-reg',  [UsuariosController::class, 'store'])->name('Comercio.usuNuevo');
     //Login
     Route::post('/',  [UsuariosController::class, 'logSes'])->name('Comercio.logSes');
-    //Cerrar Secion
+    //Cerrar Sesion
     Route::get('/cerrarSes',  [UsuariosController::class, 'cerrarSes'])->name('Comercio.cerrarSes');
 
 //Juegos

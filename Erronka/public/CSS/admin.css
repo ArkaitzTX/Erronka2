@@ -1,12 +1,21 @@
+* {
+  color: #FFFFFE;
+}
+
+button, .boton {
+  color: #FFFFFE !important;
+  background-color: #d2b202 !important;
+}
+
 html, main, body {
-  background-color: #EFDBC7 !important;
+  background-color: #252525 !important;
 }
 
 /* GENERAL */
 #editar input {
   width: 100%;
   max-height: 5vh;
-  border: 1px #252525 solid;
+  border: 1px #191919 solid;
   border-radius: 10px;
 }
 
@@ -47,29 +56,33 @@ input[type=file] {
   max-height: 20% !important;
 }
 
+input {
+  color: #191919 !important;
+}
+
 #rol input {
   height: 5vh;
-  border: 1px #252525 solid;
+  border: 1px #191919 solid;
   border-radius: 10px;
   width: 30vh;
 }
 
 #rol button {
   height: 5vh;
-  border: 1px #252525 solid;
+  border: 1px #191919 solid;
   border-radius: 10px;
 }
 
 #eliminar select {
   height: 5vh;
-  border: 1px #252525 solid;
+  border: 1px #191919 solid;
   border-radius: 10px;
   width: 30vh;
 }
 
 #eliminar button {
   height: 5vh;
-  border: 1px #252525 solid;
+  border: 1px #191919 solid;
   border-radius: 10px;
 }
 

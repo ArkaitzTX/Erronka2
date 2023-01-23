@@ -8,10 +8,10 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #E8C39E !important;
+  background-color: #323232 !important;
 }
 footer aside {
-  background-color: #B08D6B !important;
+  background-color: #d2b202 !important;
 }
 
 /* HEADER */
@@ -19,7 +19,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 5;
-  background-color: #252525;
+  background-color: #191919;
 }
 header a {
   cursor: pointer;
@@ -34,7 +34,7 @@ header a {
 #color {
   border: 1px solid #FFFFFE;
   color: #FFFFFE;
-  background-color: #252525;
+  background-color: #191919;
 }
 
 /*# sourceMappingURL=header_footer.css.map */

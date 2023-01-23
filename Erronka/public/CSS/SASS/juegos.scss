@@ -1,13 +1,28 @@
 @import "_main";
 
-$f: #EFDBC7; //Fondo
+// $f: #EFDBC7; //Fondo
 
-$d0: #B08D6B; //Div0
-$d1: #E8C39E; //Div1
+// $d0: #B08D6B; //Div0
+// $d1: #E8C39E; //Div1
+// $d2: #F5F3F0; //Div2
+
+// $b: #FFFFFE; //Blaco
+// $n: #252525; //Negro
+
+$f: #252525; //Fondo
+
+$d0: #d2b202; //Div0
+$d1: #323232; //Div1
 $d2: #F5F3F0; //Div2
 
 $b: #FFFFFE; //Blaco
-$n: #252525; //Negro
+$n: #191919; //Negro
+
+// MODO OSCURO*******
+*{
+    color: $b;
+}
+// MODO OSCURO*******
 
 #fondo {
     background-color: $f;

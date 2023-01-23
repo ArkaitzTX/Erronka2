@@ -1,11 +1,11 @@
 main {
-  background-color: #EFDBC7;
+  background-color: #252525;
   padding-bottom: 15%;
 }
 
-button {
-  background-color: #252525 !important;
+button:not(.nocolor) {
   color: #FFFFFE !important;
+  background-color: #d2b202 !important;
 }
 
 @media (max-width: 1199.98px) and (min-width: 500px) {
@@ -59,7 +59,7 @@ button {
 
 #candado article {
   height: 40vh;
-  background-color: #252525;
+  background-color: #191919;
   position: relative;
   transform: translateY(4px);
   transition: 1s;
@@ -73,7 +73,7 @@ button {
 #candado article div {
   height: 25%;
   width: 100%;
-  background-color: #B08D6B;
+  background-color: #d2b202;
   position: absolute;
   bottom: 0;
 }

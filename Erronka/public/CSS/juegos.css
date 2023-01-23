@@ -1,11 +1,11 @@
 main {
-  background-color: #EFDBC7;
+  background-color: #252525;
   padding-bottom: 15%;
 }
 
-button {
-  background-color: #252525 !important;
+button:not(.nocolor) {
   color: #FFFFFE !important;
+  background-color: #d2b202 !important;
 }
 
 @media (max-width: 1199.98px) and (min-width: 500px) {
@@ -23,8 +23,12 @@ button {
     padding-bottom: 55%;
   }
 }
+* {
+  color: #FFFFFE;
+}
+
 #fondo {
-  background-color: #EFDBC7;
+  background-color: #252525;
 }
 
 #menu {
@@ -33,20 +37,20 @@ button {
 }
 
 .menu-btn {
-  background-color: #B08D6B !important;
+  background-color: #d2b202 !important;
   color: #FFFFFE !important;
 }
 .menu-btn:focus {
-  background-color: #E8C39E !important;
+  background-color: #323232 !important;
 }
 
 .objeto {
   display: table-cell;
-  background: #B08D6B;
+  background: #d2b202;
 }
 
 .otro {
-  background-color: #252525;
+  background-color: #191919;
   border-radius: 10px;
   padding: 10px;
   color: #FFFFFE;
@@ -54,15 +58,15 @@ button {
 }
 
 .page-link {
-  background-color: #B08D6B !important;
+  background-color: #d2b202 !important;
 }
 .page-link:hover {
-  background-color: #E8C39E !important;
+  background-color: #323232 !important;
 }
 
 #info {
   background-color: #FFFFFE !important;
-  color: #252525 !important;
+  color: #191919 !important;
   border-radius: 50%;
   width: 5vh;
   height: 5vh;
@@ -72,13 +76,13 @@ button {
 
 .juegos {
   position: relative;
-  background-color: #E8C39E;
-  color: #252525;
+  background-color: #323232;
+  color: #191919;
   border-radius: 5px;
 }
 
 hr {
-  background-color: #252525;
+  background-color: #191919;
 }
 
 .completado {

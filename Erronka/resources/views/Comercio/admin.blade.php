@@ -30,7 +30,7 @@
                 {{-- IMAGEN --}}
                 <section class="row col-lg-3 col-md-6 editimagen">
                     <img id="imagenUsu" src="IMG/profile/{{ $miUsu->foto }}" alt="Perfil" class="col-12">
-                    <label class="imagen col-12 text-center btn btn-dark my-2">
+                    <label class="imagen col-12 text-center btn btn-dark my-2 boton">
                         <input type="file" name="img" class="cambios imagen col-12 text-center btn btn-dark my-2">
                         IRUDIA
                     </label>
@@ -101,7 +101,7 @@
     </main>
 
     {{-- CERRAR --}}
-    <a href="{{ route('Comercio.cerrarSes') }}" type="button" class="btn btn-dark" id="cerrar">
+    <a href="{{ route('Comercio.cerrarSes') }}" type="button" class="btn btn-dark boton" id="cerrar">
         Saioa itxi
     </a>
 
