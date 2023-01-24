@@ -10,6 +10,10 @@ class PartidasController extends Controller
     //VER
     public function index()
     {
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         if(isset(session()->get('usuario')->id)){
             $partidas = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0];
             return view('Comercio.index', compact('partidas'));
@@ -20,6 +24,10 @@ class PartidasController extends Controller
     //VER ID
     public function ver($candado)
     {
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         if(null === session()->get('usuario')){
             return view('Comercio.log-reg');
         }
@@ -29,6 +37,18 @@ class PartidasController extends Controller
         $usuario = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0]->id;
         return view('Comercio.juegos', compact('partidas', 'candado', 'usuario'));
     }
+
+    function cambioIdioma(){
+        if(session()->has('idioma')){
+            app()->setLocale(session()->get('idioma'));
+        }
+    }
+
+
+
+
+
+
     //CREAR
     // public function store(Request $request)
     // {

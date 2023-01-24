@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\PartidasController;
 
+// IDIOMA
+// App::setLocale("eu");
+Route::get('/idioma', [UsuariosController::class, 'idioma'])->name('Comercio.idioma');
+
+
+
 //Ventana Index 1
 // Route::get('/', function () {
 //     return view('Comercio.index');

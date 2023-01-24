@@ -57,18 +57,15 @@
                     <img class="col d-none d-xl-block candado" src="{{asset('IMG/candado.png')}}" alt="">
                     <div class="col">
                         <img id="fondo" src="{{asset('IMG/fondo5.png')}}" alt="fondo">
-                        <h1 id="titulo" class="mb-5 text-dark">MERKATARITZA</h1>
+                        <h1 id="titulo" class="mb-5 text-dark"> {{__("index.titulo")}} {{-- !idioma --}}</h1> 
                         <p class="mb-5 text-center text-dark">
-                            Bilatu 2 kandaduen konbinazioa joko ezberdinetan, kutxa desblokeatu ahal izateko. Joko
-                            bakoitzak letra bat emango dizu,
-                            kandaduaren konbinazioaren zati bat izango da. Bi kandaduak irekita dituzunean, kutxa ireki
-                            dezakezu.
+                            {{__("index.texto")}} {{-- !idioma --}}
                         </p>
                         @isset($partidas)
                         @if($partidas->juego1 == 1 && $partidas->juego2 == 1)
-                        <button id="animatu" class="btn">KUTXA IREKI</button>
+                        <button id="animatu" class="btn">{{__("index.boton")}} {{-- !idioma --}}</button>
                         @else
-                        <button onclick="location.href='#juegos'" class="btn">KUTXA IREKI</button>
+                        <button onclick="location.href='#juegos'" class="btn">{{__("index.boton")}} {{-- !idioma --}}</button>
                         @endif
                         @endisset
 
@@ -99,7 +96,7 @@
 
                     <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
-                        <h3 class="mx-5 my-4">KANDADU Nº1</h3>
+                        <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} Nº1</h3>
                     </div>
                 </article>
             </a>
@@ -119,7 +116,7 @@
 
                     <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
-                        <h3 class="mx-5 my-4">KANDADU Nº2</h3>
+                        <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} Nº2</h3>
                     </div>
                 </article>
             </a>

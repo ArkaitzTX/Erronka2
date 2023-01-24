@@ -9,6 +9,7 @@ const COLORES = [
         d2: '#F5F3F0',
 
         h: '#252525',
+        t: '#191919'
     },
     {
         // OSCURO
@@ -19,6 +20,7 @@ const COLORES = [
         d2: '#F5F3F0',
 
         h: '#191919',
+        t: '#FFFFFE'
     },
     {
         // BEIGE
@@ -29,6 +31,7 @@ const COLORES = [
         d2: '#F5F3F0',
 
         h: '#B08D6B',
+        t: '#FFFFFE'
     },
 ];
 
@@ -59,4 +62,5 @@ function aplicarColor() {
     rootElement.style.setProperty('--d2', COLORES[colorElegido].d2);
 
     rootElement.style.setProperty('--h', COLORES[colorElegido].h);
+    rootElement.style.setProperty('--t', COLORES[colorElegido].t);
 }

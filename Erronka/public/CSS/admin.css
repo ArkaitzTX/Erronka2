@@ -4,10 +4,11 @@
   --d1: #323232;
   --d2: #F5F3F0;
   --h: #191919;
+  --t: #FFFFFE;
 }
 
 * {
-  color: #FFFFFE;
+  color: var(--t);
 }
 
 button, .boton {

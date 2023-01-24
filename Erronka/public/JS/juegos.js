@@ -129,7 +129,7 @@ window.onload = () => {
             }
         },
         template: `
-            <strong class="otro">Erlojua: {{ minutos }}:{{ segundos }}</strong>
+            <strong class="otro">{{ minutos }}:{{ segundos }}</strong>
         `,
         methods: {
 

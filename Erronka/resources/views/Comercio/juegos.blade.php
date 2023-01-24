@@ -44,7 +44,7 @@
                     <vidas></vidas>
                 </div> --}}
                 <div>
-                    <strong class="otro">Bizitzak: <span id="vidas">3</span></strong>
+                    <strong class="otro">{{__("juegos.v")}} {{-- !idioma --}} <span id="vidas">3</span></strong>
                 </div>
                 <div id="reloj">
                     <reloj></reloj>
@@ -57,19 +57,19 @@
                 <li class="objeto nav-item text-center rounded" role="presentation">
                     <button class="menu-btn nav-link active w-100 text-light" id="pills-Juego1-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego1" type="button" role="tab" aria-controls="pills-Juego1"
-                        aria-selected="true">Jolasa 1</button>
+                        aria-selected="true">{{__("juegos.j1")}} {{-- !idioma --}}</button>
                 </li>
                 <li class="objeto nav-item text-center rounded mx-3"
                     role="presentation">
                     <button class="menu-btn nav-link w-100 text-light" id="pills-Juego2-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego2" type="button" role="tab" aria-controls="pills-Juego2"
-                        aria-selected="false">Jolasa 2</button>
+                        aria-selected="false">{{__("juegos.j2")}} {{-- !idioma --}}</button>
                 </li>
                 <li class="objeto nav-item text-center rounded  mx-3"
                     role="presentation">
                     <button class="menu-btn nav-link w-100 text-light s" id="pills-Juego3-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego3" type="button" role="tab" aria-controls="pills-Juego3"
-                        aria-selected="false">Jolasa 3</button>
+                        aria-selected="false">{{__("juegos.j3")}} {{-- !idioma --}}</button>
                 </li>
 
             </ul>

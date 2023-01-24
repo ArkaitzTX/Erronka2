@@ -36,14 +36,17 @@
                     <ul class="navbar-nav me-auto my-2 my-lg-0">
                         <li class="nav-item active">
                             {{-- Comercio.cofre --> BUEG EN LOGIN [CAMBIAR EL SISTEMA DE LOS #] --}}
-                            <a href=' {{ route('Comercio.index') }}' class="nav-link">Hasiera</a>
+                            <a href=' {{ route('Comercio.index') }}' class="nav-link">{{__("header.l1")}} {{-- !idioma --}}</a>
                         </li>
                         <li class="nav-item">
-                            <a href=' {{ route('Comercio.juegos') }}' class="nav-link">Jokoak</a>
+                            <a href=' {{ route('Comercio.juegos') }}' class="nav-link">{{__("header.l2")}} {{-- !idioma --}}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="col" class="nav-link">#Tema</a>
+                            <a id="col" class="nav-link">{{__("header.l3")}} {{-- !idioma --}}</a>
                         </li>
+                        {{-- <li class="nav-item">
+                            <a href=' {{ route('Comercio.idioma') }}' class="nav-link">{{__("header.l4")}}</a>
+                        </li> --}}
                     </ul>
 
                     <ul class="navbar-nav">
@@ -57,7 +60,7 @@
                                 {{-- ! --}}
                             @else
                                 <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color" type="submit">
-                                    Saioa Hasi
+                                    {{__("header.f2")}} {{-- !idioma --}}
                                 </a>
                             @endif
 
