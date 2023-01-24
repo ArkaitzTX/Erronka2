@@ -67,7 +67,7 @@
                 </li>
                 <li class="objeto nav-item text-center rounded  mx-3"
                     role="presentation">
-                    <button class="menu-btn nav-link w-100 text-light" id="pills-Juego3-tab" data-bs-toggle="pill"
+                    <button class="menu-btn nav-link w-100 text-light s" id="pills-Juego3-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-Juego3" type="button" role="tab" aria-controls="pills-Juego3"
                         aria-selected="false">Jolasa 3</button>
                 </li>

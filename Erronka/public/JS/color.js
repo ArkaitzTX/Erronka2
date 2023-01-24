@@ -1,13 +1,45 @@
 let colorElegido = 0;
-let cantColores = 3;
+const COLORES = [
+    {
+        // CLARO
+        f: '#FFFFFE',
+
+        d0: '#004173',
+        d1: '#0979b0',
+        d2: '#F5F3F0',
+
+        h: '#252525',
+    },
+    {
+        // OSCURO
+        f: '#252525',
+
+        d0: '#B79a00',
+        d1: '#323232',
+        d2: '#F5F3F0',
+
+        h: '#191919',
+    },
+    {
+        // BEIGE
+        f: '#EFDBC7',
+
+        d0: '#B08D6B',
+        d1: '#B08D6B',
+        d2: '#F5F3F0',
+
+        h: '#B08D6B',
+    },
+];
+
 
 $(document).ready(function () {
 
-    colorElegido = localStorage.getItem("color");
+    colorElegido = typeof localStorage.getItem("color") !== undefined ? Number(localStorage.getItem("color")) : 0;
     aplicarColor();
 
     $(document).on("click", "#col", function () {
-        colorElegido = colorElegido < cantColores - 1 ? colorElegido + 1 : 0;
+        colorElegido = colorElegido < COLORES.length -1 ? colorElegido + 1 : 0;
         localStorage.setItem("color", colorElegido);
 
         aplicarColor();
@@ -16,51 +48,15 @@ $(document).ready(function () {
 });
 
 function aplicarColor() {
+    // console.log(colorElegido);
+
     const rootElement = document.documentElement;
 
-    switch (Number(colorElegido)) {
-        case 0:
-            // console.log("CLARO");
-            rootElement.style.setProperty('--f', '#FFFFFE');
+    rootElement.style.setProperty('--f', COLORES[colorElegido].f);
 
-            rootElement.style.setProperty('--d0', '#004173');
-            rootElement.style.setProperty('--d1', '#0979b0');
-            rootElement.style.setProperty('--d2', '#F5F3F0');
+    rootElement.style.setProperty('--d0', COLORES[colorElegido].d0);
+    rootElement.style.setProperty('--d1', COLORES[colorElegido].d1);
+    rootElement.style.setProperty('--d2', COLORES[colorElegido].d2);
 
-            rootElement.style.setProperty('--h', '#252525');
-            break;
-        case 1:
-            // console.log("OSCURO");
-            rootElement.style.setProperty('--f', '#252525');
-
-            rootElement.style.setProperty('--d0', '#B79a00');
-            rootElement.style.setProperty('--d1', '#323232');
-            rootElement.style.setProperty('--d2', '#F5F3F0');
-
-            rootElement.style.setProperty('--h', '#191919');
-            break;
-        case 2:
-            // console.log("BEIGE");
-            rootElement.style.setProperty('--f', '#EFDBC7');
-
-            rootElement.style.setProperty('--d0', '#B08D6B');
-            rootElement.style.setProperty('--d1', '#E8C39E');
-            rootElement.style.setProperty('--d2', '#F5F3F0');
-
-            rootElement.style.setProperty('--h', '#B08D6B');
-            break;
-        // case 3:
-        //     // console.log("OTRO");
-        //     rootElement.style.setProperty('--f', 'red');
-
-        //     rootElement.style.setProperty('--d0', 'yellow');
-        //     rootElement.style.setProperty('--d1', 'red');
-        //     rootElement.style.setProperty('--d2', 'yellow');
-
-        //     rootElement.style.setProperty('--h', 'yellow');
-        //     break;
-        default:
-            console.log("OTRO: " + colorElegido);
-            break;
-    }
+    rootElement.style.setProperty('--h', COLORES[colorElegido].h);
 }

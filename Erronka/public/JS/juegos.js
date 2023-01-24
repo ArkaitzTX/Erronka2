@@ -522,6 +522,8 @@ window.onload = () => {
             }
         }
     }).mount('#juego6');
+
+
 }
 
 
