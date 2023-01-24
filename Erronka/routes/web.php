@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\PartidasController;
 
+// IDIOMA
+// App::setLocale("eu");
+Route::get('/idioma', [UsuariosController::class, 'idioma'])->name('Comercio.idioma');
+
+
+
 //Ventana Index 1
 // Route::get('/', function () {
 //     return view('Comercio.index');
@@ -22,7 +28,7 @@ Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.lo
     Route::post('/log-reg',  [UsuariosController::class, 'store'])->name('Comercio.usuNuevo');
     //Login
     Route::post('/',  [UsuariosController::class, 'logSes'])->name('Comercio.logSes');
-    //Cerrar Secion
+    //Cerrar Sesion
     Route::get('/cerrarSes',  [UsuariosController::class, 'cerrarSes'])->name('Comercio.cerrarSes');
 
 //Juegos

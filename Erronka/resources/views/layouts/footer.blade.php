@@ -51,13 +51,13 @@
                     <section class="">
                         <p class="d-flex justify-content-center align-items-center">
                             @if(null !== session()->get('usuario'))
-                                <a href="{{ route('Comercio.cerrarSes') }}" class="btn btn-outline-light btn-rounded" id="color">
-                                    Saioa itxi
+                                <a href="{{ route('Comercio.cerrarSes') }}" class="btn elBoton" id="color">
+                                    {{__("header.f1")}} {{-- !idioma --}}
                                 </a>
                             @else
-                                <span class="me-3">Izena eman orain</span>
-                                <a href=' {{ route('Comercio.login') }} ' class="btn btn-outline-danger my-2 my-sm-0 " id="color">
-                                    Saioa Hasi
+                                <span class="me-3">{{__("header.f3")}} {{-- !idioma --}}</span>
+                                <a href=' {{ route('Comercio.login') }} ' class="btn elBoton my-2 my-sm-0 " id="color">
+                                    {{__("header.f2")}} {{-- !idioma --}}
                                 </a>
                             @endif
                         </p>

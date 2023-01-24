@@ -1,11 +1,30 @@
-$f: #EFDBC7; //Fondo
+@import "_colores";
 
-$d0: #B08D6B; //Div0
-$d1: #E8C39E; //Div1
-$d2: #F5F3F0; //Div2
+
+$f: var(--f); //Fondo
+
+$d0: var(--d0); //Div0
+$d1: var(--d1); //Div1
+$d2: var(--d2); //Div2
+
+$h: var(--h); //Header
+$t: var(--t); //Text
 
 $b: #FFFFFE; //Blaco
-$n: #252525; //Negro
+$n: #191919; //Negro
+
+// MODO OSCURO*******
+*{
+    color: $t;
+}
+button, .boton{
+    color: $b !important;
+    background-color: $d0 !important;
+}
+// MODO OSCURO*******
+
+
+
 
 
 html, main, body{
@@ -14,10 +33,14 @@ html, main, body{
 
 
 /* GENERAL */
+input{
+    border: 1px $n solid;
+}
+
 #editar input {
     width: 100%;
     max-height: 5vh;
-    border: 1px $n solid;
+    // border: 1px $b solid;
     border-radius: 10px;
 }
 
@@ -48,39 +71,42 @@ input[type=file] {
 }
 
 .imagen {
-    border: 1px solid $d2;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
-    border: 1px black solid;
+    // border: 1px $b solid;
     border-radius: 10px;
     max-width: 25vh !important;
     max-height: 20% !important;
 }
 
+input{
+    color: $n !important;
+}
+
 #rol input {
     height: 5vh;
-    border: 1px $n solid;
+    // border: 1px $b solid !important;
     border-radius: 10px;
     width: 30vh;
 }
 
 #rol button {
     height: 5vh;
-    border: 1px $n solid;
+    // border: 1px $b solid;
     border-radius: 10px;
 }
 
 #eliminar select {
     height: 5vh;
-    border: 1px $n solid;
+    // border: 1px $b solid;
     border-radius: 10px;
     width: 30vh;
 }
 
 #eliminar button {
     height: 5vh;
-    border: 1px $n solid;
+    // border: 1px $b solid;
     border-radius: 10px;
 }
 
@@ -89,7 +115,7 @@ input[type=file] {
     margin-top: 1%;
     left: 80%;
     z-index: 10;
-    border: $b 1px solid;
+    // border: $b 1px solid;
 }
 
 @media screen and (min-width: 980px) {
@@ -157,4 +183,16 @@ input[type=file] {
     100% {
         transform: translateY(0px);
     }
+}
+
+
+
+// OTRO
+
+#otracosa{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 10%;
 }

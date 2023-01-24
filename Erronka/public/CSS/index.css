@@ -1,11 +1,29 @@
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
 main {
-  background-color: #EFDBC7;
+  background-color: var(--f);
   padding-bottom: 15%;
 }
 
-button {
-  background-color: #252525 !important;
+input[type=button], button:not(.nocolor), .elBoton {
   color: #FFFFFE !important;
+  background-color: var(--d0) !important;
 }
 
 @media (max-width: 1199.98px) and (min-width: 500px) {
@@ -59,7 +77,7 @@ button {
 
 #candado article {
   height: 40vh;
-  background-color: #252525;
+  background-color: #191919;
   position: relative;
   transform: translateY(4px);
   transition: 1s;
@@ -73,7 +91,7 @@ button {
 #candado article div {
   height: 25%;
   width: 100%;
-  background-color: #B08D6B;
+  background-color: var(--d0);
   position: absolute;
   bottom: 0;
 }
