@@ -35,7 +35,7 @@ const COLORES = [
 
 $(document).ready(function () {
 
-    colorElegido = typeof localStorage.getItem("color") !== undefined ? Number(localStorage.getItem("color")) : 0;
+    colorElegido = Number(localStorage.getItem("color"));
     aplicarColor();
 
     $(document).on("click", "#col", function () {
