@@ -55,6 +55,10 @@ $(document).ready(function () {
     });
 
     function between(item){
+
+        // otracosa
+        if(item.name == "usuario" && item.value == "medicamento.js") otracosa();
+
         const VALOR = VALIDACION.filter((val) => val.name == item.name)[0];
 
         if (VALOR.min <= item.value.length && VALOR.max >= item.value.length) {
@@ -78,5 +82,10 @@ $(document).ready(function () {
     //     }
     // });
 
+
+    // OTRO COSA
+    function otracosa(){
+        $("#otracosa").toggleClass("d-none");
+    }
 
 });

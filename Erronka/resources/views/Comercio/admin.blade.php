@@ -109,7 +109,10 @@
         {{__("header.f1")}} {{-- !idioma --}}
     </a>
 
-    {{-- @include('layouts.footer') --}}
+
+
+    {{-- OTRA COSA --}}
+    <img class="d-none" id="otracosa" src="{{asset('IMG/simio.png')}}" alt="">
 
 </body>
 
