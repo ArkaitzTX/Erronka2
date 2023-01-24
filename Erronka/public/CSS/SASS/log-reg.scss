@@ -1,14 +1,23 @@
+@import "_colores";
 @import "_main";
 
-$f: #EFDBC7; //Fondo
+$f: var(--f); //Fondo
 
-$d0: #B08D6B; //Div0
-$d1: #E8C39E; //Div1
-$d2: #F5F3F0; //Div2
+$d0: var(--d0); //Div0
+$d1: var(--d1); //Div1
+$d2: var(--d2); //Div2
+
+$h: var(--h); //Header
+$t: var(--t); //Text
 
 $b: #FFFFFE; //Blaco
-$n: #252525; //Negro
+$n: #191919; //Negro
 
+// MODO OSCURO*******
+*{
+    color: $b;
+}
+// MODO OSCURO*******
 
 main{
     padding-top: 5%;

@@ -1,11 +1,29 @@
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
 main {
-  background-color: #EFDBC7;
+  background-color: var(--f);
   padding-bottom: 15%;
 }
 
-button {
-  background-color: #252525 !important;
+input[type=button], button:not(.nocolor), .elBoton {
   color: #FFFFFE !important;
+  background-color: var(--d0) !important;
 }
 
 @media (max-width: 1199.98px) and (min-width: 500px) {
@@ -23,11 +41,15 @@ button {
     padding-bottom: 55%;
   }
 }
+* {
+  color: #FFFFFE;
+}
+
 main {
   padding-top: 5%;
 }
 main section {
-  background-color: #E8C39E;
+  background-color: var(--d1);
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -42,15 +64,15 @@ main section {
 
 .menu-obj {
   display: table-cell;
-  background: #B08D6B;
+  background: var(--d0);
 }
 
 .menu-btn {
-  background-color: #B08D6B !important;
+  background-color: var(--d0) !important;
   color: #FFFFFE !important;
 }
 .menu-btn:focus {
-  background-color: #E8C39E !important;
+  background-color: var(--d1) !important;
 }
 
 .formulario input {

@@ -13,8 +13,6 @@
     {{-- JS --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{asset('JS/admin.js')}}"></script>
-
-    <title>Admin</title>
 </head>
 
 <body>
@@ -30,33 +28,33 @@
                 {{-- IMAGEN --}}
                 <section class="row col-lg-3 col-md-6 editimagen">
                     <img id="imagenUsu" src="IMG/profile/{{ $miUsu->foto }}" alt="Perfil" class="col-12">
-                    <label class="imagen col-12 text-center btn btn-dark my-2">
+                    <label class="imagen col-12 text-center btn btn-dark my-2 boton">
                         <input type="file" name="img" class="cambios imagen col-12 text-center btn btn-dark my-2">
-                        IRUDIA
+                        {{__("admin.foto")}} {{-- !idioma --}}
                     </label>
                 </section>
                 {{-- EDITAR FORM --}}
                 <section class="row col-lg-9 col-md-9 col-sm-9 mt-5 erabiltzailea">
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">Izena</label>
+                        <label class="etiquetas">{{__("admin.nombre")}} {{-- !idioma --}}</label>
                         <input type="text" name="nombre" class="cambios" value="{{$miUsu->nombre}}">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">Abizena</label>
+                        <label class="etiquetas">{{__("admin.apellido")}} {{-- !idioma --}}</label>
                         <input type="text" name="apellido" class="cambios" value="{{$miUsu->apellido}}">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">Erabiltzailea</label>
+                        <label class="etiquetas">{{__("admin.usuario")}} {{-- !idioma --}}</label>
                         <input type="text" name="usuario" class="cambios" value="{{$miUsu->usuario}}">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">Pasaitza</label>
+                        <label class="etiquetas">{{__("admin.pass")}} {{-- !idioma --}}</label>
                         <input readonly type="password" name="pass" class="cambios" value="{{$miUsu->pass}}">
                     </div>
                     <button id="validar" type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar"
-                        data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">GORDE</button>
+                        data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">{{__("admin.guarda")}} {{-- !idioma --}}</button>
                 </section>
-                <p id="editando" class="d-none text-danger text-center">Datuak ez dira gorde...</p>
+                <p id="editando" class="d-none text-danger text-center">{{__("admin.noGuarda")}} {{-- !idioma --}}</p>
                 {{-- HACER CON JS QUE ESTE PUESTO CUANDO ESTEMOS EDITANDO  --}}
 
                 <br>
@@ -67,11 +65,17 @@
             </form>
 
             <hr>
+            {{-- CAMBIAR IDIOMA --}}
+            <button class="btn nav-item">
+                <a href=' {{ route('Comercio.idioma') }}' class="nav-link">{{__("header.l4")}}</a>
+            </button>
+
+            <br>
 
             <form class=" my-5 text-center" id="rol" action="{{ route('Comercio.rol', $miUsu->id) }}" method="post">
                 @csrf
                 <article class="d-flex justify-content-center align-items-center">
-                    <input type="text" placeholder="Admin kodea" class="text-center" name="rol">
+                    <input type="text" placeholder="{{__("admin.admin")}} {{-- !idioma --}}" class="text-center" name="rol">
                     <button type="submit" class="btn btn-dark" value="enviar">+</button>
                 </article>
             </form>
@@ -101,11 +105,14 @@
     </main>
 
     {{-- CERRAR --}}
-    <a href="{{ route('Comercio.cerrarSes') }}" type="button" class="btn btn-dark" id="cerrar">
-        Saioa itxi
+    <a href="{{ route('Comercio.cerrarSes') }}" type="button" class="btn btn-dark boton" id="cerrar">
+        {{__("header.f1")}} {{-- !idioma --}}
     </a>
 
-    {{-- @include('layouts.footer') --}}
+
+
+    {{-- OTRA COSA --}}
+    <img class="d-none" id="otracosa" src="{{asset('IMG/simio.png')}}" alt="">
 
 </body>
 

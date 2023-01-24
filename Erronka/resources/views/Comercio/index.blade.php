@@ -30,17 +30,17 @@
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="{{asset('IMG/win.png')}}" class="d-block w-100" alt="...">
+                    <img src="{{asset('IMG/victoria-fondo.png')}}" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="{{asset('IMG/oro1.jpg')}}" class="d-block w-100" alt="...">
+                    <img src="{{asset('IMG/oro1-fondo.png')}}" class="d-block w-100" alt="...">
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <button class="nocolor carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <button class="nocolor carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
@@ -57,18 +57,15 @@
                     <img class="col d-none d-xl-block candado" src="{{asset('IMG/candado.png')}}" alt="">
                     <div class="col">
                         <img id="fondo" src="{{asset('IMG/fondo5.png')}}" alt="fondo">
-                        <h1 id="titulo" class="mb-5 text-dark">MERKATARITZA</h1>
+                        <h1 id="titulo" class="mb-5 text-dark"> {{__("index.titulo")}} {{-- !idioma --}}</h1> 
                         <p class="mb-5 text-center text-dark">
-                            Bilatu 2 kandaduen konbinazioa joko ezberdinetan, kutxa desblokeatu ahal izateko. Joko
-                            bakoitzak letra bat emango dizu,
-                            kandaduaren konbinazioaren zati bat izango da. Bi kandaduak irekita dituzunean, kutxa ireki
-                            dezakezu.
+                            {{__("index.texto")}} {{-- !idioma --}}
                         </p>
                         @isset($partidas)
                         @if($partidas->juego1 == 1 && $partidas->juego2 == 1)
-                        <button id="animatu" class="btn">KUTXA IREKI</button>
+                        <button id="animatu" class="btn">{{__("index.boton")}} {{-- !idioma --}}</button>
                         @else
-                        <button onclick="location.href='#juegos'" class="btn">KUTXA IREKI</button>
+                        <button onclick="location.href='#juegos'" class="btn">{{__("index.boton")}} {{-- !idioma --}}</button>
                         @endif
                         @endisset
 
@@ -99,7 +96,7 @@
 
                     <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
-                        <h3 class="mx-5 my-4">KANDADU Nº1</h3>
+                        <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} Nº1</h3>
                     </div>
                 </article>
             </a>
@@ -119,7 +116,7 @@
 
                     <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
-                        <h3 class="mx-5 my-4">KANDADU Nº2</h3>
+                        <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} Nº2</h3>
                     </div>
                 </article>
             </a>
