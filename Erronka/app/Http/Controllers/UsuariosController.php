@@ -18,7 +18,9 @@ class UsuariosController extends Controller
 
         $miUsu = session()->get('usuario');
         $usu = Usuarios::all();
-        return view('Comercio.admin', compact('usu', 'miUsu'));
+        $par = Partidas::all();
+
+        return view('Comercio.admin', compact('usu', 'miUsu', 'par'));
     }
     //VER ID
     // public function ver($id)

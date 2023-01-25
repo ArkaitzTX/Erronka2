@@ -41,7 +41,7 @@
                     <form class="form px-4 pt-5 formulario" action="{{ route('Comercio.logSes') }}" method="POST">
                         @csrf
 
-                        <input type="text" name="usuario" class="form-control" placeholder="{{__("log-reg.nombre")}} {{-- !idioma --}}">
+                        <input type="text" name="usuario" class="form-control" placeholder="{{__("log-reg.usuario")}} {{-- !idioma --}}">
                         <input type="password" name="pass" class="form-control" placeholder="{{__("log-reg.pass1")}} {{-- !idioma --}}">
                         <button class="btn btn-block">{{__("log-reg.sesion")}} {{-- !idioma --}}</button>
                     </form>

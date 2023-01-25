@@ -84,7 +84,8 @@
             {{-- ELIMINAR --}}
 
             @if($miUsu->rol == 1)
-            <form class=" my-5 text-center" id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
+
+            {{-- <form class=" my-5 text-center" id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
                 @csrf @method('DELETE')
                 <article class="d-flex justify-content-center align-items-center">
                     <select name="usuario" class="text-center">
@@ -97,8 +98,63 @@
                     <button type="submit" class="btn btn-dark" value="borrar">-</button>
                 </article>
                 <p class="text-center text-success">{{Session::get('mensaje')}}</p>
-            </form>
+            </form> --}}
+
+            <section class="usuarios my-5 d-flex justify-content-center align-items-center flex-column">
+                <table>
+                    <tr>
+                        <th>{{__("admin.t1")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t2")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t3")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t4")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t5")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t6")}} {{-- !idioma --}}</th>
+                    </tr>
+                @foreach($usu as $usus)
+                    <tr>
+
+                        @if($usus->id != $miUsu->id && $usus->id != 1)
+                            <td>
+                                {{ $usus->usuario }}
+                            </td>
+                            <td>{{ $usus->nombre }}</td>
+                            <td>{{ $usus->apellido }}</td>
+                            @if($usus->rol == 1)
+                                <td>ADMIN</td>
+                            @else
+                                <td>----</td>
+                            @endif
+                            <td>
+                                @foreach($par as $pars)
+                                    @if($usus->id == $pars->usuario)
+                                        @if($pars->juego1 == 1 && $pars->juego2 == 1)
+                                            <span class="text-success">{{__("admin.si")}} {{-- !idioma --}}</span>
+                                        @else  
+                                            <span class="text-danger">{{__("admin.no")}} {{-- !idioma --}}</span>
+                                        @endif
+                                    @endif
+                                @endforeach
+                            </td>
+                            <td>
+                                <form id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
+                                    @csrf @method('DELETE')
+                                    <input hidden name="usuario" value="{{ $usus->id }}">
+                                    <input class="btn boton" type="submit" value="Eliminar">
+                                </form>
+                            </td>
+                        @endif
+                    </tr>
+                @endforeach
+                </table>
+
+                <br>
+                <p class="text-center text-success">{{Session::get('mensaje')}}</p>
+
+            </section>
+
             @endif
+
+
 
 
         </article>

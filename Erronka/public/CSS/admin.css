@@ -7,13 +7,14 @@
   --t: #FFFFFE;
 }
 
-* {
+*:not(select) {
   color: var(--t);
 }
 
 button, .boton {
   color: #FFFFFE !important;
   background-color: var(--d0) !important;
+  border: var(--t) 1px solid !important;
 }
 
 html, main, body {
@@ -35,7 +36,6 @@ input {
   width: 30vh;
   height: 6vh;
 }
-
 #editar img {
   width: 25vh;
   height: 30vh;
@@ -75,7 +75,6 @@ input {
   border-radius: 10px;
   width: 30vh;
 }
-
 #rol button {
   height: 5vh;
   border-radius: 10px;
@@ -86,7 +85,6 @@ input {
   border-radius: 10px;
   width: 30vh;
 }
-
 #eliminar button {
   height: 5vh;
   border-radius: 10px;
@@ -94,9 +92,29 @@ input {
 
 #cerrar {
   position: absolute;
-  margin-top: 1%;
-  left: 80%;
-  z-index: 10;
+  bottom: 20px;
+  right: 20px;
+}
+
+.usuarios table tr {
+  background-color: var(--d1);
+  border: 1px solid var(--t);
+  transition: 0.5s;
+  transform: scale(1);
+}
+.usuarios table tr th {
+  height: 50px;
+  background-color: var(--d0);
+}
+.usuarios table tr td, .usuarios table tr th {
+  color: var(--t) !important;
+  text-align: center;
+  min-width: 15vw;
+}
+.usuarios table tr:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+  transform: scale(1.005);
 }
 
 @media screen and (min-width: 980px) {
@@ -122,6 +140,9 @@ input {
   .editimagen {
     justify-content: center;
     margin-left: 1%;
+  }
+  table {
+    font-size: small;
   }
 }
 @media screen and (max-width: 380px) {

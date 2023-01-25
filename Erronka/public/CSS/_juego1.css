@@ -1,3 +1,7 @@
+input{
+    color: #252525;
+}
+
 #seccion1{
     display: flex;
     text-align: center;
