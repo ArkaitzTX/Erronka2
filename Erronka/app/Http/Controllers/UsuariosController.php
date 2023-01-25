@@ -5,12 +5,17 @@ use App\Models\Usuarios;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Partidas;
+// use App;
 
 class UsuariosController extends Controller
 {
     //VER
     public function index()
     {
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         $miUsu = session()->get('usuario');
         $usu = Usuarios::all();
         return view('Comercio.admin', compact('usu', 'miUsu'));
@@ -24,12 +29,20 @@ class UsuariosController extends Controller
     //VER CREAR
     public function create()
     {
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         return view('Comercio.log-reg');
     }
 
     //CREAR
     public function store(Request $request)
     {
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         if(Usuarios::where('usuario', $request->usuario)->exists()){
             return redirect()->action([UsuariosController::class, 'create'])->with('error', 'Erabiltzailea existitzen da.');
         }
@@ -69,17 +82,10 @@ class UsuariosController extends Controller
     //LOGIN
     public function logSes(Request $request){
 
-        // $usuarios = Usuarios::all();
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
 
-        // foreach($usuarios as $usu){
-        //     if($request->usuario != $usu->usuario && $request->pass != $usu->pass){
-        //         return view('Comercio.log-reg', 'El usuario es incorrecto');
-        //     }   
-        // }
-
-        
-        
-        // $usuarios = Usuarios::all();
         $usuarios = Usuarios::where('usuario','=',$request->usuario)->get();
         
         foreach($usuarios as $usu){
@@ -97,6 +103,10 @@ class UsuariosController extends Controller
      //CERRAR SESION
      public function cerrarSes(){
 
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         session()->forget('usuario');
         return view('Comercio.index');
     }
@@ -104,6 +114,10 @@ class UsuariosController extends Controller
     // MEJORAR ROL
     public function rol(Request $request, $id)
     {
+
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
         $codigoAdmin = 'ADMIN123';
 
         if ($request->rol == $codigoAdmin) {
@@ -120,6 +134,11 @@ class UsuariosController extends Controller
     //UPDATE
     public function update(Request $request, $id)
     {
+
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         $request->validate([
             'nombre' => 'required|max:50',
             'apellido' => 'required|max:50',
@@ -154,6 +173,10 @@ class UsuariosController extends Controller
     //BORRAR
     public function destroy(Request $request)
     {
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         $usu = Usuarios::findOrFail($request->usuario);
         $part = Partidas::where('usuario',$request->usuario)->get()[0];
 
@@ -162,5 +185,21 @@ class UsuariosController extends Controller
         $usu->delete();
         
         return redirect()->route('Comercio.admin')->with('mensaje', 'Erabiltzailea ezabatu da.');
+    }
+
+    public function idioma(){
+        if(session()->get('idioma') == "es"){
+            session(['idioma' => "eu"]);
+        }
+        else{
+            session(['idioma' => "es"]);
+        }
+        return redirect()->route('Comercio.admin');
+    }
+
+    function cambioIdioma(){
+        if(session()->has('idioma')){
+            app()->setLocale(session()->get('idioma'));
+        }
     }
 }

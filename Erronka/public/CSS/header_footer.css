@@ -1,3 +1,12 @@
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
 html {
   min-height: 100%;
   position: relative;
@@ -8,10 +17,10 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #E8C39E !important;
+  background-color: var(--d1) !important;
 }
 footer aside {
-  background-color: #B08D6B !important;
+  background-color: var(--d0) !important;
 }
 
 /* HEADER */
@@ -19,9 +28,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 5;
-  background-color: #252525;
+  background-color: var(--h);
 }
 header a {
+  color: #FFFFFE !important;
   cursor: pointer;
 }
 
@@ -34,7 +44,7 @@ header a {
 #color {
   border: 1px solid #FFFFFE;
   color: #FFFFFE;
-  background-color: #252525;
+  background-color: #191919;
 }
 
 /*# sourceMappingURL=header_footer.css.map */
