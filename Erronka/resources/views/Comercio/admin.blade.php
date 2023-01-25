@@ -84,7 +84,8 @@
             {{-- ELIMINAR --}}
 
             @if($miUsu->rol == 1)
-            <form class=" my-5 text-center" id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
+
+            {{-- <form class=" my-5 text-center" id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
                 @csrf @method('DELETE')
                 <article class="d-flex justify-content-center align-items-center">
                     <select name="usuario" class="text-center">
@@ -97,8 +98,43 @@
                     <button type="submit" class="btn btn-dark" value="borrar">-</button>
                 </article>
                 <p class="text-center text-success">{{Session::get('mensaje')}}</p>
-            </form>
+            </form> --}}
+
+            <section class="usuarios my-5 d-flex justify-content-center align-items-center flex-column">
+                <table>
+                @foreach($usu as $usus)
+                    <tr>
+                        @if($usus->id != $miUsu->id && $usus->id != 1)
+                            <td>
+                                {{ $usus->usuario }}
+                            </td>
+                            <td>{{ $usus->nombre }}</td>
+                            <td>{{ $usus->apellido }}</td>
+                            @if($usus->rol == 1)
+                                <td>ADMIN</td>
+                            @else
+                                <td>----</td>
+                            @endif
+                            <td>
+                                <form id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
+                                    @csrf @method('DELETE')
+                                    <input hidden name="usuario" value="{{ $usus->id }}">
+                                    <input class="btn boton" type="submit" value="Eliminar">
+                                </form>
+                            </td>
+                        @endif
+                    </tr>
+                @endforeach
+                </table>
+                
+                <br>
+                <p class="text-center text-success">{{Session::get('mensaje')}}</p>
+
+            </section>
+
             @endif
+
+
 
 
         </article>

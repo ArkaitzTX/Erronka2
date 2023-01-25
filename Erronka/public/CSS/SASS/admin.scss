@@ -14,12 +14,13 @@ $b: #FFFFFE; //Blaco
 $n: #191919; //Negro
 
 // MODO OSCURO*******
-*{
+*:not(select){
     color: $t;
 }
 button, .boton{
     color: $b !important;
     background-color: $d0 !important;
+    border: $t 1px solid !important;
 }
 // MODO OSCURO*******
 
@@ -44,15 +45,18 @@ input{
     border-radius: 10px;
 }
 
-#editar button {
-    width: 30vh;
-    height: 6vh;
+#editar{
+    button {
+        width: 30vh;
+        height: 6vh;
+    }
+    img {
+        width: 25vh;
+        height: 30vh;
+    }
 }
 
-#editar img {
-    width: 25vh;
-    height: 30vh;
-}
+
 
 .etiquetas {
     width: 100%;
@@ -84,38 +88,64 @@ input{
     color: $n !important;
 }
 
-#rol input {
-    height: 5vh;
-    // border: 1px $b solid !important;
-    border-radius: 10px;
-    width: 30vh;
+#rol {
+    input {
+        height: 5vh;
+        // border: 1px $b solid !important;
+        border-radius: 10px;
+        width: 30vh;
+    }
+    button {
+        height: 5vh;
+        // border: 1px $b solid;
+        border-radius: 10px;
+    }
 }
 
-#rol button {
-    height: 5vh;
-    // border: 1px $b solid;
-    border-radius: 10px;
+#eliminar {
+    select {
+        height: 5vh;
+        // border: 1px $b solid;
+        border-radius: 10px;
+        width: 30vh;
+    }
+    button {
+        height: 5vh;
+        // border: 1px $b solid;
+        border-radius: 10px;
+    }
 }
 
-#eliminar select {
-    height: 5vh;
-    // border: 1px $b solid;
-    border-radius: 10px;
-    width: 30vh;
-}
-
-#eliminar button {
-    height: 5vh;
-    // border: 1px $b solid;
-    border-radius: 10px;
-}
 
 #cerrar {
     position: absolute;
-    margin-top: 1%;
-    left: 80%;
-    z-index: 10;
-    // border: $b 1px solid;
+    
+    bottom: 20px;
+    right: 20px;
+}
+
+.usuarios{
+    table{
+        tr{
+            background-color: $d1;
+            border: 1px solid $t;
+            
+            transition: .5s;
+            transform: scale(1);
+            
+            td{
+                color: $t !important;
+                text-align: center;
+                min-width: 18vw;
+            }
+            &:hover{
+                opacity: 0.8;
+
+                transition: .5s;
+                transform: scale(1.005);
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 980px) {
