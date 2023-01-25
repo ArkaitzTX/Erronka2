@@ -102,8 +102,17 @@
 
             <section class="usuarios my-5 d-flex justify-content-center align-items-center flex-column">
                 <table>
+                    <tr>
+                        <th>{{__("admin.t1")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t2")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t3")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t4")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t5")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t6")}} {{-- !idioma --}}</th>
+                    </tr>
                 @foreach($usu as $usus)
                     <tr>
+
                         @if($usus->id != $miUsu->id && $usus->id != 1)
                             <td>
                                 {{ $usus->usuario }}

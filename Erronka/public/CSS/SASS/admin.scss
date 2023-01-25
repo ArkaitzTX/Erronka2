@@ -133,7 +133,11 @@ input{
             transition: .5s;
             transform: scale(1);
             
-            td{
+            th{
+                height: 50px;
+                background-color: $d0;
+            }
+            td, th{
                 color: $t !important;
                 text-align: center;
                 min-width: 15vw;

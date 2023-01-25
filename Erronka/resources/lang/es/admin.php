@@ -12,5 +12,12 @@ return [
     "si" => "COMPLETADO",
     "no" => "SIN COMPLETAR",
 
+    "t1" => "Usuario",
+    "t2" => "Nombre",
+    "t3" => "Apellido",
+    "t4" => "Permisos",
+    "t5" => "Juegos",
+    "t6" => "Eliminar",
+
 ];
 ?>

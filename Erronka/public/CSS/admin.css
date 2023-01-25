@@ -102,7 +102,11 @@ input {
   transition: 0.5s;
   transform: scale(1);
 }
-.usuarios table tr td {
+.usuarios table tr th {
+  height: 50px;
+  background-color: var(--d0);
+}
+.usuarios table tr td, .usuarios table tr th {
   color: var(--t) !important;
   text-align: center;
   min-width: 15vw;
