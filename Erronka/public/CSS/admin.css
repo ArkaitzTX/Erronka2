@@ -105,7 +105,7 @@ input {
 .usuarios table tr td {
   color: var(--t) !important;
   text-align: center;
-  min-width: 18vw;
+  min-width: 15vw;
 }
 .usuarios table tr:hover {
   opacity: 0.8;

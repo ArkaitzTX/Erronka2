@@ -9,5 +9,7 @@ return [
     "admin" => "Admin kodea",
     "guarda" => "GORDE",
     "noGuarda" => "Datuak ez dira gorde...",
+    "si" => "EGINDA",
+    "no" => "EGIN GABE",
 ];
 ?>

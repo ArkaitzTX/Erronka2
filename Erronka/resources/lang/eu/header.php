@@ -4,7 +4,8 @@ return [
     "l1" => "Hasiera",
     "l2" => "Jokoa",
     "l3" => "#Gaiak",
-    "l4" => "Hizkuntzak",
+    // "l4" => "Hizkuntzak",
+    "l4" => "Español",
 
     "f1" => "Saioa itxi",
     "f2" => "Saioa hasi",

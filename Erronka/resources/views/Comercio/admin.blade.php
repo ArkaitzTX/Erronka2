@@ -116,6 +116,17 @@
                                 <td>----</td>
                             @endif
                             <td>
+                                @foreach($par as $pars)
+                                    @if($usus->id == $pars->usuario)
+                                        @if($pars->juego1 == 1 && $pars->juego2 == 1)
+                                            <span class="text-success">{{__("admin.si")}} {{-- !idioma --}}</span>
+                                        @else  
+                                            <span class="text-danger">{{__("admin.no")}} {{-- !idioma --}}</span>
+                                        @endif
+                                    @endif
+                                @endforeach
+                            </td>
+                            <td>
                                 <form id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
                                     @csrf @method('DELETE')
                                     <input hidden name="usuario" value="{{ $usus->id }}">
@@ -126,7 +137,7 @@
                     </tr>
                 @endforeach
                 </table>
-                
+
                 <br>
                 <p class="text-center text-success">{{Session::get('mensaje')}}</p>
 
