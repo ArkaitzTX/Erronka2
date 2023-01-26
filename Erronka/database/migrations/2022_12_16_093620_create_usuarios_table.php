@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre', 50);
             $table->string('apellido', 50);
             $table->string('usuario', 50)->nullable()->unique();;
-            $table->string('pass', 50)->nullable();
+            $table->string('pass', 100)->nullable();
             $table->integer('rol');
             $table->string('foto', 50);
             $table->string('type', 10);

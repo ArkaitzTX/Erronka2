@@ -17,24 +17,14 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    
-    @include('layouts.header')
-   
-=======
 
     {{-- !CAMBIAR CANDADOS CON LA BD --}}
 
     @include('layouts.header')
 
->>>>>>> origin/development
     <main>
 
         {{-- COFRE --}}
-<<<<<<< HEAD
-        <section class=" align-items-center justify-content-center" id="oro" >
-            <img class="w-100"  src="{{asset('IMG/oroEspañol.jpeg')}}" alt="">
-=======
         <section class="align-items-center justify-content-center" id="oro">
             
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -88,7 +78,6 @@
         {{-- <p class="my-3 text-light text-center" id="juegos">Txurdinaga</p> --}}
         <section class="d-flex justify-content-center">
             <audio id="juegos" src="{{asset('AUDIO/loquendo.mp3')}}" controls></audio>
->>>>>>> origin/development
         </section>
         <section class="d-flex align-items-center justify-content-center flex-column" id="cofre">
             <div class="container text-center">
@@ -115,12 +104,6 @@
             {{-- CANDADO 1 --}}
             <a class="text-decoration-none" href="{{ route('Comercio.juego', 1)  }}"> {{-- nºcandado--}}
                 <article class="my-5 text-light d-flex align-items-center">
-<<<<<<< HEAD
-                    <h1 class="mx-5">* * *</h1>
-                    <img id="fondoCandado" src="{{asset('IMG/cerradura.png')}}" alt="fondo">
-                    <div>
-                        <h3 class="mx-5 my-4">KANDADU Nº1</h3>
-=======
                     {{-- CANDADO --}}
                     @isset($partidas)
                     @if($partidas->juego1 == 1)
@@ -133,7 +116,6 @@
                     <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
                         <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} Nº1</h3>
->>>>>>> origin/development
                     </div>
                 </article>
             </a>
@@ -141,12 +123,6 @@
             {{-- CANDADO 2 --}}
             <a class="text-decoration-none" href="{{ route('Comercio.juego', 2)  }}">
                 <article class="mb-5 text-light d-flex align-items-center">
-<<<<<<< HEAD
-                    <h1 class="mx-5">* * *</h1>
-                    <img id="fondoCandado" src="{{asset('IMG/cerradura.png')}}" alt="fondo">
-                    <div>
-                        <h3 class="mx-5 my-4">KANDADU Nº2</h3>
-=======
 
                     {{-- CANDADO --}}
                     @isset($partidas)
@@ -160,7 +136,6 @@
                     <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
                         <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} Nº2</h3>
->>>>>>> origin/development
                     </div>
                 </article>
             </a>

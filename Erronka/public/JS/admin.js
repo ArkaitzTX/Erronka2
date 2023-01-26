@@ -1,32 +1,19 @@
 $(document).ready(function () {
-<<<<<<< HEAD
-    let cambiado = false;
-
-
-    //CUANDO SE EDITE{
-=======
     // let cambiado = false;
 
 
     //CUANDO SE EDITE{-------------------------------------------------------
->>>>>>> origin/development
     $(document).on("change", ".cambios", function () {
         $("#editando").removeClass("d-none");
         cambiado = true;
     });
 
-<<<<<<< HEAD
-    //CAMBIAR LA FOTO
-=======
     //CAMBIAR LA FOTO--------------------------------------------------------
->>>>>>> origin/development
     $(document).on("change", "input[name=img]", function () {
         const IMG = URL.createObjectURL(this.files[0]);
         $("#imagenUsu").attr("src", IMG);
     });
 
-<<<<<<< HEAD
-=======
     //VALIDACION-------------------------------------------------------------
     const VALIDACION = [
         {
@@ -89,14 +76,11 @@ $(document).ready(function () {
     //SALIR-----------------------------------------------------------------
 
     // ! NO SALIR DE JUEGOS
->>>>>>> origin/development
     // $(window).on("beforeunload", function () {
     //     if(cambiado){
     //         return confirm();
     //     }
     // });
-<<<<<<< HEAD
-=======
 
 
     // OTRO COSA
@@ -104,5 +88,4 @@ $(document).ready(function () {
         $("#otracosa").toggleClass("d-none");
     }
 
->>>>>>> origin/development
 });

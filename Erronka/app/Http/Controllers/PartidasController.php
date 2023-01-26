@@ -24,25 +24,18 @@ class PartidasController extends Controller
     //VER ID
     public function ver($candado)
     {
-<<<<<<< HEAD
-=======
         // IDIOMA **********************************
         $this->cambioIdioma();
         // IDIOMA **********************************
 
->>>>>>> origin/development
         if(null === session()->get('usuario')){
             return view('Comercio.log-reg');
         }
 
         $candado = 'juego'.$candado;
         $partidas = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0];
-<<<<<<< HEAD
-        return view('Comercio.juegos', compact('partidas', 'candado'));
-=======
         $usuario = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0]->id;
         return view('Comercio.juegos', compact('partidas', 'candado', 'usuario'));
->>>>>>> origin/development
     }
 
     function cambioIdioma(){

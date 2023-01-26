@@ -2,11 +2,6 @@
 <html lang="en">
 
 <body>
-<<<<<<< HEAD
-    JUEGO 1.3
-    @yield('content')
-</body>
-=======
     {{-- JUEGO 3 --}}
     <section id="juego3" class="container d-flex align-items-center justify-content-center flex-column p-relative fs-5">
         <label>Calcula el dígito de control del siguiente código de barras: </label>
@@ -35,5 +30,4 @@
         width: 50vw;
     }
 </style>
->>>>>>> origin/development
 </html>

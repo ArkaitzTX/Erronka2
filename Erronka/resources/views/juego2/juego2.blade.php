@@ -2,10 +2,6 @@
 <html lang="en">
 
 <body>
-<<<<<<< HEAD
-    JUEGO 2.2
-    @yield('content')
-=======
     <section id="juego5">
         <div >
             <h5>Calcula el importe de la factura que emitirá el proveedor de material de construcción ACV SL a José Campo Lamas Construcciones SL por las ventas realizadas durante el mes:</h5>
@@ -21,6 +17,5 @@
 
     <section id="p2">
     </section>
->>>>>>> origin/development
 </body>
 </html>

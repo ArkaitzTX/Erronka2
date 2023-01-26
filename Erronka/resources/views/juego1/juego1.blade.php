@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-
-<body>
-=======
 <head>
     <link href="{{asset('CSS/_juego1.css')}}" rel="stylesheet" type="text/css">
 </head>
@@ -30,6 +26,5 @@
     {{-- PISTA --}}
     <section id="p1">
     </section>
->>>>>>> origin/development
 </body>
 </html>

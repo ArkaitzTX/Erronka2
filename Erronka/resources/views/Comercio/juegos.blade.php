@@ -46,19 +46,6 @@
         {{-- <button onclick="Ganar('juego1', 22)">AAAAAAAAAAAAAAAA</button> --}}
         {{-- ************************************************ --}}
 
-<<<<<<< HEAD
-        {{-- ************************************************ --}}
-        {{-- <h1>{{$partidas->$candado}}</h1> --}}
-        {{-- ************************************************ --}}
-
-
-        {{-- Otros --}}
-        <section class="mx-5 my-3 d-flex flex-nowrap align-items-center justify-content-between">
-            <article id="reloj" class="">
-                <strong class="otro">Bizitzak: 3</strong>
-                <reloj></reloj>
-            </article>
-=======
         {{-- MENU-PISTAS VUE --}}
         <article>
             {{-- Otros --}}
@@ -73,7 +60,6 @@
                     <reloj></reloj>
                 </div> 
             </section>
->>>>>>> origin/development
 
             {{-- Menu --}}
             <ul class="nav nav-pills container" id="menu" role="tablist">
@@ -100,17 +86,6 @@
         </article>
         {{-- Modulo de los Juegos --}}
         {{-- <section class="juegos container text-light text-center tab-content mt-5"> --}}
-<<<<<<< HEAD
-        <section class="juegos container mt-5">
-            <div class="tab-pane fade show active " id="pills-Juego1" role="tabpanel" aria-labelledby="pills-Juego1-tab">
-                @include($candado.'.juego1')
-            </div>
-            <div class=" tab-pane fade" id="pills-Juego2" role="tabpanel" aria-labelledby="pills-Juego2-tab">
-                @include($candado.'.juego2')
-            </div>
-            <div class="tab-pane fade" id="pills-Juego3" role="tabpanel" aria-labelledby="pills-Juego3-tab">
-                @include($candado.'.juego3')
-=======
 
             {{-- TELEPORT --}}
             <div hidden id="pistas">
@@ -123,7 +98,6 @@
             <Teleport hidden to="#pistas3">
                 <pista n="2" c="{{$candado}}"></pista>
             </Teleport>
->>>>>>> origin/development
             </div>
 
             <section class="corrector">

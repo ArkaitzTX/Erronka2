@@ -8,13 +8,8 @@
     <title>MERKATARITZA</title>
 
     {{-- CSS --}}
-<<<<<<< HEAD
-    <link href="{{asset('CSS/Login,Register.css')}}" rel="stylesheet" type="text/css">
- </head>
-=======
     <link href="{{asset('CSS/log-reg.css')}}" rel="stylesheet" type="text/css">
 </head>
->>>>>>> origin/development
 
 <body>
 
@@ -51,26 +46,6 @@
                         <button class="btn btn-block">{{__("log-reg.sesion")}} {{-- !idioma --}}</button>
                     </form>
 
-<<<<<<< HEAD
-                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile">
-                    <input type="password" name="pass" class="form-control" placeholder="Pasahitza">
-                    <button class="btn btn-dark btn-block">Saioa Hasi</button>
-                </form>
-
-                <p class="text-center text-success">{{Session::get('bien')}}</p>
-                <p class="text-center text-danger">{{Session::get('error')}}</p>
-                @isset($error)
-                <br>
-                <p class="text-center text-danger">*{{$error}}*</p>
-                @endisset
-
-                @foreach ($errors->all() as $error)
-                    <p class="text-danger text-center">Ez da Erabiltzaile sortu</p>
-                    @break
-                @endforeach 
-
-            </article>
-=======
                     <p class="text-center text-success">{{Session::get('bien')}}</p>
                     <p class="text-center text-danger">{{Session::get('error')}}</p>
                     @isset($error)
@@ -82,33 +57,12 @@
                     <p class="text-danger text-center">{{__("log-reg.error")}} {{-- !idioma --}}</p>
                     @break
                     @endforeach
->>>>>>> origin/development
 
                 </article>
 
                 {{-- SING-UP --}}
                 <article class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
 
-<<<<<<< HEAD
-                    <input type="text" name="nombre" class="form-control" placeholder="Izena" value="{{ old('nombre')}}" required>
-                    <input type="text" name="apellido" class="form-control" placeholder="Abizena" value="{{ old('apellido')}}" required>
-                    <input type="text" name="usuario" class="form-control" placeholder="Erabiltzaile" value="{{ old('usuario')}}" required>
-                    <input type="password" name="pass" class="form-control" placeholder="Pasahitza" value="{{ old('pass')}}" required>
-                    <input type="password" name="passB" class="form-control" placeholder="Bersartu pasahitza" value="{{ old('passB')}}" required>
-                    <button class="btn btn-dark btn-block">Erregistratu</button>
-                </form>
-
-                <br>
-                @foreach ($errors->all() as $error)
-                    <p class="text-danger text-center">{{ $error }}</p>
-                @endforeach 
-
-
-            </article>
-
-
-
-=======
                     {{-- FORM SING-UP --}}
                     <form class="form px-4 formulario" action="{{ route('Comercio.usuNuevo') }}" method="POST">
                         @csrf
@@ -140,7 +94,6 @@
 
 
             </section>
->>>>>>> origin/development
         </section>
     </main>
 

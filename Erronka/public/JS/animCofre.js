@@ -6,10 +6,6 @@ function hasiera() {
             bottom: '250px',
             opacity: '0',
             height: '0px',
-<<<<<<< HEAD
-            width: 'opx'
-=======
->>>>>>> origin/development
 
         }, 1500);
     });

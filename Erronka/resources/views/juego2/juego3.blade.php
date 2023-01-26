@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-
-<body>
-    JUEGO 2.3
-    @yield('content')
-=======
 <head>
     <link rel="stylesheet" href="{{asset('CSS/_juego6.css')}}">
 </head>
@@ -47,6 +41,5 @@
     <section id="p3">
     </section>
 
->>>>>>> origin/development
 </body>
 </html>

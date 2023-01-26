@@ -2,15 +2,6 @@
 <html lang="en">
 
 <body>
-<<<<<<< HEAD
-    <section>
-<div  id="cont">
-        <form action="">
-            <table class="table">
-                <tr class="tr">
-                    <label v-text="page"></label>
-                    <th><label class="preg" v-text="preguntas[page].pregunta"></label></th>
-=======
     {{-- JUEGO2 --}}
     <section id="juego2">
 
@@ -18,18 +9,12 @@
             <table class="table">
                 <tr class="tr">
                     <th><label class="preg" >@{{page + 1 + ".- " }}@{{preguntas[page].pregunta}}</label></th>
->>>>>>> origin/development
                 </tr>
                 <tr class="tr">
                     <td>
                         <div class="resp" v-for="(respuestas, index) in preguntas[page].respuesta">
-<<<<<<< HEAD
-                        <input type="radio" name="resp" class="miResp" :value="index" v-model="preguntas[page].miRespuesta">
-                            <label v-text="respuestas"></label>     
-=======
                             <input type="radio" name="resp" class="miResp" :value="index" v-model="preguntas[page].miRespuesta">
                             <label>@{{respuestas}}</label>     
->>>>>>> origin/development
                         </div>
                     </td>
                 </tr>
@@ -47,24 +32,6 @@
             <li class="page-item current-page page7"><button class="page-link" v-on:click='paginator7'>7</button></li>
             <li class="page-item current-page page8"><button class="page-link" v-on:click='paginator8'>8</button></li>
         </div>
-<<<<<<< HEAD
-        <button v-on:click='corregir()'>CORREGIR</button>
-
-        {{-- BORRAR --}}
-        {{-- <pre>
-            @{{ $data }}
-        </pre> --}}
-        </div>
-    </section>
-
-    <section class="corrector">
-        <corrector pre="pregunta 2:" cor="A">
-        </corrector>
-    </section>
-</body>
-
-</html>
-=======
 
     </section>
 
@@ -74,4 +41,3 @@
 </body>
 
 </html>
->>>>>>> origin/development

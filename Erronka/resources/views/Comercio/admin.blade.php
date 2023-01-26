@@ -33,35 +33,6 @@
                 {{-- IMAGEN --}}
                 <section class="row col-lg-3 col-md-6 editimagen">
                     <img id="imagenUsu" src="IMG/profile/{{ $miUsu->foto }}" alt="Perfil" class="col-12">
-<<<<<<< HEAD
-                    <label class="imagen col-12 text-center btn btn-dark my-2">
-                        <input type="file" name="img" class="cambios imagen col-12 text-center btn btn-dark my-2">
-                        IRUDIA
-                    </label>
-                </section>
-                {{-- EDITAR FORM --}}
-                <section class="row col-lg-9 col-md-9 col-sm-9  mt-5  erabiltzailea">
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">Izena</label>
-                        <input type="text" name="nombre" class="cambios" value="{{$miUsu->nombre}}">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">Abizena</label>
-                        <input type="text" name="apellido" class="cambios" value="{{$miUsu->apellido}}">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">Erabiltzailea</label>
-                        <input type="text" name="usuario" class="cambios" value="{{$miUsu->usuario}}">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">Pasaitza</label>
-                        <input type="password" name="pass" class="cambios" value="{{$miUsu->pass}}">
-                    </div>
-                    <button type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar"
-                        data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">GORDE</button>
-                </section>
-                <p id="editando" class="d-none text-danger text-center">Datuak ez dira gorde...</p>
-=======
                     <label class="imagen col-12 text-center btn btn-dark my-2 boton">
                         <input type="file" name="img" class="cambios imagen col-12 text-center btn btn-dark my-2">
                         {{__("admin.foto")}} {{-- !idioma --}}
@@ -89,7 +60,6 @@
                         data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">{{__("admin.guarda")}} {{-- !idioma --}}</button>
                 </section>
                 <p id="editando" class="d-none text-danger text-center">{{__("admin.noGuarda")}} {{-- !idioma --}}</p>
->>>>>>> origin/development
                 {{-- HACER CON JS QUE ESTE PUESTO CUANDO ESTEMOS EDITANDO  --}}
 
                 <br>
@@ -100,24 +70,17 @@
             </form>
 
             <hr>
-<<<<<<< HEAD
-=======
             {{-- CAMBIAR IDIOMA --}}
             <button class="btn nav-item">
                 <a href=' {{ route('Comercio.idioma') }}' class="nav-link">{{__("header.l4")}}</a>
             </button>
 
             <br>
->>>>>>> origin/development
 
             <form class=" my-5 text-center" id="rol" action="{{ route('Comercio.rol', $miUsu->id) }}" method="post">
                 @csrf
                 <article class="d-flex justify-content-center align-items-center">
-<<<<<<< HEAD
-                    <input type="text" placeholder="Admin kodea" class="text-center" name="rol">
-=======
                     <input type="text" placeholder="{{__("admin.admin")}} {{-- !idioma --}}" class="text-center" name="rol">
->>>>>>> origin/development
                     <button type="submit" class="btn btn-dark" value="enviar">+</button>
                 </article>
             </form>
@@ -126,12 +89,8 @@
             {{-- ELIMINAR --}}
 
             @if($miUsu->rol == 1)
-<<<<<<< HEAD
-            <form class=" my-5 text-center" id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
-=======
 
             {{-- <form class=" my-5 text-center" id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
->>>>>>> origin/development
                 @csrf @method('DELETE')
                 <article class="d-flex justify-content-center align-items-center">
                     <select name="usuario" class="text-center">
@@ -144,12 +103,6 @@
                     <button type="submit" class="btn btn-dark" value="borrar">-</button>
                 </article>
                 <p class="text-center text-success">{{Session::get('mensaje')}}</p>
-<<<<<<< HEAD
-            </form>
-            @endif
-
-
-=======
             </form> --}}
 
             <section class="usuarios my-5 d-flex justify-content-center align-items-center flex-column">
@@ -209,18 +162,10 @@
 
 
 
->>>>>>> origin/development
         </article>
     </main>
 
     {{-- CERRAR --}}
-<<<<<<< HEAD
-    <a href="{{ route('Comercio.cerrarSes') }}" type="button" class="btn btn-dark" id="cerrar">
-        Saioa itxi
-    </a>
-
-    {{-- @include('layouts.footer') --}}
-=======
     <a href="{{ route('Comercio.cerrarSes') }}" type="button" class="btn btn-dark boton" id="cerrar">
         {{__("header.f1")}} {{-- !idioma --}}
     </a>
@@ -229,7 +174,6 @@
 
     {{-- OTRA COSA --}}
     <img class="d-none" id="otracosa" src="{{asset('IMG/simio.png')}}" alt="">
->>>>>>> origin/development
 
 </body>
 
