@@ -27,7 +27,7 @@ const COLORES = [
         f: '#EFDBC7',
 
         d0: '#B08D6B',
-        d1: '#B08D6B',
+        d1: '#E8C39E',
         d2: '#F5F3F0',
 
         h: '#B08D6B',
