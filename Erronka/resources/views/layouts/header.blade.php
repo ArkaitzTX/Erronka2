@@ -20,7 +20,7 @@
 <body>
     <header id="header">
         <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
+            <article class="container-fluid">
                 
                 <button class="navbar-toggler nocolor" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -31,7 +31,7 @@
 
                 <img class="navbar-brand" src="{{asset('IMG/Logo.png')}}" alt="logo" height="36">
                 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <section class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <ul class="navbar-nav me-auto my-2 my-lg-0">
                         <li class="nav-item active">
@@ -67,8 +67,8 @@
                         </div>
                     </ul>
 
-                </div>
-            </div>
+                </section>
+            </article>
         </nav>
     </header>
     

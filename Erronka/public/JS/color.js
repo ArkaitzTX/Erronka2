@@ -33,28 +33,29 @@ const COLORES = [
         h: '#B08D6B',
         t: '#FFFFFE'
     },
-    // {
-    //     // ES
-    //     f: '#FEC400',
+ 
+    {
+        // ES
+        f: '#FEC400',
 
-    //     d0: '#C60B1E',
-    //     d1: '#C60B1E',
-    //     d2: '#FEC400',
+        d0: '#C60B1E',
+        d1: '#C60B1E',
+        d2: '#FEC400',
 
-    //     h: '#C60B1E',
-    //     t: '#FFFFFE'
-    // },
-    // {
-    //     // EU
-    //     f: '#009B48',
+        h: '#C60B1E',
+        t: '#FFFFFE'
+    },
+    {
+        // EU
+        f: '#009B48',
 
-    //     d0: '#D52B1E',
-    //     d1: 'white',
-    //     d2: '#D52B1E',
+        d0: '#D52B1E',
+        d1: 'white',
+        d2: '#D52B1E',
 
-    //     h: '#D52B1E',
-    //     t: '#191919'
-    // },
+        h: '#D52B1E',
+        t: '#191919'
+    },
 ];
 
 
@@ -69,6 +70,9 @@ $(document).ready(function () {
 
         aplicarColor();
     });
+
+  // CARGAR
+  $("#main").removeClass("d-none");
 
 });
 
