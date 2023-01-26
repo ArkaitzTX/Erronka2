@@ -226,6 +226,71 @@ window.onload = () => {
     corrector.mount('.corrector');
 
 
+
+    // CALCULADORA-----------------------------------------------------------------------------
+    // let calculadora = Vue.createApp({})
+    // calculadora.component('calculadora', {
+    //     data() {
+    //         return {
+    //            calculo: "10 * 19 + 28",
+    //         }
+    //     },
+    //     template:`
+    //     <!-- section>(article>p*2)+(table>tr*5>th*4>button>{$}) -->
+    //     <section class="calculadora">
+    //         <article>
+    //             <span>{{ resultado }}</span>
+    //             <p>{{ calculo }}</p>
+    //         </article>
+    //         <table>
+    //             <tr>
+    //                 <th> <button class="">##</button> </th>
+    //                 <th> <button class="">CE</button> </th>
+    //                 <th> <button class=""><-</button> </th>
+    //                 <th> <button class="">/</button> </th>
+    //             </tr>
+    //             <tr>
+    //                 <th> <button class="">7</button> </th>
+    //                 <th> <button class="">8</button> </th>
+    //                 <th> <button class="">9</button> </th>
+    //                 <th> <button class="">*</button> </th>
+    //             </tr>
+    //             <tr>
+    //                 <th> <button class="">4</button> </th>
+    //                 <th> <button class="">5</button> </th>
+    //                 <th> <button class="">6</button> </th>
+    //                 <th> <button class="">-</button> </th>
+    //             </tr>
+    //             <tr>
+    //                 <th> <button class="">1</button> </th>
+    //                 <th> <button class="">2</button> </th>
+    //                 <th> <button class="">3</button> </th>
+    //                 <th> <button class="">+</button> </th>
+    //             </tr>
+    //             <tr>
+    //                 <th> <button class="">00</button> </th>
+    //                 <th> <button class="">0</button> </th>
+    //                 <th> <button class="">,</button> </th>
+    //                 <th> <button class=""> =</button> </th>
+    //             </tr>
+    //         </table>
+    //     </section>
+    //     ` ,
+    //     methods: {
+          
+    //     },
+    //     computed: {
+    //         resultado(){
+    //             let r = this.calculo.split(" ");
+
+    //             return Number("10*10");
+    //         }
+    //     }
+    // });
+    // calculadora.mount('#calculadora');
+
+
+
     // PISTAS-----------------------------------------------------------------------------
     let pistas = Vue.createApp({})
     pistas.component('pista', {
@@ -247,7 +312,13 @@ window.onload = () => {
                 axios.get('../JS/pistas.json')
                 .then((respuesta) => {
                     const N = (this.candado == "juego2") ? Number(this.juego)+3 : this.juego;
-                    Swal.fire(respuesta.data[N].pista);
+
+                    // window.open("https://calculadora.name/" , "Calculadora" , "width=350,height=600,scrollbars=NO,resizable=NO");
+                    Swal.fire({
+                        title: "PISTA",
+                        text: respuesta.data[N].pista,
+                        // footer: '<a href="../../resources/views/calculadora.html" target="_blank">CALCULADORA</a>'
+                    });
                 })
                 .catch(err => console.log(err));
             }

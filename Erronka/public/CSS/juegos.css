@@ -108,6 +108,7 @@ hr {
   text-align: center;
 }
 
+/* CALCULADORA */
 @media screen and (max-width: 900px) {
   #info {
     width: 4.5vh;
