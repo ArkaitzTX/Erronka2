@@ -1,0 +1,59 @@
+@import "_colores";
+
+$f: var(--f); //Fondo
+
+$d0: var(--d0); //Div0
+$d1: var(--d1); //Div1
+$d2: var(--d2); //Div2
+
+$h: var(--h); //Header
+$t: var(--t); //Text
+
+$b: #FFFFFE; //Blaco
+$n: #191919; //Negro
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $d1 !important;
+
+    aside{
+        background-color: $d0 !important;
+    }
+}
+
+
+
+/* HEADER */
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: $h;
+  
+  a{
+        color: $b !important;
+        cursor: pointer
+    }
+}
+
+#perfil{
+    max-width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+#color {
+    border: 1px solid $b;
+    color: $b;
+    background-color: $n;
+}

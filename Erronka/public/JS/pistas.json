@@ -1,0 +1,20 @@
+[
+    {
+        "pista":"Cuando tengas la respuesta coge el primer numero de tu respuesta y cuenta cual es la letra del abecedario que encaje con ese numero[a=1, b=2, c=3...]."
+    },
+    {
+        "pista":"Completa las preguntas y saca cual a sido la pregunta mas usada, la cual puede ser A, B, C o la D"
+    },
+    {
+        "pista":"Saca la respuesta mediante el video. Cuando la tengas coge el primer numero de tu respuesta y cuenta cual es la letra del abecedario que encaje con ese numero[a=1, b=2, c=3...]."
+    },
+    {
+        "pista":"Usa la sigiente formula para calcular el iva: [precio * 1.21]"
+    },
+    {
+        "pista":"Para sacar la factura primero calcula la suma de todos los productos que has comprado, ademas del transporte. Despues calcula un descuento del 10%."
+    },
+    {
+        "pista":"Usa la sigiente formula para calcular el iva: [precio * 1.21]"
+    }
+]

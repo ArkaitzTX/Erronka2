@@ -1,0 +1,152 @@
+@import "_colores";
+@import "_main";
+
+$f: var(--f); //Fondo
+
+$d0: var(--d0); //Div0
+$d1: var(--d1); //Div1
+$d2: var(--d2); //Div2
+
+$h: var(--h); //Header
+$t: var(--t); //Text
+
+$b: #FFFFFE; //Blaco
+$n: #191919; //Negro
+
+
+// COFRE
+
+#cofre {
+
+	height: 100vh;
+
+	h1 {
+        position: relative;
+		margin-top: 15% !important;
+		font-size: 700%;
+		animation: texto 1s linear infinite alternate;
+
+        z-index: 2;
+	}
+	button {
+        position: relative;
+		height: 7vh;
+		min-width: 8vw;
+
+		z-index: 2;
+	}
+	p {
+        position: relative;
+		z-index: 2;
+	}
+	#fondo {
+        height: 100vh;
+		max-width: 100%;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+        z-index: 1;
+	}
+}
+
+// CANDADO
+
+.candado {
+	max-width: 40vw;
+	max-height: 40vh;
+}
+#candado {
+	article {
+		height: 40vh;
+		background-color: $n;
+		position: relative;
+		transform: translateY(4px);
+		transition: 1s;
+		h1 {
+			font-size: 500%;
+			color: $b;
+			animation: combinacion 1s linear infinite alternate;
+			z-index: 1;
+		}
+		div {
+			height: 25%;
+			width: 100%;
+			background-color: $d0;
+			position: absolute;
+			bottom: 0;
+		}
+		&:hover {
+			transform: translateY(-4px);
+			transition: 1s;
+		}
+	}
+}
+
+#fondoCandado {
+    position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 40%;
+}
+
+// ORO
+
+#oro {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+// RESPONSIVE
+
+@media (min-width: 1200px) {
+	#titulo {
+		font-size: 550% !important;
+	}
+}
+@media (max-width: 1199.98px) and (min-width: 500px) {
+	#titulo {
+		font-size: 400% !important;
+	}
+	#fondoCandado {
+		left: 30%;
+	}
+}
+
+@media (max-width: 499px) and (min-width: 440px) {
+	#titulo {
+		font-size: 250% !important;
+	}
+	#fondoCandado {
+		display: none;
+	}
+}
+
+@media (max-width: 449px) {
+	#titulo {
+		font-size: 200% !important;
+	}
+    #fondoCandado {
+		display: none;
+	}
+}
+
+
+// ANIMACION
+
+@keyframes texto{
+	0% {
+		transform: translateY(-2px);
+	}
+	25% {
+		transform: translateY(-4px);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+	100% {
+		transform: translateY(-8px);
+	}
+}

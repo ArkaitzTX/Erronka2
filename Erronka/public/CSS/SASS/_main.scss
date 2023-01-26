@@ -1,0 +1,56 @@
+@import "_colores";
+
+
+$f: var(--f); //Fondo
+
+$d0: var(--d0); //Div0
+$d1: var(--d1); //Div1
+$d2: var(--d2); //Div2
+
+$h: var(--h); //Header
+$t: var(--t); //Text
+
+$b: #FFFFFE; //Blaco
+$n: #191919; //Negro
+
+
+
+
+
+
+main {
+    background-color: $f;
+	padding-bottom: 15%;
+}
+input[type=button], button:not(.nocolor), .elBoton{
+    color: $b !important;
+
+	// MODO CLARO*******
+    // background-color: $n !important;
+	// MODO CLARO*******
+
+	// MODO OSCURO*******
+    background-color: $d0 !important;
+	// MODO OSCURO*******
+}
+
+
+@media (max-width: 1199.98px) and (min-width: 500px) {
+	main {
+		padding-bottom: 35%;
+	}
+}
+
+@media (max-width: 499px) and (min-width: 440px) {
+	main {
+		padding-bottom: 45%;
+	}
+}
+
+@media (max-width: 449px) {
+	main {
+		padding-bottom: 55%;
+	}
+}
+
+

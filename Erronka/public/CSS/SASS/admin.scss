@@ -1,0 +1,235 @@
+@import "_colores";
+
+
+$f: var(--f); //Fondo
+
+$d0: var(--d0); //Div0
+$d1: var(--d1); //Div1
+$d2: var(--d2); //Div2
+
+$h: var(--h); //Header
+$t: var(--t); //Text
+
+$b: #FFFFFE; //Blaco
+$n: #191919; //Negro
+
+// MODO OSCURO*******
+*:not(select){
+    color: $t;
+}
+button, .boton{
+    color: $b !important;
+    background-color: $d0 !important;
+    border: $t 1px solid !important;
+}
+// MODO OSCURO*******
+
+
+
+
+
+html, main, body{
+    background-color: $f !important;
+}
+
+
+/* GENERAL */
+input{
+    border: 1px $n solid;
+}
+
+#editar input {
+    width: 100%;
+    max-height: 5vh;
+    // border: 1px $b solid;
+    border-radius: 10px;
+}
+
+#editar{
+    button {
+        width: 30vh;
+        height: 6vh;
+    }
+    img {
+        width: 25vh;
+        height: 30vh;
+    }
+}
+
+
+
+.etiquetas {
+    width: 100%;
+    margin: 0.5%;
+    border-radius: 10px;
+}
+
+.editimagen {
+    max-width: 50% !important;
+    margin-left: 0% !important;
+}
+
+input[type=file] {
+    display: none;
+    width: 25vh !important;
+}
+
+.imagen {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    // border: 1px $b solid;
+    border-radius: 10px;
+    max-width: 25vh !important;
+    max-height: 20% !important;
+}
+
+input{
+    color: $n !important;
+}
+
+#rol {
+    input {
+        height: 5vh;
+        // border: 1px $b solid !important;
+        border-radius: 10px;
+        width: 30vh;
+    }
+    button {
+        height: 5vh;
+        // border: 1px $b solid;
+        border-radius: 10px;
+    }
+}
+
+#eliminar {
+    select {
+        height: 5vh;
+        // border: 1px $b solid;
+        border-radius: 10px;
+        width: 30vh;
+    }
+    button {
+        height: 5vh;
+        // border: 1px $b solid;
+        border-radius: 10px;
+    }
+}
+
+
+#cerrar {
+    position: absolute;
+    
+    bottom: 20px;
+    right: 20px;
+}
+
+.usuarios{
+    table{
+        tr{
+            background-color: $d1;
+            border: 1px solid $t;
+            
+            transition: .5s;
+            transform: scale(1);
+            
+            th{
+                height: 50px;
+                background-color: $d0;
+            }
+            td, th{
+                color: $t !important;
+                text-align: center;
+                min-width: 15vw;
+            }
+            &:hover{
+                opacity: 0.8;
+
+                transition: .5s;
+                transform: scale(1.005);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 980px) {
+    #editar input {
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #editar input {
+        width: auto;
+    }
+
+    .erabiltzailea {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #editar input {
+        width: 100%;
+    }
+
+    #editar button {
+        width: 100%;
+    }
+
+    .editimagen {
+        justify-content: center;
+        margin-left: 1%;
+    }
+    table{
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .editimagen {
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .erabiltzailea {
+        width: 100%;
+    }
+
+    #editar input {
+        width: 100%;
+    }
+}
+
+
+
+@keyframes error {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-2x);
+    }
+
+    50% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+// OTRO COSA
+
+#otracosa{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 10%;
+}

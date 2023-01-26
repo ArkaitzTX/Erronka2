@@ -1,0 +1,50 @@
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+/* FOOTER */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--d1) !important;
+}
+footer aside {
+  background-color: var(--d0) !important;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: var(--h);
+}
+header a {
+  color: #FFFFFE !important;
+  cursor: pointer;
+}
+
+#perfil {
+  max-width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+#color {
+  border: 1px solid #FFFFFE;
+  color: #FFFFFE;
+  background-color: #191919;
+}
+
+/*# sourceMappingURL=header_footer.css.map */

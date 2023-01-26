@@ -1,0 +1,86 @@
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+main {
+  background-color: var(--f);
+  padding-bottom: 15%;
+}
+
+input[type=button], button:not(.nocolor), .elBoton {
+  color: #FFFFFE !important;
+  background-color: var(--d0) !important;
+}
+
+@media (max-width: 1199.98px) and (min-width: 500px) {
+  main {
+    padding-bottom: 35%;
+  }
+}
+@media (max-width: 499px) and (min-width: 440px) {
+  main {
+    padding-bottom: 45%;
+  }
+}
+@media (max-width: 449px) {
+  main {
+    padding-bottom: 55%;
+  }
+}
+* {
+  color: #FFFFFE;
+}
+
+main {
+  padding-top: 5%;
+}
+main section {
+  background-color: var(--d1);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  min-height: 400px;
+}
+
+#menu {
+  display: table !important;
+  width: 100%;
+}
+
+.menu-obj {
+  display: table-cell;
+  background: var(--d0);
+}
+
+.menu-btn {
+  background-color: var(--d0) !important;
+  color: #FFFFFE !important;
+}
+.menu-btn:focus {
+  background-color: var(--d1) !important;
+}
+
+.formulario input {
+  margin-bottom: 12px;
+  border-radius: 3px;
+}
+.formulario button {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=log-reg.css.map */

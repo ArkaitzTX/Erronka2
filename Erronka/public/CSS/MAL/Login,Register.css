@@ -1,0 +1,50 @@
+main{
+    background-color: #140C73;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    min-height: 400px;
+
+    margin-bottom: 15%;
+}
+
+
+#menu {
+    display: table !important;
+    width: 100%;
+}
+
+.menu-obj {
+    display: table-cell;
+    background: #101243;
+}
+
+.formulario input {
+
+    margin-bottom: 12px;
+    border-radius: 3px;
+}
+
+.formulario button {
+
+    margin-top: 20px;
+}
+
+
+
+  @media(max-width: 1000px) and (min-width: 500px) {
+    main {
+      margin-bottom: 45%;
+    }
+  }
+  @media (max-width: 499px) and (min-width: 440px) {
+    main {
+      margin-bottom: 50%;
+    }
+  }
+  @media (max-width: 449px) {
+    main {
+      margin-bottom: 60%;
+    }
+  }
