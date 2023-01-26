@@ -1,12 +1,17 @@
+<<<<<<< HEAD
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+=======
+
+>>>>>>> origin/development
 
 import './bootstrap';
 import { createApp } from 'vue';
 
+<<<<<<< HEAD
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -37,3 +42,14 @@ app.component('example-component', ExampleComponent);
  */
 
 app.mount('#app');
+=======
+// IMPORTAR LOS COMPONENTES
+import Pista from './pistas.vue';
+createApp(Pista).mount('.pista');
+
+
+
+
+
+
+>>>>>>> origin/development

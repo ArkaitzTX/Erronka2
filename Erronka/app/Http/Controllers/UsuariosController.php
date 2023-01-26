@@ -5,15 +5,31 @@ use App\Models\Usuarios;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Partidas;
+<<<<<<< HEAD
+=======
+// use App;
+>>>>>>> origin/development
 
 class UsuariosController extends Controller
 {
     //VER
     public function index()
     {
+<<<<<<< HEAD
         $miUsu = session()->get('usuario');
         $usu = Usuarios::all();
         return view('Comercio.admin', compact('usu', 'miUsu'));
+=======
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
+        $miUsu = session()->get('usuario');
+        $usu = Usuarios::all();
+        $par = Partidas::all();
+
+        return view('Comercio.admin', compact('usu', 'miUsu', 'par'));
+>>>>>>> origin/development
     }
     //VER ID
     // public function ver($id)
@@ -24,12 +40,23 @@ class UsuariosController extends Controller
     //VER CREAR
     public function create()
     {
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         return view('Comercio.log-reg');
     }
 
     //CREAR
     public function store(Request $request)
     {
+<<<<<<< HEAD
+=======
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
+>>>>>>> origin/development
         if(Usuarios::where('usuario', $request->usuario)->exists()){
             return redirect()->action([UsuariosController::class, 'create'])->with('error', 'Erabiltzailea existitzen da.');
         }
@@ -69,13 +96,9 @@ class UsuariosController extends Controller
     //LOGIN
     public function logSes(Request $request){
 
-        // $usuarios = Usuarios::all();
-
-        // foreach($usuarios as $usu){
-        //     if($request->usuario != $usu->usuario && $request->pass != $usu->pass){
-        //         return view('Comercio.log-reg', 'El usuario es incorrecto');
-        //     }   
-        // }
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
 
         
         
@@ -86,8 +109,12 @@ class UsuariosController extends Controller
             if($request->pass == $usu->pass){
                 session(['usuario' => $usu]);
 
+<<<<<<< HEAD
                 // Route::post('/juegos',  [PartidasController::class, 'store'])->name('Comercio.parCrear');
                 return view('Comercio.index');
+=======
+                return redirect()->action([PartidasController::class, 'index']);
+>>>>>>> origin/development
             }   
         }
 
@@ -98,6 +125,10 @@ class UsuariosController extends Controller
      //CERRAR SESION
      public function cerrarSes(){
 
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
         session()->forget('usuario');
         return view('Comercio.index');
     }
@@ -105,6 +136,13 @@ class UsuariosController extends Controller
     // MEJORAR ROL
     public function rol(Request $request, $id)
     {
+<<<<<<< HEAD
+=======
+
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+>>>>>>> origin/development
         $codigoAdmin = 'ADMIN123';
 
         if ($request->rol == $codigoAdmin) {
@@ -121,6 +159,14 @@ class UsuariosController extends Controller
     //UPDATE
     public function update(Request $request, $id)
     {
+<<<<<<< HEAD
+=======
+
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
+>>>>>>> origin/development
         $request->validate([
             'nombre' => 'required|max:50',
             'apellido' => 'required|max:50',
@@ -155,6 +201,13 @@ class UsuariosController extends Controller
     //BORRAR
     public function destroy(Request $request)
     {
+<<<<<<< HEAD
+=======
+        // IDIOMA **********************************
+        $this->cambioIdioma();
+        // IDIOMA **********************************
+
+>>>>>>> origin/development
         $usu = Usuarios::findOrFail($request->usuario);
         $part = Partidas::where('usuario',$request->usuario)->get()[0];
 
@@ -163,5 +216,24 @@ class UsuariosController extends Controller
         $usu->delete();
         
         return redirect()->route('Comercio.admin')->with('mensaje', 'Erabiltzailea ezabatu da.');
+<<<<<<< HEAD
+=======
+    }
+
+    public function idioma(){
+        if(session()->get('idioma') == "es"){
+            session(['idioma' => "eu"]);
+        }
+        else{
+            session(['idioma' => "es"]);
+        }
+        return redirect()->route('Comercio.admin');
+    }
+
+    function cambioIdioma(){
+        if(session()->has('idioma')){
+            app()->setLocale(session()->get('idioma'));
+        }
+>>>>>>> origin/development
     }
 }

@@ -1,9 +1,46 @@
+<<<<<<< HEAD
 /* GENERAL */
 #editar input {
   width: 100%;
   border: 1px black solid;
   border-radius: 10px;
 }
+=======
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+*:not(select) {
+  color: var(--t);
+}
+
+button, .boton {
+  color: #FFFFFE !important;
+  background-color: var(--d0) !important;
+  border: var(--t) 1px solid !important;
+}
+
+html, main, body {
+  background-color: var(--f) !important;
+}
+
+/* GENERAL */
+input {
+  border: 1px #191919 solid;
+}
+
+#editar input {
+  width: 100%;
+  max-height: 5vh;
+  border-radius: 10px;
+}
+
+>>>>>>> origin/development
 #editar button {
   width: 30vh;
   height: 6vh;
@@ -11,8 +48,11 @@
 #editar img {
   width: 25vh;
   height: 30vh;
+<<<<<<< HEAD
   border: 1px black solid;
   border-radius: 10px;
+=======
+>>>>>>> origin/development
 }
 
 .etiquetas {
@@ -32,46 +72,96 @@ input[type=file] {
 }
 
 .imagen {
+<<<<<<< HEAD
   border: 1px solid #ccc;
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
   border: 1px black solid;
+=======
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+>>>>>>> origin/development
   border-radius: 10px;
   max-width: 25vh !important;
   max-height: 20% !important;
 }
 
+<<<<<<< HEAD
 #rol input {
   height: 5vh;
   border: 1px black solid;
+=======
+input {
+  color: #191919 !important;
+}
+
+#rol input {
+  height: 5vh;
+>>>>>>> origin/development
   border-radius: 10px;
   width: 30vh;
 }
 #rol button {
   height: 5vh;
+<<<<<<< HEAD
   border: 1px black solid;
+=======
+>>>>>>> origin/development
   border-radius: 10px;
 }
 
 #eliminar select {
   height: 5vh;
+<<<<<<< HEAD
   border: 1px black solid;
+=======
+>>>>>>> origin/development
   border-radius: 10px;
   width: 30vh;
 }
 #eliminar button {
   height: 5vh;
+<<<<<<< HEAD
   border: 1px black solid;
+=======
+>>>>>>> origin/development
   border-radius: 10px;
 }
 
 #cerrar {
   position: absolute;
+<<<<<<< HEAD
   margin-top: 1%;
   left: 80%;
   z-index: 10;
   border: white 1px solid;
+=======
+  bottom: 20px;
+  right: 20px;
+}
+
+.usuarios table tr {
+  background-color: var(--d1);
+  border: 1px solid var(--t);
+  transition: 0.5s;
+  transform: scale(1);
+}
+.usuarios table tr th {
+  height: 50px;
+  background-color: var(--d0);
+}
+.usuarios table tr td, .usuarios table tr th {
+  color: var(--t) !important;
+  text-align: center;
+  min-width: 15vw;
+}
+.usuarios table tr:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+  transform: scale(1.005);
+>>>>>>> origin/development
 }
 
 @media screen and (min-width: 980px) {
@@ -98,6 +188,12 @@ input[type=file] {
     justify-content: center;
     margin-left: 1%;
   }
+<<<<<<< HEAD
+=======
+  table {
+    font-size: small;
+  }
+>>>>>>> origin/development
 }
 @media screen and (max-width: 380px) {
   .editimagen {
@@ -112,5 +208,28 @@ input[type=file] {
     width: 100%;
   }
 }
+<<<<<<< HEAD
+=======
+@keyframes error {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-2x);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+#otracosa {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+}
+>>>>>>> origin/development
 
 /*# sourceMappingURL=admin.css.map */

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @keyframes texto {
   0% {
     transform: translateY(-2px);
@@ -14,20 +15,71 @@
 }
 main {
   margin-bottom: 15%;
+=======
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+>>>>>>> origin/development
 }
 
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+main {
+  background-color: var(--f);
+  padding-bottom: 15%;
+}
+
+input[type=button], button:not(.nocolor), .elBoton {
+  color: #FFFFFE !important;
+  background-color: var(--d0) !important;
+}
+
+@media (max-width: 1199.98px) and (min-width: 500px) {
+  main {
+    padding-bottom: 35%;
+  }
+}
+@media (max-width: 499px) and (min-width: 440px) {
+  main {
+    padding-bottom: 45%;
+  }
+}
+@media (max-width: 449px) {
+  main {
+    padding-bottom: 55%;
+  }
+}
 #cofre {
   height: 100vh;
 }
 #cofre h1 {
+  position: relative;
   margin-top: 15% !important;
   font-size: 700%;
+<<<<<<< HEAD
   z-index: 1;
   animation: texto 1s linear infinite alternate;
+=======
+  animation: texto 1s linear infinite alternate;
+  z-index: 2;
+>>>>>>> origin/development
 }
 #cofre button {
+  position: relative;
   height: 7vh;
   min-width: 8vw;
+<<<<<<< HEAD
   z-index: 1;
 }
 #cofre p {
@@ -40,6 +92,21 @@ main {
   max-width: 100%;
   top: 0;
   left: 0;
+=======
+  z-index: 2;
+}
+#cofre p {
+  position: relative;
+  z-index: 2;
+}
+#cofre #fondo {
+  height: 100vh;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+>>>>>>> origin/development
 }
 
 .candado {
@@ -49,21 +116,33 @@ main {
 
 #candado article {
   height: 40vh;
+<<<<<<< HEAD
   background-color: #050505;
+=======
+  background-color: #191919;
+>>>>>>> origin/development
   position: relative;
   transform: translateY(4px);
   transition: 1s;
 }
 #candado article h1 {
   font-size: 500%;
+<<<<<<< HEAD
   color: white;
+=======
+  color: #FFFFFE;
+>>>>>>> origin/development
   animation: combinacion 1s linear infinite alternate;
   z-index: 1;
 }
 #candado article div {
   height: 25%;
   width: 100%;
+<<<<<<< HEAD
   background-color: #140C73;
+=======
+  background-color: var(--d0);
+>>>>>>> origin/development
   position: absolute;
   bottom: 0;
 }
@@ -72,6 +151,7 @@ main {
   transition: 1s;
 }
 
+<<<<<<< HEAD
 #oro {
   display: none;
   width: 100%;
@@ -80,6 +160,8 @@ main {
   background-color: #0C1713;
 }
 
+=======
+>>>>>>> origin/development
 #fondoCandado {
   position: absolute;
   z-index: 0;
@@ -87,17 +169,66 @@ main {
   left: 40%;
 }
 
+<<<<<<< HEAD
+=======
+#oro {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+>>>>>>> origin/development
 @media (min-width: 1200px) {
   #titulo {
     font-size: 550% !important;
   }
 }
+<<<<<<< HEAD
 @media (max-width: 1199.98px) {
   #titulo {
     font-size: 400% !important;
   }
   main {
     margin-bottom: 35%;
+=======
+@media (max-width: 1199.98px) and (min-width: 500px) {
+  #titulo {
+    font-size: 400% !important;
+  }
+  #fondoCandado {
+    left: 30%;
+  }
+}
+@media (max-width: 499px) and (min-width: 440px) {
+  #titulo {
+    font-size: 250% !important;
+  }
+  #fondoCandado {
+    display: none;
+  }
+}
+@media (max-width: 449px) {
+  #titulo {
+    font-size: 200% !important;
+  }
+  #fondoCandado {
+    display: none;
+  }
+}
+@keyframes texto {
+  0% {
+    transform: translateY(-2px);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(-8px);
+>>>>>>> origin/development
   }
 }
 
