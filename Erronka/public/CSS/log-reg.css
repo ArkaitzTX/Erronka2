@@ -75,6 +75,10 @@ main section {
   background-color: var(--d1) !important;
 }
 
+option {
+  color: #191919;
+}
+
 .formulario input {
   margin-bottom: 12px;
   border-radius: 3px;

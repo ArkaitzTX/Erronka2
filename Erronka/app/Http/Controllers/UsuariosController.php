@@ -5,6 +5,7 @@ use App\Models\Usuarios;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Partidas;
+use Illuminate\Support\Facades\Hash;
 // use App;
 
 class UsuariosController extends Controller
@@ -64,7 +65,7 @@ class UsuariosController extends Controller
             $usu->nombre = $request->nombre;
             $usu->apellido = $request->apellido;
             $usu->usuario = $request->usuario;
-            $usu->pass = $request->pass;
+            $usu->pass = bcrypt($request->pass);
             $usu->rol = 0;
             $usu->foto = "default.png";
             $usu->type = "png";
@@ -73,6 +74,9 @@ class UsuariosController extends Controller
             $partidas = new Partidas();
             $partidas->juego1 = 0;
             $partidas->juego2 = 0;
+            //! DIFICULTAD
+            $partidas->dificultad = $request->dificultad;
+            //! DIFICULTAD
             $partidas->usuario = Usuarios::where('usuario','=', $request->usuario)->get()[0]->id;
             $partidas->save();
             
@@ -91,7 +95,7 @@ class UsuariosController extends Controller
         $usuarios = Usuarios::where('usuario','=',$request->usuario)->get();
         
         foreach($usuarios as $usu){
-            if($request->pass == $usu->pass){
+            if(Hash::check($request->pass, $usu->pass)){
                 session(['usuario' => $usu]);
 
                 return redirect()->action([PartidasController::class, 'index']);

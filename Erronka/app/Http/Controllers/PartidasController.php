@@ -35,7 +35,8 @@ class PartidasController extends Controller
         $candado = 'juego'.$candado;
         $partidas = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0];
         $usuario = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0]->id;
-        return view('Comercio.juegos', compact('partidas', 'candado', 'usuario'));
+        $dificultad = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0]->dificultad;
+        return view('Comercio.juegos', compact('partidas', 'candado', 'usuario', 'dificultad'));
     }
 
     function cambioIdioma(){

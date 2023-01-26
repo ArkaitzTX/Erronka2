@@ -21,7 +21,7 @@ class UsuariosFactory extends Factory
             'nombre'=>$this->faker->firstName(),
             'apellido'=>$this->faker->lastName(),
             'usuario'=>$this->faker->name(),
-            'pass'=>'Inf041',
+            'pass'=>bcrypt('Inf041'),
             'foto'=>'default.png',
             'type'=>'png',
             'rol'=>0,

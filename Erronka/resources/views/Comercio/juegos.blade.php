@@ -40,14 +40,13 @@
         <article>
             {{-- Otros --}}
             <section class="mx-5 my-3 d-flex flex-nowrap">
-                {{-- <div id="vidas">
-                    <vidas></vidas>
-                </div> --}}
                 <div>
-                    <strong class="otro">{{__("juegos.v")}} {{-- !idioma --}} <span id="vidas">3</span></strong>
+                    <strong class="otro">{{__("juegos.v")}}
+                         {{-- !idioma --}} <span id="vidas">3</span>
+                    </strong>
                 </div>
                 <div id="reloj">
-                    <reloj></reloj>
+                    <reloj d="{{$dificultad}}"></reloj>
                 </div> 
             </section>
 

@@ -121,6 +121,7 @@ window.onload = () => {
     // RELOJ-----------------------------------------------------------------------------
     const reloj = Vue.createApp({})
     reloj.component('reloj', {
+        props: ['d'],
         data() {
             return {
                 minutos: 30,
@@ -158,6 +159,20 @@ window.onload = () => {
             },
         },
         created() {
+            switch (this.d) {
+                case "0":
+                    this.minutos = 30;
+                    break;
+                case "1":
+                    this.minutos = 20;
+                    break;          
+                case "2":
+                    this.minutos = 10;
+                    break;
+                default:
+                    alert(this.d);
+                    break;
+            }
             this.intervalo()
         }
     });

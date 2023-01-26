@@ -10,5 +10,9 @@ return [
     "usuario" => "Erabiltzaile",
     "pass1" => "Pasahitza",
     "pass2" => "Bersartu pasahitza",
+    "dif" => "Zailtasuna:",
+    "d1" => "Erraza",
+    "d2" => "Arrunta",
+    "d3" => "Zaila",
 ];
 ?>

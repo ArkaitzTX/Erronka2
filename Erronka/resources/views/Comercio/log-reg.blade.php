@@ -77,6 +77,13 @@
                             value="{{ old('pass')}}" required>
                         <input type="password" name="passB" class="form-control" placeholder="{{__("log-reg.pass2")}} {{-- !idioma --}}"
                             value="{{ old('passB')}}" required>
+
+                        <label>{{__("log-reg.dif")}} {{-- !idioma --}}</label>
+                        <select name="dificultad" class="form-control">
+                            <option value="0">{{__("log-reg.d1")}} {{-- !idioma --}}</option>
+                            <option value="1">{{__("log-reg.d2")}} {{-- !idioma --}}</option>
+                            <option value="2">{{__("log-reg.d3")}} {{-- !idioma --}}</option>
+                        </select>
                         <button class="btn btn-block">Erregistratu</button>
                     </form>
 
