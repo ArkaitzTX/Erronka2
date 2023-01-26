@@ -143,10 +143,9 @@ input{
                 min-width: 15vw;
             }
             &:hover{
-                opacity: 0.8;
-
-                transition: .5s;
-                transform: scale(1.005);
+                opacity: .5;
+                transition: .3s;
+                // transform: scale(1.005);
             }
         }
     }
