@@ -63,7 +63,7 @@ input[type=file] {
   cursor: pointer;
   border-radius: 10px;
   max-width: 25vh !important;
-  max-height: 20% !important;
+  max-height: 40px !important;
 }
 
 input {

@@ -21,6 +21,7 @@
 
     <main>
         <article class="container my-5">
+
             {{-- EDITAR --}}
             <form id="editar" class="row" action="{{ route('Comercio.usuUpdate', $miUsu->id) }}"
                 enctype="multipart/form-data" method="post">
@@ -49,8 +50,13 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
                         <label class="etiquetas">{{__("admin.pass")}} {{-- !idioma --}}</label>
-                        <input readonly type="password" name="pass" class="cambios" value="{{$miUsu->pass}}">
+                        <input type="password" name="pass" class="cambios">
                     </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
+                        <label class="etiquetas">{{__("admin.pass")}} {{-- !idioma --}}</label>
+                        <input type="password" name="passV" class="cambios" >
+                    </div>
+                    
                     <button id="validar" type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar"
                         data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">{{__("admin.guarda")}} {{-- !idioma --}}</button>
                 </section>
@@ -61,8 +67,8 @@
                 @foreach ($errors->all() as $error)
                 <p class="text-danger text-center">{{ $error }}</p>
                 @endforeach
-
             </form>
+            
 
             <hr>
             {{-- CAMBIAR IDIOMA --}}
