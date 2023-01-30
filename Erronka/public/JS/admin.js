@@ -2,7 +2,7 @@ const FORM = "editar";
 const CORRECTOR = {
     nombre: [ 
         {
-            nombre: "betwen", 
+            nombre: "between", 
             valor: [3, 50]
         },
         {
@@ -12,7 +12,7 @@ const CORRECTOR = {
     ],
     apellido: [ 
         {
-            nombre: "betwen", 
+            nombre: "between", 
             valor: [3, 50]
         },
         {
@@ -22,13 +22,13 @@ const CORRECTOR = {
     ],
     usuario: [ 
         {
-            nombre: "betwen", 
+            nombre: "between", 
             valor: [5, 50]
         },
     ],
     pass: [
         {
-            nombre: "betwen", 
+            nombre: "between", 
             valor: [8, 20]
         },
         {
@@ -40,7 +40,7 @@ const CORRECTOR = {
 
 
 const VALIDACIONES = {
-    betwen: (valor, input) =>{
+    between: (valor, input) =>{
         return valor[0] <= input.length && valor[1] > input.length;
     },
     tipo: (valor, input) =>{
@@ -52,7 +52,7 @@ const VALIDACIONES = {
 };
 
 const ERRORES = {
-    betwen: (valor, inputname) =>{
+    between: (valor, inputname) =>{
         return `La longitud de tu ${inputname} tiene que estar entre ${valor[0]} y ${valor[1]}`;
     },
     tipo: (valor, inputname) =>{

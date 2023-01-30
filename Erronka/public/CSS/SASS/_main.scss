@@ -34,6 +34,10 @@ input[type=button], button:not(.nocolor), .elBoton{
 	// MODO OSCURO*******
 }
 
+.text-danger, .text-warning, .text-success{
+	text-shadow: -1px 0 $t, 0 1px $t, 1px 0 $t, 0 -1px $t !important;
+}
+
 
 @media (max-width: 1199.98px) and (min-width: 500px) {
 	main {
