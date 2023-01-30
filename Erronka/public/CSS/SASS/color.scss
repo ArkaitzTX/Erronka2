@@ -1,0 +1,85 @@
+@import "_colores";
+@import "_main";
+
+$f: var(--f); //Fondo
+
+$d0: var(--d0); //Div0
+$d1: var(--d1); //Div1
+$d2: var(--d2); //Div2
+
+$h: var(--h); //Header
+$t: var(--t); //Text
+
+$b: #FFFFFE; //Blaco
+$n: #191919; //Negro
+
+
+@mixin flex {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#menu{
+
+    @include flex;
+    
+    section{
+        background-color: $d1;
+        color: $t;
+        margin-top: 1%;
+    
+        height: 15vh;
+        width: 80vw;
+        
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+
+}
+
+#vista {
+    background-color: $f;
+
+    border: $t 1px solid;
+    height: 65vh;
+    width: 80vw;
+
+    @include flex;
+
+    header{
+        background-color: $h;
+
+        // border: $t 1px solid;
+        height: 10vh;
+        width: 70vw;
+    }
+    section {
+        background-color: $d1;
+
+        // border: $t 1px solid;
+        height: 20vh;
+        width: 70vw;
+
+        @include flex;
+
+        div {
+            background-color: $d0;
+
+            // border: $t 1px solid;
+            height: 5vh;
+            width: 60vw;
+        }
+        #div2{
+            background-color: $d2;
+        }
+    }
+
+    p, h1{
+        color: $t;
+    }
+}

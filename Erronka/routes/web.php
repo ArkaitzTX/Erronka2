@@ -22,6 +22,11 @@ Route::get('/#cofre', function () {
     return view('Comercio.index');
 })->name('Comercio.cofre');
 
+//COLORES
+Route::get('/tema', function () {
+    return view('Comercio.color');
+})->name('Comercio.tema');
+
 //Ventana Log-reg
 Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.login');
     //Create

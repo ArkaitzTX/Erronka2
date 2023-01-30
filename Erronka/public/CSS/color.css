@@ -1,0 +1,102 @@
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+:root {
+  --f: #252525;
+  --d0: #B79a00;
+  --d1: #323232;
+  --d2: #F5F3F0;
+  --h: #191919;
+  --t: #FFFFFE;
+}
+
+main {
+  background-color: var(--f);
+  padding-bottom: 15%;
+}
+
+input[type=button], button:not(.nocolor), .elBoton {
+  color: #FFFFFE !important;
+  background-color: var(--d0) !important;
+}
+
+.text-danger, .text-warning, .text-success {
+  text-shadow: -1px 0 var(--t), 0 1px var(--t), 1px 0 var(--t), 0 -1px var(--t) !important;
+}
+
+@media (max-width: 1199.98px) and (min-width: 500px) {
+  main {
+    padding-bottom: 35%;
+  }
+}
+@media (max-width: 499px) and (min-width: 440px) {
+  main {
+    padding-bottom: 45%;
+  }
+}
+@media (max-width: 449px) {
+  main {
+    padding-bottom: 55%;
+  }
+}
+#menu {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#menu section {
+  background-color: var(--d1);
+  color: var(--t);
+  margin-top: 1%;
+  height: 15vh;
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#vista {
+  background-color: var(--f);
+  border: var(--t) 1px solid;
+  height: 65vh;
+  width: 80vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#vista header {
+  background-color: var(--h);
+  height: 10vh;
+  width: 70vw;
+}
+#vista section {
+  background-color: var(--d1);
+  height: 20vh;
+  width: 70vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#vista section div {
+  background-color: var(--d0);
+  height: 5vh;
+  width: 60vw;
+}
+#vista section #div2 {
+  background-color: var(--d2);
+}
+#vista p, #vista h1 {
+  color: var(--t);
+}
+
+/*# sourceMappingURL=color.css.map */

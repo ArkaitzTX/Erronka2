@@ -33,29 +33,6 @@ const COLORES = [
         h: '#B08D6B',
         t: '#FFFFFE'
     },
- 
-    // {
-    //     // ES
-    //     f: '#FEC400',
-
-    //     d0: '#C60B1E',
-    //     d1: '#C60B1E',
-    //     d2: '#FEC400',
-
-    //     h: '#C60B1E',
-    //     t: '#FFFFFE'
-    // },
-    // {
-    //     // EU
-    //     f: '#009B48',
-
-    //     d0: '#D52B1E',
-    //     d1: 'white',
-    //     d2: '#D52B1E',
-
-    //     h: '#D52B1E',
-    //     t: '#191919'
-    // },
 ];
 
 
@@ -77,16 +54,15 @@ $(document).ready(function () {
 });
 
 function aplicarColor() {
-    // console.log(colorElegido);
+    const R = document.documentElement;
 
-    const rootElement = document.documentElement;
+    R.style.setProperty('--f', COLORES[colorElegido].f);
 
-    rootElement.style.setProperty('--f', COLORES[colorElegido].f);
+    R.style.setProperty('--d0', COLORES[colorElegido].d0);
+    R.style.setProperty('--d1', COLORES[colorElegido].d1);
+    R.style.setProperty('--d2', COLORES[colorElegido].d2);
 
-    rootElement.style.setProperty('--d0', COLORES[colorElegido].d0);
-    rootElement.style.setProperty('--d1', COLORES[colorElegido].d1);
-    rootElement.style.setProperty('--d2', COLORES[colorElegido].d2);
-
-    rootElement.style.setProperty('--h', COLORES[colorElegido].h);
-    rootElement.style.setProperty('--t', COLORES[colorElegido].t);
+    R.style.setProperty('--h', COLORES[colorElegido].h);
+    R.style.setProperty('--t', COLORES[colorElegido].t);
 }
+
