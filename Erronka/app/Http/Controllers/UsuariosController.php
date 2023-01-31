@@ -14,7 +14,7 @@ class UsuariosController extends Controller
     public function index()
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         $miUsu = session()->get('usuario');
@@ -33,7 +33,7 @@ class UsuariosController extends Controller
     public function create()
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         return view('Comercio.log-reg');
@@ -43,7 +43,7 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         if(Usuarios::where('usuario', $request->usuario)->exists()){
@@ -89,7 +89,7 @@ class UsuariosController extends Controller
     public function logSes(Request $request){
 
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         $usuarios = Usuarios::where('usuario','=',$request->usuario)->get();
@@ -110,7 +110,7 @@ class UsuariosController extends Controller
      public function cerrarSes(){
 
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         session()->forget('usuario');
@@ -122,7 +122,7 @@ class UsuariosController extends Controller
     {
 
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
         $codigoAdmin = 'ADMIN123';
 
@@ -142,7 +142,7 @@ class UsuariosController extends Controller
     {
 
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         $request->validate([
@@ -180,7 +180,7 @@ class UsuariosController extends Controller
     public function destroy(Request $request)
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         $usu = Usuarios::findOrFail($request->usuario);
@@ -203,9 +203,9 @@ class UsuariosController extends Controller
         return redirect()->route('Comercio.admin');
     }
 
-    function cambioIdioma(){
-        if(session()->has('idioma')){
-            app()->setLocale(session()->get('idioma'));
-        }
-    }
+    // function cambioIdioma(){
+    //     if(session()->has('idioma')){
+    //         app()->setLocale(session()->get('idioma'));
+    //     }
+    // }
 }

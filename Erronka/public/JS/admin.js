@@ -40,27 +40,30 @@ const CORRECTOR = {
 
 
 const VALIDACIONES = {
-    between: (valor, input) =>{
-        return valor[0] <= input.length && valor[1] > input.length;
+    between: {
+        validar: (valor, input) =>{
+            return valor[0] <= input.length && valor[1] > input.length;
+        },
+        error: (valor, inputname) =>{
+            return `La longitud de tu ${inputname} tiene que estar entre ${valor[0]} y ${valor[1]}`;
+        }
     },
-    tipo: (valor, input) =>{
-        return input.split("").every(char => isNaN(char) == valor);
+    tipo:{
+        validar: (valor, input) =>{
+            return input.split("").every(char => isNaN(char) == valor);
+        },
+        error: (valor, inputname) =>{
+            const MITIPO = ["INT", "STRING"]
+            return `El tipo del dato de tu ${inputname} tiene que ser ${MITIPO[valor]}`;
+        }
     },
-    comparacion: (valor, input) =>{
-        return input === document.getElementsByName(valor)[0].value;
-    },
-};
-
-const ERRORES = {
-    between: (valor, inputname) =>{
-        return `La longitud de tu ${inputname} tiene que estar entre ${valor[0]} y ${valor[1]}`;
-    },
-    tipo: (valor, inputname) =>{
-        const MITIPO = ["INT", "STRING"]
-        return `El tipo del dato de tu ${inputname} tiene que ser ${MITIPO[valor]}`;
-    },
-    comparacion: (valor, inputname) =>{
-         return `El valor de tu ${inputname} no es igual`;
+    comparacion:{
+        validar: (valor, input) =>{
+            return input === document.getElementsByName(valor)[0].value;
+        },
+        error: (valor, inputname) =>{
+            return `El valor de tu ${inputname} no es igual`;
+       }
     },
 };
 
@@ -83,9 +86,9 @@ $(document).ready(function () {
                     nombre[0] == input.name
                 ) &&
                 CORRECTOR[input.name].forEach(correcciones => {
-                    if (!VALIDACIONES[correcciones.nombre](correcciones.valor, input.value)) {
+                    if (!VALIDACIONES[correcciones.nombre].validar(correcciones.valor, input.value)) {
                         RESULTADO = false;
-                        input.parentElement.insertAdjacentHTML("beforeend", '<p class="error text-danger">' + ERRORES[correcciones.nombre](correcciones.valor, input.name) + '</p>');
+                        input.parentElement.insertAdjacentHTML("beforeend", '<p class="error text-danger">' + VALIDACIONES[correcciones.nombre].error(correcciones.valor, input.name) + '</p>');
 
                         input.style.border = "solid 2px red";
                         input.style.animation ="error .25s  linear 2";

@@ -4,16 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\PartidasController;
 
-// IDIOMA
-// App::setLocale("eu");
-Route::get('/idioma', [UsuariosController::class, 'idioma'])->name('Comercio.idioma');
 
 
+Route::group(['middleware' => 'idiomas'], function(){
 
-//Ventana Index 1
-// Route::get('/', function () {
-//     return view('Comercio.index');
-// })->name('Comercio.index');
 //Index con #
 Route::get('/#juegos', function () {
     return view('Comercio.index');
@@ -23,9 +17,9 @@ Route::get('/#cofre', function () {
 })->name('Comercio.cofre');
 
 //COLORES
-Route::get('/tema', function () {
-    return view('Comercio.color');
-})->name('Comercio.tema');
+// Route::get('/tema', function () {
+//     return view('Comercio.color');
+// })->name('Comercio.tema');
 
 //Ventana Log-reg
 Route::get('/log-reg', [UsuariosController::class, 'create'])->name('Comercio.login');
@@ -54,4 +48,7 @@ Route::group(['middleware' => 'seguridad'], function(){
         //Rol mejora
         Route::post('/admin/{id}', [UsuariosController::class, 'rol'])->name('Comercio.rol');
 });
+// IDIOMA
+Route::get('/idioma', [UsuariosController::class, 'idioma'])->name('Comercio.idioma');
 
+});
