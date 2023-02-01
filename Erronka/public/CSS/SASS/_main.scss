@@ -34,8 +34,10 @@ input[type=button], button:not(.nocolor), .elBoton{
 	// MODO OSCURO*******
 }
 
-.text-danger, .text-warning, .text-success{
-	text-shadow: -1px 0 $t, 0 1px $t, 1px 0 $t, 0 -1px $t !important;
+.text-danger, .text-warning, .text-info, .text-success{
+	// background-color: $t;
+	// text-shadow: 0px 0px 5px white;
+	text-shadow: -1px 0 $t, 0 .5px $t, .5px 0 $t, 0 -1px $t !important;
 }
 
 
