@@ -37,7 +37,7 @@ input[type=button], button:not(.nocolor), .elBoton{
 .text-danger, .text-warning, .text-info, .text-success{
 	// background-color: $t;
 	// text-shadow: 0px 0px 5px white;
-	text-shadow: -1px 0 $t, 0 .5px $t, .5px 0 $t, 0 -1px $t !important;
+	text-shadow: -1px 0 $t, 0 .25px $t, .25px 0 $t, 0 -1px $t !important;
 }
 
 

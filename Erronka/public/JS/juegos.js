@@ -485,12 +485,13 @@ window.onload = () => {
             //DRAG
             drag(e) {
                 this.div = e.target.cloneNode(true);
+                this.div.setAttribute("draggable", false);
             },
             // DROP
             drop(e) {
                 e.preventDefault();
 
-                if(e.target.firstChild == null){
+                if(e.target.firstChild == null){                    
                     e.target.appendChild(this.div);
                 }
                 else{
@@ -537,9 +538,6 @@ window.onload = () => {
                 };
 
                 return res;
-            },
-            suma(){
-
             }
         }
     }).mount('#juego6');
