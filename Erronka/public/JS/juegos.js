@@ -121,6 +121,7 @@ window.onload = () => {
     // RELOJ-----------------------------------------------------------------------------
     const reloj = Vue.createApp({})
     reloj.component('reloj', {
+        props: ['d'],
         data() {
             return {
                 minutos: 30,
@@ -158,6 +159,20 @@ window.onload = () => {
             },
         },
         created() {
+            switch (this.d) {
+                case "0":
+                    this.minutos = 30;
+                    break;
+                case "1":
+                    this.minutos = 20;
+                    break;          
+                case "2":
+                    this.minutos = 10;
+                    break;
+                default:
+                    alert(this.d);
+                    break;
+            }
             this.intervalo()
         }
     });
@@ -247,7 +262,13 @@ window.onload = () => {
                 axios.get('../JS/pistas.json')
                 .then((respuesta) => {
                     const N = (this.candado == "juego2") ? Number(this.juego)+3 : this.juego;
-                    Swal.fire(respuesta.data[N].pista);
+
+                    // window.open("https://calculadora.name/" , "Calculadora" , "width=350,height=600,scrollbars=NO,resizable=NO");
+                    Swal.fire({
+                        title: "PISTA",
+                        text: respuesta.data[N].pista,
+                        // footer: '<a href="../../resources/views/calculadora.html" target="_blank">CALCULADORA</a>'
+                    });
                 })
                 .catch(err => console.log(err));
             }
@@ -464,12 +485,13 @@ window.onload = () => {
             //DRAG
             drag(e) {
                 this.div = e.target.cloneNode(true);
+                this.div.setAttribute("draggable", false);
             },
             // DROP
             drop(e) {
                 e.preventDefault();
 
-                if(e.target.firstChild == null){
+                if(e.target.firstChild == null){                    
                     e.target.appendChild(this.div);
                 }
                 else{
@@ -516,9 +538,6 @@ window.onload = () => {
                 };
 
                 return res;
-            },
-            suma(){
-
             }
         }
     }).mount('#juego6');

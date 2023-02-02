@@ -11,7 +11,7 @@ class Partidas extends Model
 
     protected $table = "partidas";
     protected $primaryKey = "id";
-    protected $fillable = ['juego1', 'juego2', 'usuario'];
+    protected $fillable = ['juego1', 'juego2', 'dificultad', 'usuario'];
     protected $hidden = ['id'];
 
     public function usuarios(){

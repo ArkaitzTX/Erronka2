@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body id="main" class="d-none">
 
     {{-- !CAMBIAR CANDADOS CON LA BD --}}
 
@@ -52,11 +52,17 @@
 
         </section>
         <section class="d-flex align-items-center justify-content-center flex-column" id="cofre">
-            <div class="container text-center">
+            <article class="container text-center">
                 <div class="row align-items-center">
                     <img class="col d-none d-xl-block candado" src="{{asset('IMG/candado.png')}}" alt="">
                     <div class="col">
-                        <img id="fondo" src="{{asset('IMG/fondo5.png')}}" alt="fondo">
+
+                        <picture>
+                            <source media="(max-width: 699.99px)" srcset="{{asset('IMG/fondo7.png')}}" type="image/png">
+                            <source media="(max-width: 1000px)  AND (min-width: 700px)" srcset="{{asset('IMG/fondo6.png')}}" type="image/png">
+                            <img id="fondo" src="{{asset('IMG/fondo5.png')}}" alt="fondo">
+                        </picture>
+
                         <h1 id="titulo" class="mb-5 text-dark"> {{__("index.titulo")}} {{-- !idioma --}}</h1> 
                         <p class="mb-5 text-center text-dark">
                             {{__("index.texto")}} {{-- !idioma --}}
@@ -72,7 +78,7 @@
                     </div>
                     <img class="col d-none d-xl-block candado" src="{{asset('IMG/candado.png')}}" alt="">
                 </div>
-            </div>
+            </article>
         </section>
 
         {{-- <p class="my-3 text-light text-center" id="juegos">Txurdinaga</p> --}}
@@ -96,7 +102,7 @@
 
                     <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
-                        <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} Nº1</h3>
+                        <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} 1</h3>
                     </div>
                 </article>
             </a>
@@ -116,7 +122,7 @@
 
                     <img id="fondoCandado" src="{{asset('IMG/cerradura-r.png')}}" alt="fondo">
                     <div>
-                        <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} Nº2</h3>
+                        <h3 class="mx-5 my-4">{{__("index.candado")}} {{-- !idioma --}} 2</h3>
                     </div>
                 </article>
             </a>

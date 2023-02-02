@@ -18,8 +18,7 @@
             <div id="2" v-on:drop="drop" v-on:dragover="allowDrop" class="caja"></div>
             *
             <div id="3" v-on:drop="drop" v-on:dragover="allowDrop" class="caja"></div>
-            {{-- =
-            <label class="caja text-dark">50</label> --}}
+     
         </div>
         <br>
         <div class="contenedor">

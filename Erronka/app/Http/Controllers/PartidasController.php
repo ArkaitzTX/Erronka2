@@ -11,7 +11,7 @@ class PartidasController extends Controller
     public function index()
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         if(isset(session()->get('usuario')->id)){
@@ -25,7 +25,7 @@ class PartidasController extends Controller
     public function ver($candado)
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         if(null === session()->get('usuario')){
@@ -35,14 +35,15 @@ class PartidasController extends Controller
         $candado = 'juego'.$candado;
         $partidas = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0];
         $usuario = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0]->id;
-        return view('Comercio.juegos', compact('partidas', 'candado', 'usuario'));
+        $dificultad = Partidas::where('usuario','=',session()->get('usuario')->id)->get()[0]->dificultad;
+        return view('Comercio.juegos', compact('partidas', 'candado', 'usuario', 'dificultad'));
     }
 
-    function cambioIdioma(){
-        if(session()->has('idioma')){
-            app()->setLocale(session()->get('idioma'));
-        }
-    }
+    // function cambioIdioma(){
+    //     if(session()->has('idioma')){
+    //         app()->setLocale(session()->get('idioma'));
+    //     }
+    // }
 
 
 

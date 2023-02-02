@@ -11,6 +11,7 @@
     <link href="{{asset('CSS/admin.css')}}" rel="stylesheet" type="text/css">
 
     {{-- JS --}}
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> {{-- VUE  --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{asset('JS/admin.js')}}"></script>
 </head>
@@ -20,9 +21,10 @@
     @include('layouts.header')
 
     <main>
-        <article class="container my-5">
+        <article id="validacion" class="container my-5">
+
             {{-- EDITAR --}}
-            <form id="editar" class="row" action="{{ route('Comercio.usuUpdate', $miUsu->id) }}"
+            <form @submit.prevent id="editar" class="row" action="{{ route('Comercio.usuUpdate', $miUsu->id) }}"
                 enctype="multipart/form-data" method="post">
                 @csrf {{ method_field('PUT') }}
                 {{-- IMAGEN --}}
@@ -37,23 +39,52 @@
                 <section class="row col-lg-9 col-md-9 col-sm-9 mt-5 erabiltzailea">
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
                         <label class="etiquetas">{{__("admin.nombre")}} {{-- !idioma --}}</label>
-                        <input type="text" name="nombre" class="cambios" value="{{$miUsu->nombre}}">
+                        {{-- !VAINILLA <input type="text" name="nombre" class="cambios" value="{{$miUsu->nombre}}"> --}}
+                        <input type="text" 
+                        name="nombre" 
+                        class="cambios" 
+                        value="{{$miUsu->nombre}}"
+                        @blur="validar">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
                         <label class="etiquetas">{{__("admin.apellido")}} {{-- !idioma --}}</label>
-                        <input type="text" name="apellido" class="cambios" value="{{$miUsu->apellido}}">
+                        {{-- !VAINILLA <input type="text" name="apellido" class="cambios" value="{{$miUsu->apellido}}"> --}}
+                        <input type="text" 
+                        name="apellido" 
+                        class="cambios" 
+                        value="{{$miUsu->apellido}}"
+                        @blur="validar">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
                         <label class="etiquetas">{{__("admin.usuario")}} {{-- !idioma --}}</label>
-                        <input type="text" name="usuario" class="cambios" value="{{$miUsu->usuario}}">
+                        {{-- !VAINILLA <input type="text" name="usuario" class="cambios" value="{{$miUsu->usuario}}"> --}}
+                        <input type="text" 
+                        name="usuario" 
+                        class="cambios" 
+                        value="{{$miUsu->usuario}}"
+                        @blur="validar">
+                    </div>
+                    {{-- !PASS <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
+                        <label class="etiquetas">{{__("admin.pass")}}</label>
+                        <input type="password" name="pass" class="cambios">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
-                        <label class="etiquetas">{{__("admin.pass")}} {{-- !idioma --}}</label>
-                        <input readonly type="password" name="pass" class="cambios" value="{{$miUsu->pass}}">
+                        <label class="etiquetas">{{__("admin.pass")}}</label>
+                        <input type="password" name="passV" class="cambios" > --}}
                     </div>
-                    <button id="validar" type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar"
-                        data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">{{__("admin.guarda")}} {{-- !idioma --}}</button>
+                    
+                    <button @click.prevent="enviar" class="btn btn-dark text-center col-6 mx-3" value="editar" data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">{{__("admin.guarda")}}</button>
+
+                    {{-- !VAINILLA <button id="validar" type="submit" class="btn btn-dark text-center col-6 mx-3" value="editar"
+                        data-bs-toggle="tooltip" data-bs-placement="down" title="Datuak gorde egiten du">{{__("admin.guarda")}} </button> --}}
                 </section>
+
+                <ul v-for="errores in misErrores">
+                    <li class="text-danger">@{{ errores }}</li>
+                </ul>
+
+                {{-- <pre>@{{$data}}</pre> --}}
+
                 <p id="editando" class="d-none text-danger text-center">{{__("admin.noGuarda")}} {{-- !idioma --}}</p>
                 {{-- HACER CON JS QUE ESTE PUESTO CUANDO ESTEMOS EDITANDO  --}}
 
@@ -61,8 +92,8 @@
                 @foreach ($errors->all() as $error)
                 <p class="text-danger text-center">{{ $error }}</p>
                 @endforeach
-
             </form>
+            
 
             <hr>
             {{-- CAMBIAR IDIOMA --}}
@@ -84,21 +115,62 @@
             {{-- ELIMINAR --}}
 
             @if($miUsu->rol == 1)
-            <form class=" my-5 text-center" id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
-                @csrf @method('DELETE')
-                <article class="d-flex justify-content-center align-items-center">
-                    <select name="usuario" class="text-center">
-                        @foreach($usu as $usus)
+
+            <section class="usuarios my-5 d-flex justify-content-center align-items-center flex-column">
+                <table>
+                    <tr>
+                        <th>{{__("admin.t1")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t2")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t3")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t4")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t5")}} {{-- !idioma --}}</th>
+                        <th>{{__("admin.t6")}} {{-- !idioma --}}</th>
+                    </tr>
+                @foreach($usu as $usus)
+                    <tr>
+
                         @if($usus->id != $miUsu->id && $usus->id != 1)
-                        <option value="{{ $usus->id }}">{{ $usus->usuario }}</option>
+                            <td>
+                                {{ $usus->usuario }}
+                            </td>
+                            <td>{{ $usus->nombre }}</td>
+                            <td>{{ $usus->apellido }}</td>
+                            @if($usus->rol == 1)
+                                <td>ADMIN</td>
+                            @else
+                                <td>----</td>
+                            @endif
+                            <td>
+                                @foreach($par as $pars)
+                                    @if($usus->id == $pars->usuario)
+                                        @if($pars->juego1 == 1 && $pars->juego2 == 1)
+                                            <span class="text-success">{{__("admin.si")}} {{-- !idioma --}}</span>
+                                        @else  
+                                            <span class="text-danger">{{__("admin.no")}} {{-- !idioma --}}</span>
+                                        @endif
+                                    @endif
+                                @endforeach
+                            </td>
+                            <td>
+                                <form id="eliminar" action="{{ route('Comercio.usuEliminar') }}" method="POST">
+                                    @csrf @method('DELETE')
+                                    <input hidden name="usuario" value="{{ $usus->id }}">
+                                    <input class="btn boton" type="submit" value="Eliminar">
+                                </form>
+                            </td>
                         @endif
-                        @endforeach
-                    </select>
-                    <button type="submit" class="btn btn-dark" value="borrar">-</button>
-                </article>
+                    </tr>
+                @endforeach
+                </table>
+
+                <br>
                 <p class="text-center text-success">{{Session::get('mensaje')}}</p>
-            </form>
+
+            </section>
+
             @endif
+
+
 
 
         </article>

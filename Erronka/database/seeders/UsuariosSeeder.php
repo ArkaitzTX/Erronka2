@@ -19,7 +19,7 @@ class UsuariosSeeder extends Seeder
         $usuario->nombre = 'Admin';
         $usuario->apellido = 'Admin';
         $usuario->usuario = 'admin';
-        $usuario->pass = 'admin';
+        $usuario->pass = bcrypt('admin');
         $usuario->foto = 'default.png';
         $usuario->type = 'png';
         $usuario->rol = 1;
@@ -32,7 +32,7 @@ class UsuariosSeeder extends Seeder
         $usuario1->nombre = 'Rick';
         $usuario1->apellido = 'Fritz';
         $usuario1->usuario = 'Rick Fritz';
-        $usuario1->pass = 'Inf041';
+        $usuario1->pass = bcrypt('Inf041');
         $usuario1->foto = 'default.png';
         $usuario1->type = 'png';
         $usuario1->rol = 0;

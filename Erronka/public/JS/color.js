@@ -27,7 +27,7 @@ const COLORES = [
         f: '#EFDBC7',
 
         d0: '#B08D6B',
-        d1: '#B08D6B',
+        d1: '#E8C39E',
         d2: '#F5F3F0',
 
         h: '#B08D6B',
@@ -48,19 +48,21 @@ $(document).ready(function () {
         aplicarColor();
     });
 
+  // CARGAR
+  $("#main").removeClass("d-none");
+
 });
 
 function aplicarColor() {
-    // console.log(colorElegido);
+    const R = document.documentElement;
 
-    const rootElement = document.documentElement;
+    R.style.setProperty('--f', COLORES[colorElegido].f);
 
-    rootElement.style.setProperty('--f', COLORES[colorElegido].f);
+    R.style.setProperty('--d0', COLORES[colorElegido].d0);
+    R.style.setProperty('--d1', COLORES[colorElegido].d1);
+    R.style.setProperty('--d2', COLORES[colorElegido].d2);
 
-    rootElement.style.setProperty('--d0', COLORES[colorElegido].d0);
-    rootElement.style.setProperty('--d1', COLORES[colorElegido].d1);
-    rootElement.style.setProperty('--d2', COLORES[colorElegido].d2);
-
-    rootElement.style.setProperty('--h', COLORES[colorElegido].h);
-    rootElement.style.setProperty('--t', COLORES[colorElegido].t);
+    R.style.setProperty('--h', COLORES[colorElegido].h);
+    R.style.setProperty('--t', COLORES[colorElegido].t);
 }
+

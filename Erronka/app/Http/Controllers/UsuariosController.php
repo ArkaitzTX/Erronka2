@@ -5,6 +5,7 @@ use App\Models\Usuarios;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Partidas;
+use Illuminate\Support\Facades\Hash;
 // use App;
 
 class UsuariosController extends Controller
@@ -13,12 +14,14 @@ class UsuariosController extends Controller
     public function index()
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         $miUsu = session()->get('usuario');
         $usu = Usuarios::all();
-        return view('Comercio.admin', compact('usu', 'miUsu'));
+        $par = Partidas::all();
+
+        return view('Comercio.admin', compact('usu', 'miUsu', 'par'));
     }
     //VER ID
     // public function ver($id)
@@ -30,7 +33,7 @@ class UsuariosController extends Controller
     public function create()
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         return view('Comercio.log-reg');
@@ -40,7 +43,7 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         if(Usuarios::where('usuario', $request->usuario)->exists()){
@@ -62,7 +65,7 @@ class UsuariosController extends Controller
             $usu->nombre = $request->nombre;
             $usu->apellido = $request->apellido;
             $usu->usuario = $request->usuario;
-            $usu->pass = $request->pass;
+            $usu->pass = bcrypt($request->pass);
             $usu->rol = 0;
             $usu->foto = "default.png";
             $usu->type = "png";
@@ -71,6 +74,9 @@ class UsuariosController extends Controller
             $partidas = new Partidas();
             $partidas->juego1 = 0;
             $partidas->juego2 = 0;
+            //! DIFICULTAD
+            $partidas->dificultad = $request->dificultad;
+            //! DIFICULTAD
             $partidas->usuario = Usuarios::where('usuario','=', $request->usuario)->get()[0]->id;
             $partidas->save();
             
@@ -83,13 +89,13 @@ class UsuariosController extends Controller
     public function logSes(Request $request){
 
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         $usuarios = Usuarios::where('usuario','=',$request->usuario)->get();
         
         foreach($usuarios as $usu){
-            if($request->pass == $usu->pass){
+            if(Hash::check($request->pass, $usu->pass)){
                 session(['usuario' => $usu]);
 
                 return redirect()->action([PartidasController::class, 'index']);
@@ -104,7 +110,7 @@ class UsuariosController extends Controller
      public function cerrarSes(){
 
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         session()->forget('usuario');
@@ -116,7 +122,7 @@ class UsuariosController extends Controller
     {
 
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
         $codigoAdmin = 'ADMIN123';
 
@@ -136,15 +142,15 @@ class UsuariosController extends Controller
     {
 
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
-        $request->validate([
-            'nombre' => 'required|max:50',
-            'apellido' => 'required|max:50',
-            'usuario' => 'required|max:50', // unique:posts|
-            'pass' => 'required|max:50',
-        ]);
+        // $request->validate([
+        //     'nombre' => 'required|max:50',
+        //     'apellido' => 'required|max:50',
+        //     'usuario' => 'required|max:50', // unique:posts|
+        //     'pass' => 'required|max:50',
+        // ]);
         
         $usu = Usuarios::findOrFail($id);
         $usu->nombre = $request->nombre;
@@ -174,7 +180,7 @@ class UsuariosController extends Controller
     public function destroy(Request $request)
     {
         // IDIOMA **********************************
-        $this->cambioIdioma();
+        // $this->cambioIdioma();
         // IDIOMA **********************************
 
         $usu = Usuarios::findOrFail($request->usuario);
@@ -197,9 +203,9 @@ class UsuariosController extends Controller
         return redirect()->route('Comercio.admin');
     }
 
-    function cambioIdioma(){
-        if(session()->has('idioma')){
-            app()->setLocale(session()->get('idioma'));
-        }
-    }
+    // function cambioIdioma(){
+    //     if(session()->has('idioma')){
+    //         app()->setLocale(session()->get('idioma'));
+    //     }
+    // }
 }

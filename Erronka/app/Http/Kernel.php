@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
 
         // MIDELWARE
         'seguridad' => \App\Http\Middleware\SeguridadMiddleware::class,
+        'idiomas' => \App\Http\Middleware\Idiomas::class,
     ];
 }

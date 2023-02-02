@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('juego1');
             $table->integer('juego2');
+            $table->integer('dificultad');
             $table->unsignedBigInteger('usuario');
             $table->foreign('usuario')->references('id')->on('usuarios');
             $table->timestamps();

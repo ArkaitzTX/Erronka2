@@ -41,7 +41,7 @@
                     <form class="form px-4 pt-5 formulario" action="{{ route('Comercio.logSes') }}" method="POST">
                         @csrf
 
-                        <input type="text" name="usuario" class="form-control" placeholder="{{__("log-reg.nombre")}} {{-- !idioma --}}">
+                        <input type="text" name="usuario" class="form-control" placeholder="{{__("log-reg.usuario")}} {{-- !idioma --}}">
                         <input type="password" name="pass" class="form-control" placeholder="{{__("log-reg.pass1")}} {{-- !idioma --}}">
                         <button class="btn btn-block">{{__("log-reg.sesion")}} {{-- !idioma --}}</button>
                     </form>
@@ -77,6 +77,13 @@
                             value="{{ old('pass')}}" required>
                         <input type="password" name="passB" class="form-control" placeholder="{{__("log-reg.pass2")}} {{-- !idioma --}}"
                             value="{{ old('passB')}}" required>
+
+                        <label>{{__("log-reg.dif")}} {{-- !idioma --}}</label>
+                        <select name="dificultad" class="form-control">
+                            <option value="0">{{__("log-reg.d1")}} {{-- !idioma --}}</option>
+                            <option value="1">{{__("log-reg.d2")}} {{-- !idioma --}}</option>
+                            <option value="2">{{__("log-reg.d3")}} {{-- !idioma --}}</option>
+                        </select>
                         <button class="btn btn-block">Erregistratu</button>
                     </form>
 
