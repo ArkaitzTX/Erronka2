@@ -31,10 +31,6 @@
     
     <main class="mt-5" id="tamaina">
         
-        {{-- ************************************************ --}}
-        {{-- <h1>{{$candado}}</h1> --}}
-        {{-- <button onclick="Ganar('juego1', 22)">AAAAAAAAAAAAAAAA</button> --}}
-        {{-- ************************************************ --}}
 
         {{-- MENU-PISTAS VUE --}}
         <article>

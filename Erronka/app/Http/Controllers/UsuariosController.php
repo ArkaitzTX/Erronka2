@@ -145,12 +145,12 @@ class UsuariosController extends Controller
         // $this->cambioIdioma();
         // IDIOMA **********************************
 
-        $request->validate([
-            'nombre' => 'required|max:50',
-            'apellido' => 'required|max:50',
-            'usuario' => 'required|max:50', // unique:posts|
-            'pass' => 'required|max:50',
-        ]);
+        // $request->validate([
+        //     'nombre' => 'required|max:50',
+        //     'apellido' => 'required|max:50',
+        //     'usuario' => 'required|max:50', // unique:posts|
+        //     'pass' => 'required|max:50',
+        // ]);
         
         $usu = Usuarios::findOrFail($id);
         $usu->nombre = $request->nombre;
